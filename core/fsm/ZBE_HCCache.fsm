@@ -1,0 +1,127 @@
+/*%FSM<COMPILE "C:\Users\Ross\Desktop\PoseidonTools\Data\Packages\Bin\fsmEditor\scriptedFSM.cfg, ZBE_HCCache v1.1">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Start",0,4346,-61.457844,-334.708740,28.542156,-284.708740,0.000000,"Start"};
+item1[] = {"Player_Host",4,218,80.000000,-335.000000,170.000000,-285.000000,0.000000,"Player/Host"};
+item2[] = {"End",1,250,220.000000,-335.000000,310.000000,-285.000000,0.000000,"End"};
+item3[] = {"Dedicated_HC",4,218,-60.000000,-420.000000,30.000000,-370.000000,0.000000,"Dedicated/HC"};
+item4[] = {"Deactivate",2,250,80.000000,-420.000000,170.000000,-370.000000,0.000000,"Deactivate"};
+item5[] = {"wait",4,218,220.000000,-420.000000,310.000000,-370.000000,0.000000,"wait"};
+link0[] = {0,1};
+link1[] = {0,3};
+link2[] = {1,2};
+link3[] = {3,4};
+link4[] = {4,5};
+link5[] = {5,4};
+globals[] = {5.000000,0,0,0,0,640,480,1,20,6316128,1,-285.792664,469.733429,-148.260559,-625.824036,1022,646,1};
+window[] = {0,-1,-1,-1,-1,975,125,1865,183,1,1040};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "ZBE_HCCache v1.1";
+        class States
+        {
+                /*%FSM<STATE "Start">*/
+                class Start
+                {
+                        name = "Start";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"//Rockhunt provided this update and it's damn sexy" \n
+                         "Private [""_time""]"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Dedicated_HC">*/
+                                class Dedicated_HC
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="Deactivate";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!hasInterface"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Player_Host">*/
+                                class Player_Host
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="End";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"hasInterface"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "End">*/
+                class End
+                {
+                        name = "End";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Deactivate">*/
+                class Deactivate
+                {
+                        name = "Deactivate";
+                        itemno = 4;
+                        init = /*%FSM<STATEINIT""">*/"{" \n
+                         "	if (!local _x) then " \n
+                         "	{" \n
+                         "		_x enableSimulation false" \n
+                         "	}" \n
+                         "	else" \n
+                         "	{" \n
+                         "		if (!simulationEnabled _x) then" \n
+                         "		{" \n
+                         "			_x enableSimulation true" \n
+                         "		}" \n
+                         "	}" \n
+                         "} forEach allUnits;" \n
+                         "{" \n
+                         "	if (!local _x) then " \n
+                         "	{" \n
+                         "		_x enableSimulation false" \n
+                         "	}" \n
+                         "	else" \n
+                         "	{" \n
+                         "		if (!simulationEnabled _x) then" \n
+                         "		{" \n
+                         "			_x enableSimulation true" \n
+                         "		}" \n
+                         "	}" \n
+                         "} forEach vehicles;" \n
+                         "_time = time + 30;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "wait">*/
+                                class wait
+                                {
+                                        itemno = 5;
+                                        priority = 0.000000;
+                                        to="Deactivate";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"time > _time"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="Start";
+        finalStates[] =
+        {
+                "End",
+        };
+};
+/*%FSM</COMPILE>*/

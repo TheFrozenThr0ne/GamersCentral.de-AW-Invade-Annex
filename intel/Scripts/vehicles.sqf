@@ -1,0 +1,1 @@
+sign_1 SetObjectTexture [0,"Intel\Pictures\vehicles.jpg"]; call bis_fnc_mp;

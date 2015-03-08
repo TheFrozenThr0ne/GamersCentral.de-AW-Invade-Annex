@@ -1,0 +1,795 @@
+//------------------------- On Load
+
+author = [Rarek, Quiksilver] Customized by GamersCentral;					// Visible when loading mission
+onLoadName = "Invade and Annex 2.82";						// Visible when loading mission
+OnLoadMission = "- Welcome back to GamersCentral Invade and Annex  - Join us on TeamSpeak at TS3.GamersCentral.de                                 - Protected by SpyGlass Anti-Hack";
+loadScreen = "media\images\loading.jpg";				// Visible when loading mission
+overviewPicture = "media\images\loading.jpg";			// Visible when selecting mission	
+
+onLoadIntro = "";										// Displays a message while the intro is loading.
+onLoadIntroTime = 0;									// Time and date displayed while the intro loads. 1 visible, 0 hidden.
+onLoadMissionTime = 0;									// Time and date displayed while the mission loads. 1 visible, 0 hidden.
+
+class Header 
+	{
+		gameType = COOP;								// Unknown, COOP, DM, TDM, CTF, SC, CTI, RPG, Sandbox, Seize, Defend.
+		minPlayers = 1;									// Min # of players the MISSION supports
+		maxPlayers = 60;								// Max # of players the MISSION supports, not server slots. Make sure # is greater than server slots.
+	}; 
+
+//------------------------- Admin
+
+enableDebugConsole = 1;									// 0 = disabled. 1 = admins, 2 = everybody. 0 is recommended in MP.
+allowFunctionsLog = 0; 									// Log functions to .rpt. disabled with 0
+onPauseScript = "scripts\onPause.sqf";
+
+//------------------------- Misc
+
+disableChannels[] = {6};								// 0 = Global, 1 = Side, 2 = Command, 3 = Group, 4 = Vehicle, 5 = Direct, 6 = System. Admin/server/BattlEye can still use Global. 
+disabledAI = 1;											// No AI in playable units
+aiKills = 0; 											// disable scorelist for AI players
+enableItemsDropping = 0; 								// disabled with 0
+joinUnassigned = 1;										// 0 = players forced into role on join
+showUAVFeed = 1;										// Enables/Disables the UAV Feed. Zeus-related.
+
+//------------------------- Respawn
+
+Respawn = 3;											// 0 = none. 1 = bird. 2 = instant where died. 3 = base or respawn_west marker. 4 = respawn with team, or bird. 5 = into AI or bird.
+RespawnDelay = 4;										// Delay prior to respawn, ensure longer than BTC revive delay.
+RespawnDialog = 0;										// default = 1. show respawn timer and scoreboard when killed.
+
+//------------------------- Garbage collector
+							
+wreckLimit = 3;											// Limit before removal is triggered
+wreckRemovalMinTime = 120;								// Min time before removal
+wreckRemovalMaxTime = 360;								// Max time before removal
+corpseLimit = 5;										// Limit before removal is triggered		
+corpseRemovalMinTime = 60;								// Min time before removal
+corpseRemovalMaxTime = 120;								// Max time before removal
+
+//------------------------- Includes / Functions
+	
+#include "scripts\VAS\menu.hpp" 						// VAS
+#include "scripts\taw_vd\dialog.hpp" 					// TAW View Distance
+#include "scripts\vehicle\crew\common.hpp"  			// vehicle crew hud
+#include "scripts\=BTC=_revive\=BTC=_respawn.h"			// BTC medic revive system
+#include "R3F_LOG\desc_include.h"						// Logistics
+#include "mission\side\downloadData.hpp"				// Side Mission
+#include "scripts\DOM_squad\SquadManagement.hpp"		// Squad Management
+#include "ATM_airdrop\dialog.hpp"						// Halo Jump
+#include "scripts\vehicle\TVS\Tvs.hpp"					// TV Guided Bomb - Buzzard CAS
+#include "dialogs.hpp"									// Intro
+
+class CfgFunctions
+	{
+		#include "functions\cfgfunctions.hpp"			// Integrated I&A functions
+		#include "scripts\VAS\cfgfunctions.hpp"			// VAS
+		#include "scripts\taw_vd\CfgFunctions.hpp"		// View distance
+	    class FETT {									// Curator synch http://forums.bistudio.com/showthread.php?176691-Making-placed-units-be-editable-for-every-Zeus
+	        class curator {
+	            class eventHandlers {postInit = 1;};
+	            class objPlaced {};
+	            class grpPlaced {};
+	        };
+	    };
+	
+	class SpyGlass
+	{
+		tag = "SPY";
+		class Functions
+		{
+			file = "scripts\antihack\SPYGLASS";
+			class cmdMenuCheck{};
+			class cookieJar{};
+			class menuCheck{};
+			class notifyAdmins{};
+			class observe{};
+			class payLoad{};
+			class variableCheck{};
+			class initSpy {postInit=1;};
+		};
+	};
+};
+
+class RscTitles
+{
+	#include "scripts\helmetcam\hcam.hpp"			// Helmet Cam
+	#include "scripts\vehicle\crew\namesleft.hpp"	// Occupants HUD for vehicles
+	
+	class VTS_WeaponResting_Dialog 
+	{
+		idd = -1;
+		movingEnable = 0;
+		enableSimulation = 1;
+		enableDisplay = 1;
+		duration = 2147483647;
+		fadein = 0;
+		fadeout = 0;
+		onLoad = "uiNamespace setVariable [""VTS_WeaponResting_Dialog_id"", _this select 0]";
+		class RscPicture;
+		class RscText;
+		class controls 
+		{ 
+			class VTS_WeaponResting_Dialog_Picture: RscPicture
+			{
+			idc = 0;
+			type = 0;
+			style = 48;
+			text = "scripts\vts_weaponresting\vts_weaponresting.paa";
+			x = 0.0115015 * safezoneW + safezoneX;
+			y = 0.709983 * safezoneH + safezoneY;
+			w = 0.0829102 * safezoneW;
+			h = 0.0699966 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {0, 0, 0, 0.3};
+			font = "TahomaB";
+			sizeEx = 0;
+			lineSpacing = 0;
+			fixedWidth = 0;
+			shadow = 0;
+			};
+			class VTS_WeaponResting_Dialog_Text: RscText
+			{
+			idc = 1;
+			type = 13;
+			style = 0x02;
+			text = "";
+			colorBackground[] = {0,0,0,0.0};
+			colorText[] = {1.0,1.0,1.0,0.75};
+			colorDisabled[] = {0.6,0.1,0.3,0};
+			colorBackgroundDisabled[] = {0,0.0,0};
+			colorBackgroundActive[] = {0.0,0.0,1.0,0.0};
+			colorFocused[] = {0,0,0,0.0};
+			colorShadow[] = {0,0,0,0.0};
+			colorBorder[] = {0,0,0,0};	
+			font="TahomaB";//
+			SizeEx = 0.040000;
+			Size = 0.025 * safezoneH;
+			LineSpacing = 1.000000;
+			shadow = 2;
+			fixedWidth = 0;
+			x = 0.0115015 * safezoneW + safezoneX;
+			y = 0.749983 * safezoneH + safezoneY;
+			w = 0.0829102 * safezoneW;
+			h = 0.0699966 * safezoneH;
+			offsetX = 0.000;
+			offsetY = 0.000;
+			offsetPressedX = 0.000;
+			offsetPressedY = 0.000;
+			borderSize = 0;	
+			soundEnter[] = {};
+			soundPush[] = {};
+			soundClick[] = {};
+			soundEscape[] = {};	
+			};	
+		};
+	};	
+};
+
+class faction {
+	#include "scripts\misc\factionResistance.hpp"
+};
+
+//------------------------- Parameters
+
+class Params 
+	{
+		
+		class HeadlessClient {
+				title = "Headless Client";
+				values[] = {1,0};
+				texts[] = {"Enabled","Disabled"};
+				default = 1;
+		};
+		
+		class CuratorGodMode {
+				title = $STR_A3_MP_ZGM_m11.Altis_Params_CuratorUnlock;
+				values[] = {0,1};
+				texts[] = {$STR_DISABLED,$STR_ENABLED};
+				default = 1;
+		};
+		
+		class CuratorModeratorRights {
+				title = $STR_A3_MP_ZGM_m11.Altis_Params_CuratorModeratorRights;
+				values[] = {0,1,2};
+				texts[] = {
+					$STR_A3_MP_ZGM_m11.Altis_Params_CuratorModeratorRights_0,
+					$STR_A3_MP_ZGM_m11.Altis_Params_CuratorModeratorRights_1,
+					$STR_A3_MP_ZGM_m11.Altis_Params_CuratorModeratorRights_2
+		};
+		default = 1;
+			};
+			
+		class Type {
+				title = $STR_DISP_ARCGRP_TYPE;
+				values[] = {0,1};
+				texts[] = {$STR_A3_CfgMPGameTypes_Coop_name_0,$STR_A3_CfgMPGameTypes_DM_name_0};
+				default = 0;
+				isGlobal = 1;
+				file = "paramType.sqf";
+			};
+			
+		class PlayerEditingAreaSize {
+				title = "Distance in metres from players in which Zeus cannot edit";
+				values[] = {0,100,200,300,500,1000};
+				texts[] = {0,100,200,300,500,1000};
+				default = 0;
+			};
+	
+		class DebugConsole {
+				title = $STR_A3_paramDebugConsole_title;
+				values[] = {0,1};
+				texts[] = {$STR_DISABLED,$STR_ENABLED};
+				default = 1;
+			};
+			
+		class AO {
+				title = "Enable Main AO?";
+				values[] = {1,0};
+				texts[] = {"Enabled","Disabled"};
+				default = 1;
+			};
+		
+		class DefendAO {
+				title = "Enable Defend AO?";
+				values[] = {1,0};
+				texts[] = {"Enabled","Disabled"};
+				default = 0;
+			};
+
+		class SideObjectives {
+				title = "Enable Side Objectives?";
+				values[] = {1,0};
+				texts[] = {"Enabled","Disabled"};
+				default = 1;
+			};
+		
+		class AOReinforcementParaDrop {
+				title = "Enable AO Reinforcement ParaDrop?";
+				values[] = {1,0};
+				texts[] = {"Enabled","Disabled"};
+				default = 1;
+			};
+			
+		class AOReinforcementJet {
+				title = "Enable AO Reinforcement Jet?";
+				values[] = {1,0};
+				texts[] = {"Enabled","Disabled"};
+				default = 1;
+			};
+		
+		class EnemyLeftThreshholdSecondary {
+				title = "Enemy Left Threshold";
+				values[] = {1,2,3,4,5,6,7,8,9,10};
+				texts[] = {"1","2","3","4","5","6","7","8","9","10"};
+				default = 4;
+			};
+			
+		class EnemyLeftThreshhold {
+				title = "Enemy Left Threshold";
+				values[] = {1,2,3,4,5,6,7,8,9,10};
+				texts[] = {"1","2","3","4","5","6","7","8","9","10"};
+				default = 7;
+			};
+			
+		class EnemySpawn {
+				title = "Chance which Enemy should Spawn DAC or From invade and annex?";
+				values[] = {0,1,2,3,4,5,6,7,8,9,11};
+				texts[] = {"0%","10%","20%","30%","40%","50%","60%","70%","80%","90%","100%"};
+				default = 6; // default 5
+			};
+			
+		class RadioTowerMineFieldChance {
+				title = "Chance for minefield to spawn around Radio Tower?";
+				values[] = {0,1,2,3,4,5,6,7,8,9,11};
+				texts[] = {"0%","10%","20%","30%","40%","50%","60%","70%","80%","90%","100%"};
+				default = 6; // default 5
+			};
+
+		class ArtilleryTargetTickTimeMin {
+				title = "MINIMUM Time between Priority Target actions";
+				values[] = {30,60,120,180,240,300,600,900};
+				texts[] = {"30 seconds","1 minute","2 minutes","3 minutes","4 minutes","5 minutes","10 minutes","15 minutes"};
+				default = 60; // 120 default
+			};
+
+		class ArtilleryTargetTickTimeMax {
+				title = "MAXIMUM Time between Priority Target actions";
+				values[] = {30,60,120,180,240,300,600,900};
+				texts[] = {"30 seconds","1 minute","2 minutes","3 minutes","4 minutes","5 minutes","10 minutes","15 minutes"};
+				default = 180; // 300 default
+			};
+
+		class ArtilleryTargetTickWarning {
+				title = "Warnings from CROSSROAD regarding Priority Target actions?";
+				values[] = {1,0};
+				texts[] = {"Enabled","Disabled"};
+				default = 1;
+			};
+		
+		class AOSizeSecondary {
+				title = "Secondary AO Diameter";
+				values[] = {200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500};
+				texts[] = {"200m","300m","400m","500m","600m","700m","800m","900m","1,000m","1,100m","1,200m","1,300m","1,400m","1,500m"};
+				default = 300;
+			};
+			
+		class AOSize {
+				title = "Main AO Diameter";
+				values[] = {200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500};
+				texts[] = {"200m","300m","400m","500m","600m","700m","800m","900m","1,000m","1,100m","1,200m","1,300m","1,400m","1,500m"};
+				default = 1000;
+			};
+		
+		class TowerRadioTower {
+				title = "3 Tower on RadioTower Diameter";
+				values[] = {150,200,300,400,500};
+				texts[] = {"150","200m","300m","400m","500m"};
+				default = 150;
+			};
+			
+		class VehicleRespawnDistance {
+				title = "Distance from players that vehicles won't respawn";
+				values[] = {10,50,100,200,300,400,500,1000,2000,5000,10000};
+				texts[] = {"10m","50m","100m","200m","300m","400m","500m","1km","2km","5km","10km"};
+				default = 500;
+			};
+		
+		class GroupPatrolSecondary {
+				title = "Groups Patrolling AO";
+				values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
+				texts[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
+				default = 4; // default 11... remember, more AI = less FPS
+			};
+		
+		class SniperTeamsPatrolSecondary {
+				title = "Sniper Teams Patrolling AO";
+				values[] = {0,1,2,3};
+				texts[] = {1,2,3,4};
+				default = 1; // default 2
+			};
+		
+		class StaticMGSecondary {
+				title = "Static Weapons in the AO";
+				values[] = {0,1,2,3};
+				texts[] = {1,2,3,4};
+				default = 0; // default 2
+			};
+		
+		class OverwatchSecondary {
+				title = "Overwatch teams in the AO";
+				values[] = {0,1,2,3,4,5,6,7};
+				texts[] = {1,2,3,4,5,6,7,8};
+				default = 2; // default 6
+			};
+			
+		class AAPatrolSecondary {
+				title = "AA Vehicles Patrolling AO";
+				values[] = {0,1,2,3,4};
+				texts[] = {1,2,3,4,5};
+				default = 0; // default 2
+			};
+		
+		class AirPatrolSecondary {
+				title = "% Chance Of Air Vehicles Patrolling AO";
+				values[] = {0,1,2,3,4,5,6,7,8,9,10};
+				texts[] = {0,10,20,30,40,50,60,70,80,90,100};
+				default = 4; // default 7
+		};
+		
+		class EnemiesInBuildingsSecondary {
+			title = "AO NUMBER OF ENEMIES IN BUILDINGS";
+			values[] = {0,5,10,15,20,25,30,35,40,45,50};
+			texts[] = {"DISABLED","5","10","15","20","25","30","35","40","45","50"};
+			default = 10;
+		};
+		
+		class GroupPatrol {
+				title = "Groups Patrolling AO";
+				values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
+				texts[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
+				default = 8; // default 11... remember, more AI = less FPS
+			};
+	
+		class SniperTeamsPatrol {
+				title = "Sniper Teams Patrolling AO";
+				values[] = {0,1,2,3};
+				texts[] = {1,2,3,4};
+				default = 2; // default 2
+			};
+
+		class StaticMG {
+				title = "Static Weapons in the AO";
+				values[] = {0,1,2,3};
+				texts[] = {1,2,3,4};
+				default = 2; // default 2
+			};
+
+		class Overwatch {
+				title = "Overwatch teams in the AO";
+				values[] = {0,1,2,3,4,5,6,7};
+				texts[] = {1,2,3,4,5,6,7,8};
+				default = 4; // default 6
+			};	
+
+		class VEHPatrol {
+				title = "Vehicles Patrolling AO";
+				values[] = {0,1,2,3,4,5,6};
+				texts[] = {1,2,3,4,5,6,7};
+				default = 2; // default 2
+			};
+
+		class AAPatrol {
+				title = "AA Vehicles Patrolling AO";
+				values[] = {0,1,2,3,4};
+				texts[] = {1,2,3,4,5};
+				default = 2; // default 2
+			};
+			
+		class AirPatrol {
+				title = "% Chance Of Air Vehicles Patrolling AO";
+				values[] = {0,1,2,3,4,5,6,7,8,9,10};
+				texts[] = {0,10,20,30,40,50,60,70,80,90,100};
+				default = 7; // default 7
+		};
+		
+		class EnemiesInBuildings {
+			title = "AO NUMBER OF ENEMIES IN BUILDINGS";
+			values[] = {0,5,10,15,20,25,30,35,40,45,50};
+			texts[] = {"DISABLED","5","10","15","20","25","30","35","40","45","50"};
+			default = 20;
+		};
+			
+		class EasterEggs {
+			title = "Enable Easter Eggs?";
+			values[] = {1,0};
+			texts[] = {"Enabled","Disabled"};
+			default = 0;
+		};	
+		
+		class rThermal {
+			title = "Specialise Thermal Optics";
+			values[] = {0,1};
+			texts[] = {"DISABLED","ENABLED"};
+			default = 0;
+		};
+		
+		class rLMG {
+			title = "Specialise LMGs";
+			values[] = {0,1};
+			texts[] = {"DISABLED","ENABLED"};
+			default = 0;
+		};
+		
+		class rSOptics {
+			title = "Specialise Sniper Optics";
+			values[] = {0,1};
+			texts[] = {"DISABLED","ENABLED"};
+			default = 0;
+		};
+		
+		class CasFixedWingSupport {
+			title = "CAS SUPPORT";
+			values[] = {0,1,2,3,4,5};
+			texts[] = {"DISABLED","A-164 WIPEOUT (CAS)","A-143 BUZZARD (AA)","A-143 BUZZARD (CAS)","To-199 NEOPHRON (CAS)","RANDOM"};
+			default = 5;
+		};
+		
+		class CasATGM {
+			title = "CAS Air-To-Ground Missiles";
+			values[] = {0,1};
+			texts[] = {"DISABLED","ENABLED"};
+			default = 0;
+		};
+		
+		class CasOnStart {
+			title = "CAS at Mission Start";
+			values[] = {0,1};
+			texts[] = {"DISABLED","ENABLED"};
+			default = 0;
+		};
+		
+		class PilotRespawn {
+			title = "Pilot Respawn";
+			values[] = {0,1};
+			texts[] = {"DISABLED","ENABLED"};
+			default = 1;
+		};
+
+	class Fatigue {
+		title = "Player Fatigue";
+		values[] = {0,1};
+		texts[] = {"DISABLED","ENABLED"};
+		default = 0;
+	};
+	
+	class HeliRope {
+		title = "Fast Rope";
+		values[] = {0,1};
+		texts[] = {"DISABLED","ENABLED"};
+		default = 1;
+	};
+	
+	class HeliSling {
+		title = "Vehicle Heli Sling";
+		values[] = {0,1};
+		texts[] = {"DISABLED","ENABLED"};
+		default = 0;		// Has been somewhat fixed, give it a trial until BIS releases theirs
+	};
+	
+	class HeliDrop {
+		title = "Helicopter Supply Drop";
+		values[] = {0,1};
+		texts[] = {"DISABLED","ENABLED"};
+		default = 1;
+	};
+	
+	class MobileArmory {
+		title = "Mobile Armory";
+		values[] = {0,1,2,3};
+		texts[] = {"DISABLED","VAS","ARSENAL","VAS and ARSENAL"};
+		default = 3;
+	};
+	
+	class UH80TurretControl {
+		title = "UH-80 Pilot Turret Control";
+		values[] = {0,1};
+		texts[] = {"DISABLED","ENABLED"};
+		default = 1;
+	};
+	
+	class VehicleAmmoCargo {				// Can bobcats and ammo HEMTT rearm other vehicles?
+		title = "Vehicle Ammo Cargo";
+		values[] = {0,1};
+		texts[] = {"DISABLED","ENABLED"};
+		default = 0;
+	};
+};
+
+//------------------------- Notifications
+
+class CfgNotifications
+{
+	class Default
+	{
+		title = ""; 			// Tile displayed as text on black background. Filled by arguments.
+		iconPicture = ""; 		// Small icon displayed in left part. Colored by "color", filled by arguments.
+		iconText = ""; 			// Short text displayed over the icon. Colored by "color", filled by arguments.
+		description = ""; 		// Brief description displayed as structured text. Colored by "color", filled by arguments.
+		color[] = {1,1,1,1}; 	// Icon and text color
+		duration = 5; 			// How many seconds will the notification be displayed
+		priority = 0; 			// Priority; higher number = more important; tasks in queue are selected by priority
+		difficulty[] = {}; 		// Required difficulty settings. All listed difficulties has to be enabled
+	};
+	
+	class NewMainSecondary
+	{
+		title = "NEW SECONDARY OBJECTIVE";
+		description = "Clear %1";
+		iconPicture = "media\images\notificons\main_objective.paa";
+		color[] = {1, 0.81, 0.06, 1};
+		priority = 9;
+	};
+	
+	class NewMain
+	{
+		title = "NEW MAIN OBJECTIVE";
+		description = "Take %1";
+		iconPicture = "media\images\notificons\main_objective.paa";
+		color[] = {1, 0.81, 0.06, 1};
+		priority = 9;
+	};
+
+	class CompletedMain
+	{
+		title = "MAIN OBJECTIVE COMPLETE";
+		description = "Taken %1";
+		iconPicture = "media\images\notificons\main_objective_completed.paa";
+		color[] = {1, 0.81, 0.06, 1};
+		priority = 9;
+	};
+	
+	class CompletedSecondary
+	{
+		title = "SECONDARY OBJECTIVE COMPLETE";
+		description = "Cleared %1";
+		iconPicture = "media\images\notificons\main_objective_completed.paa";
+		color[] = {1, 0.81, 0.06, 1};
+		priority = 9;
+	};
+	
+	class NewMainDefend
+	{
+		title = "DEFEND MAIN OBJECTIVE";
+		description = "Defend %1";
+		iconPicture = "media\images\notificons\defendtarget.paa";
+		color[] = {1, 0.81, 0.06, 1};
+		priority = 9;
+	};
+
+	class CompletedMainDefended
+	{
+		title = "MAIN OBJECTIVE DEFENDED";
+		description = "Defended %1";
+		iconPicture = "media\images\notificons\main_objective_completed.paa";
+		color[] = {1, 0.81, 0.06, 1};
+		priority = 9;
+	};
+
+	class NewSub
+	{
+		title = "NEW SUB-OBJECTIVE";
+		description = "%1";
+		iconPicture = "media\images\notificons\sub_objective.paa";
+		color[] = {1, 0.81, 0.06, 1};
+		priority = 8;
+	};
+
+	class CompletedSub
+	{
+		title = "SUB-OBJECTIVE COMPLETE";
+		description = "%1";
+		iconPicture = "media\images\notificons\sub_objective_completed.paa";
+		color[] = {1, 0.81, 0.06, 1};
+		priority = 8;
+	};
+
+	class NewSideMission
+	{
+		title = "NEW SIDE MISSION";
+		iconPicture = "media\images\notificons\side_mission.paa";
+		description = "%1";
+		color[] = {0, 0.7, 0.93, 1};
+		priority = 7;
+	};
+
+	class NewSideMissionFileData
+	{
+		title = "NEW SIDE MISSION";
+		iconPicture = "media\images\notificons\laptop.paa";
+		description = "%1";
+		color[] = {0, 0.7, 0.93, 1};
+		priority = 7;
+	};
+
+	class NewSideMissionFileDataComplete
+	{
+		title = "FILE DATA SAVED";
+		description = "%1";
+		iconPicture = "media\images\notificons\laptop.paa";
+		color[] = {0.38, 0.81, 0.16, 1};
+		priority = 6;
+	};
+
+	class NewSideMissionRadar
+	{
+		title = "NEW SIDE MISSION";
+		iconPicture = "media\images\notificons\smdestroyradar.paa";
+		description = "%1";
+		color[] = {0, 0.7, 0.93, 1};
+		priority = 7;
+	};
+
+	class CompletedSideMission
+	{
+		title = "SIDE MISSION COMPLETE";
+		iconPicture = "media\images\notificons\side_mission_completed.paa";
+		description = "%1";
+		color[] = {0, 0.7, 0.93, 1};
+		priority = 7;
+	};
+
+	class NewPriorityTarget
+	{
+		title = "NEW PRIORITY TARGET";
+		iconPicture = "media\images\notificons\priority_target.paa";
+		description = "%1";
+		color[] = {0.8, 0.13, 0.14, 1};
+		priority = 10;
+	};
+
+	class CompletedPriorityTarget
+	{
+		title = "PRIORITY TARGET DOWN";
+		iconPicture = "media\images\notificons\priority_target_neutralised.paa";
+		description = "%1";
+		color[] = {0.8, 0.13, 0.14, 1};
+		priority = 10;
+	};
+
+	class EnemyJetDown
+	{
+		title = "ENEMY CAS NEUTRALIZED";
+		iconPicture = "media\images\notificons\down.paa";
+		description = "%1";
+		color[] = {1, 0.81, 0.06, 1};
+		priority = 8;
+	};
+
+	class EnemyJet
+	{
+		title = "ENEMY CAS INBOUND";
+		iconPicture = "media\images\notificons\enemyJetinbound.paa";
+		description = "%1";
+		color[] = {0.8, 0.13, 0.14, 1};
+		priority = 8;
+	};
+
+	class NewSideMissionJet
+	{
+		title = "NEW SIDE MISSION";
+		iconPicture = "media\images\notificons\enemyJetinbound.paa";
+		description = "%1";
+		color[] = {0.8, 0.13, 0.14, 1};
+		priority = 8;
+	};
+
+	class Reward
+	{
+		title = "TEAM REWARD";
+		description = "%1";
+		iconPicture = "media\images\notificons\reward.paa";
+		color[] = {0.38, 0.81, 0.16, 1};
+		priority = 6;
+	};
+
+	class ScoreBonus
+	{
+		title = "SCORE BONUS";
+		description = "%1";
+		iconPicture = "media\images\notificons\score_bonus.paa";
+		iconText = "+%2";
+		color[] = {0.38, 0.81, 0.16, 1};
+		priority = 5;
+	};
+};
+
+class CfgDebriefing
+{
+	class SpyGlass
+	{
+		title = "The SpyGlass sees you";
+		subTitle = "You were detected by the SpyGlass";
+		description = "You were detected for cheating and have been reported to the server. Enjoy your day.";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0,0.3,0.6,1};
+	};
+};
+
+class CfgSounds
+{
+
+ sounds[] = {Vent,Vent2,Para};
+
+	class Vent {name="Vent";sound[]={ATM_airdrop\data\Vent.ogg,db-11,1.0};titles[] = {};};
+	class Vent2 {name="Vent2";sound[]={ATM_airdrop\data\Vent2.ogg,db-11,1.0};titles[] = {};};
+	class Para {name="Para";sound[]={ATM_airdrop\data\parachute.ogg,db-11,1.0};titles[] = {};};
+	
+class vts_weaponresting_sound
+	{
+		name = "vts_weaponresting_sound";
+		sound[] = {"scripts\vts_weaponresting\vts_weaponresting.wav", 1, 1};
+		titles[] = {};
+	};
+};
+
+/*
+Authors: 
+
+	Quiksilver & Rarek [AW]
+	
+	Invade & Annex 2.00 was developed by Rarek [ahoyworld.co.uk] with hundreds of hours of work, 
+	The current iterations have been developed by Quiksilver with hundreds of hours of work.
+	
+	Contributors: Razgriz33 [AW], Jester [AW], Kamaradski [AW], David [AW], chucky [allFPS].
+	
+	www.ahoyworld.co.uk
+	www.allfps.com.au
+	
+	Please be respectful and do not remove/alter credits.
+	
+File Reference: 
+
+	https://community.bistudio.com/wiki/Description.ext
+*/
