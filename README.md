@@ -2,14 +2,14 @@
 A Custimized Version of Mission AW Invade &amp; Annex from http://GamersCentral.de
 
 
-# # #  REQIRED:  # # # 
+# # #  REQIRED:  # # 
 Create a Folder in Root Directory of your ArmA III Server - InvadeAnnex_settings
 Create 3 Files in the Folder InvadeAnnex_settings - communityList.sqf - init.sqf - VIPcommunityList.sqf
 
 
-# # #  TO DO:  # # # 
+# # #  TO DO:  # # 
 
-# Copy below in to communityList.sqf #
+# # Copy below in to communityList.sqf #
 
 masterClassArray = ["B_MBT_01_mlrs_F","O_Plane_CAS_02_F"];
 
@@ -23,7 +23,7 @@ publicVariable "masterUIDArray";
 
 
 
-# Copy below in to VIPcommunityList.sqf #
+# # Copy below in to VIPcommunityList.sqf #
 
 masterClassArrayVIP = [""];
 masterUIDArrayVIP = [
@@ -35,9 +35,10 @@ publicVariable "masterClassArrayVIP";
 publicVariable "masterUIDArrayVIP";
 
 
-# Copy below in to init.sqf #
+# # Copy below in to init.sqf #
 
 execVM (externalConfigFolder + "\communityList.sqf");
+
 execVM (externalConfigFolder + "\VIPcommunityList.sqf");
 
 
