@@ -1,10 +1,15 @@
 # GamersCentral.de-AW-Invade-Annex
+
 A Custimized Version of Mission AW Invade &amp; Annex from http://GamersCentral.de
 
 
+
 # # #  REQIRED:  # # 
+
 Create a Folder in Root Directory of your ArmA III Server - InvadeAnnex_settings
+
 Create 3 Files in the Folder InvadeAnnex_settings - communityList.sqf - init.sqf - VIPcommunityList.sqf
+
 
 
 # # #  TO DO:  # # 
@@ -56,5 +61,7 @@ execVM (externalConfigFolder + "\communityList.sqf");
 execVM (externalConfigFolder + "\VIPcommunityList.sqf");
 
 
+
 Replace the UID with yours for able to use Restricted Vehicles.
+
 You can add Vehicle Class Names to masterClassArrayVIP = [""]; or masterClassArray = ["B_MBT_01_mlrs_F","O_Plane_CAS_02_F"]; to restrict Vehicles to only who are in the Community list.
