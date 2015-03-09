@@ -11,28 +11,42 @@ Create 3 Files in the Folder InvadeAnnex_settings - communityList.sqf - init.sqf
 
 # # Copy below in to communityList.sqf #
 
+
 masterClassArray = ["B_MBT_01_mlrs_F","O_Plane_CAS_02_F"];
 
 masterUIDArray = [
+
   "76561198001220177", // MaDmaX
+  
   "76561198001220177" // MaDmaX
+  
 ];
 
 publicVariable "masterClassArray";
+
 publicVariable "masterUIDArray";
+
+
 
 
 
 # # Copy below in to VIPcommunityList.sqf #
 
 masterClassArrayVIP = [""];
+
 masterUIDArrayVIP = [
+
   "76561198001220177", // MaDmaX
+  
   "76561198001220177" // MaDmaX
+  
 ];
 
 publicVariable "masterClassArrayVIP";
+
 publicVariable "masterUIDArrayVIP";
+
+
 
 
 # # Copy below in to init.sqf #
