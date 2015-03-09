@@ -62,6 +62,8 @@ execVM (externalConfigFolder + "\VIPcommunityList.sqf");
 
 
 
+
+
 Replace the UID with yours for able to use Restricted Vehicles.
 
 You can add Vehicle Class Names to masterClassArrayVIP = [""]; or masterClassArray = ["B_MBT_01_mlrs_F","O_Plane_CAS_02_F"]; to restrict Vehicles to only who are in the Community list.
