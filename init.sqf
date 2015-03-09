@@ -19,6 +19,7 @@ if (isServer) then {
   [] execVM (externalConfigFolder + "\init.sqf");
 };
 
+execvm "mission\second\initMPlus.sqf";
 
 DAC_Basic_Value = 0;execVM "DAC\DAC_Config_Creator.sqf";
 call compile preprocessFile "scripts\=BTC=_revive\=BTC=_revive_init.sqf";		// revive
