@@ -219,6 +219,22 @@ player createDiaryRecord ["MissionInfo",["Description GER", "
 
 
 //-------------------------------------------------- Change Log
+player createDiaryRecord ["changelog",
+[
+"20.0",
+"
+<br />- [CHANGED] Inceased Halo Jump Pilot Restriction
+<br />- [ADDED] Transport Logistic Pilot Slot
+<br />
+<br />
+<br />
+<br />  Contact us:
+<br />
+<br />- eMail: Support@GamersCentral.de
+<br />- TeamSpeak: TS3.GamersCentral.de
+<br />- WWW: GamersCentral.de
+<br />  Edited by GamersCentral.de - MaDmaX[GC]
+"
 
 player createDiaryRecord ["changelog",
 [

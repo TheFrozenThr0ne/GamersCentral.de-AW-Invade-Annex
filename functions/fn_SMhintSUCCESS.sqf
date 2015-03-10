@@ -25,7 +25,7 @@ _completeText = format[
 "<t align='center'><t size='2.2'>Side Mission</t><br/><t size='1.5' color='#08b000'>COMPLETE</t><br/>____________________<br/>Fantastic job, lads! The OPFOR stationed on the island won't last long if you keep that up!<br/><br/>We've given you %1 to help with the fight. You'll find it at base.<br/><br/>Focus on the main objective for now; we'll relay this success to the intel team and see if there's anything else you can do for us. We'll get back to you in 10-15 minutes.</t>",_vehName];
 
 _flagPole = format[
-"<t align='center'><t size='2.2'>Flag Pole</t><br/><t size='1.5' color='#FD67D5'>AVAILABLE</t><br/>____________________<br/>You are now able to join the OPFOR forces to AO! You find the Flag Pole at the Base on the Spawn Point. The flag pole will be removed within 15 minutes until you get a new one as reward!<br/><br/><br/>- Status: Beta<br/><br/>Follow the Rules!</t>",_vehName];
+"<t align='center'><t size='2.2' color='#E00000'>PVP ENABLED</t><br/><t align='center'><t size='2.2'>Flag Pole</t><br/><t size='1.5' color='#FD67D5'>AVAILABLE</t><br/>____________________<br/>You are now able to join the OPFOR forces to AO! You find the Flag Pole at the Base on the Spawn Point. The flag pole will be removed within 15 minutes until you get a new one as reward!<br/><br/><br/>- Status: Beta<br/><br/>Follow the Rules!</t>",_vehName];
 	
 	
 _reward = createVehicle [_vehVarname, getMarkerPos "smReward1",smMarkerList,0,"NONE"];

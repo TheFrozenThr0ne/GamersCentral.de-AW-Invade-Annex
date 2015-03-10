@@ -21,8 +21,6 @@ if (PARAMS_Fatigue == 0) then {player enableFatigue FALSE;};
 
 //=========================== PILOTS ONLY
 
-nul = [player] execVM "no_shooting.sqf";
-
 _pilots = ["B_pilot_F","B_helipilot_F"];
 _iampilot = ({typeOf player == _x} count _pilots) > 0;
 if (_iampilot) then {
@@ -84,6 +82,7 @@ player setVariable ["seated",FALSE];
 player addAction ["Clear vehicle inventory",QS_fnc_actionClearInventory,[],-97,FALSE,FALSE,'','[] call QS_fnc_conditionClearInventory'];
 
 [player] execVM "scripts\simpleEP.sqf";
+nul = [player] execVM "scripts\no_shooting.sqf";
 
 //======================= Add players to Zeus
 
