@@ -2,7 +2,7 @@
 
 A Custimized Version of Mission AW Invade &amp; Annex from http://GamersCentral.de
 
-# # # FEATURED # # #
+# # # FEATURES # # #
 
 Squad Managment + Options (hold T)
 
@@ -41,7 +41,6 @@ Create a Folder in Root Directory of your ArmA III Server - InvadeAnnex_settings
 Create 3 Files in the Folder InvadeAnnex_settings - communityList.sqf - init.sqf - VIPcommunityList.sqf
 
 # Or remove
-
 if (isServer) then {
 
   externalConfigFolder = "\InvadeAnnex_settings";
@@ -49,7 +48,6 @@ if (isServer) then {
   [] execVM (externalConfigFolder + "\init.sqf");
   
 };
-
 # in init.sqf in your Mission Folder in order to disable Community Vehicles
 
 
