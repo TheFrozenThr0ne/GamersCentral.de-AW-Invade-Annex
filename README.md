@@ -1,13 +1,13 @@
-# GamersCentral.de-AW-Invade-Annex
+# GamersCentral.de-AW-Invade-Annex ALTIS
 
-A Custimized Version of Mission AW Invade &amp; Annex from http://GamersCentral.de - MaDmaX
+A Custimized Version of Mission Ahoy World Invade &amp; Annex edited by http://GamersCentral.de
 
 
 # # # CREDITS # # #
 
 Main Creator of this Mission is Ahoy World.
 
-The leader of all those Changes is MaDmaX. Please Respect he's work, great Ideas and improvements. If you like to use a Idea made by him, please ask him first for permission. If you dont like to ask then you have to add Credits Information about him and he's Community Website to it.
+The leader of all those Changes is MaDmaX. Please Respect he's work, great Ideas and improvements. If you like to use a Script, made by him, for your Mission then, please ask him first for permission. If you dont like to ask then you have to add Credits Information about its Project.
 
 
 
@@ -36,6 +36,10 @@ HALO Jump (Only available when less than 2 Transport Vortex Pilots)
 * Restricted Community only Vehicles (Follow to do below to use this) - MaDmaX Script
 
 * PVP Function - (You will get a Flag Pole as Side Mission reward which allow you to Join the OPFOR Side to AO for 15 Minutes) - MaDmaX Script
+
+Base No Damage Safe Zone
+
+
 
 
 
