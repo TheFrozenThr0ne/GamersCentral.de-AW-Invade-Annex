@@ -5,7 +5,7 @@ A Custimized Version of Mission AW Invade &amp; Annex from http://GamersCentral.
 
 # # # CREDITS # # #
 
-The leader of all those Changes is MaDmaX. Please Respect he's work, great Ideas and improvements. If you like to use a Idea made by him, please ask him first for permission. If you dont like to ask then you have to add Credits Information about him and he's Community Website to it. Legend: * Script made by MaDmaX
+The leader of all those Changes is MaDmaX. Please Respect he's work, great Ideas and improvements. If you like to use a Idea made by him, please ask him first for permission. If you dont like to ask then you have to add Credits Information about him and he's Community Website to it.
 
 
 
@@ -17,7 +17,7 @@ Helmet Camera
 
 Transport Logistics - [R3F] Logistics
 
-* Teleport to far places
+* Teleport to far places - MaDmaX Script
 
 MHQ Vehicle
 
@@ -31,9 +31,9 @@ Taru MOD Pod (fixed)
 
 HALO Jump (Only available when less than 2 Transport Vortex Pilots)
 
-* Restricted Community only Vehicles (Follow to do below to use this)
+* Restricted Community only Vehicles (Follow to do below to use this) - MaDmaX Script
 
-* PVP Function - (You will get a Flag Pole as Side Mission reward which allow you to Join the OPFOR Side to AO for 15 Minutes)
+* PVP Function - (You will get a Flag Pole as Side Mission reward which allow you to Join the OPFOR Side to AO for 15 Minutes) - MaDmaX Script
 
 
 
