@@ -5,6 +5,8 @@ A Custimized Version of Mission AW Invade &amp; Annex from http://GamersCentral.
 
 # # # CREDITS # # #
 
+Main Creator of this Mission is Ahoy World.
+
 The leader of all those Changes is MaDmaX. Please Respect he's work, great Ideas and improvements. If you like to use a Idea made by him, please ask him first for permission. If you dont like to ask then you have to add Credits Information about him and he's Community Website to it.
 
 
