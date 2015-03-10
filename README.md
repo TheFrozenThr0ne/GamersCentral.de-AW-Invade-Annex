@@ -2,6 +2,31 @@
 
 A Custimized Version of Mission AW Invade &amp; Annex from http://GamersCentral.de
 
+# # # FEATURED # # #
+
+Squad Managment + Options (hold T)
+
+Helmet Camera
+
+Transport Logistics - [R3F] Logistics
+
+Teleport to far places
+
+MHQ Vehicle
+
+Dynamic Weather
+
+Weapon Resting Bipod (Shift + H)
+
+Unit Caching
+
+Taru MOD Pod (fixed)
+
+HALO Jump (Only available when less than 2 Transport Vortex Pilots)
+
+Restricted Community only Vehicles (Follow to do below to use this)
+
+
 
 # # # INFO # # #
 
@@ -15,6 +40,17 @@ Create a Folder in Root Directory of your ArmA III Server - InvadeAnnex_settings
 
 Create 3 Files in the Folder InvadeAnnex_settings - communityList.sqf - init.sqf - VIPcommunityList.sqf
 
+# Or remove
+
+if (isServer) then {
+
+  externalConfigFolder = "\InvadeAnnex_settings";
+  
+  [] execVM (externalConfigFolder + "\init.sqf");
+  
+};
+
+# in init.sqf in your Mission Folder in order to disable Community Vehicles
 
 
 # # #  TO DO:  # # 
