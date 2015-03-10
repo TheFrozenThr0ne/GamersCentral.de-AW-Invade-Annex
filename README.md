@@ -3,7 +3,7 @@
 A Custimized Version of Mission AW Invade &amp; Annex from http://GamersCentral.de
 
 
-# # # INFO # #
+# # # INFO # # #
 
 PSD Pictures for Map can be Downloaded here: http://gamersupload.de/file/568/billboard-intel.rar.html
 
