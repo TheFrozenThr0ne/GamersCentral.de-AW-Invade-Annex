@@ -11,7 +11,25 @@ _marker setMarkerType "mil_objective";
 "MarkerS" setMarkerText "Supply Van Crash";  
 "MarkerS" setMarkerColor "ColorRed";
 sleep 5;
-[_pos] execVM "mission\second\scripts\ai.sqf";
+
+#define INF_URBANTYPE "OIA_GuardSentry","OIA_GuardSquad","OIA_GuardTeam"
+_enemiesArraySecond = [grpNull];
+_x = 0;
+for "_x" from 1 to 2 do {
+	_overwatchGroup = createGroup east;
+	_randomPos = [getMarkerPos "MarkerP", 50, 50, 10] call BIS_fnc_findOverwatch;
+	_overwatchGroup = [_randomPos, East, (configfile >> "CfgGroups" >> "East" >> "OPF_F" >> "UInfantry" >> [INF_URBANTYPE] call BIS_fnc_selectRandom)] call BIS_fnc_spawnGroup;
+	[_overwatchGroup, _randomPos, 50] call BIS_fnc_taskPatrol;
+	
+	_wp = _overwatchGroup addWaypoint [getMarkerPos "MarkerP", 0, 50];
+	
+	_enemiesArraySecond = _enemiesArraySecond + [_overwatchGroup];
+
+	{
+		_x addCuratorEditableObjects [units _overwatchGroup, false];
+	} foreach adminCurators;
+
+};
 
 _ogjstr = "<t align='center' size='2.0' color='#ff0000'>Mission<br/>Supply Van Crash</t><br/><t size='1.25' color='#ffff00'>______________<br/><br/>
 Our radar has picked up a supply van crash!<br/>
@@ -29,6 +47,6 @@ sleep 1500;
 deleteMarker "MarkerS"; 
 deleteVehicle  _wreck; 
 deleteVehicle  _wreck1;
-
+[_enemiesArraySecond] spawn QS_fnc_AOdelete;
 sleep 10;
 []execVM "mission\second\initMPlus.sqf";

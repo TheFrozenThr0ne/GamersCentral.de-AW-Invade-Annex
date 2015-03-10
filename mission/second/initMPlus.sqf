@@ -4,8 +4,8 @@
 	Author: Cammygames, drsubo, drsubo
 */
 
-_minTime = 1*60; //5 minutes 
-_maxTime = 2*60; //30 minutes
+_minTime = 10*60; //5 minutes 
+_maxTime = 25*60; //30 minutes
 
 _sleepTime = (random (_maxTime - _minTime)) + _minTime;
 sleep _sleepTime;
