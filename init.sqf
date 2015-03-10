@@ -19,15 +19,12 @@ if (isServer) then {
   [] execVM (externalConfigFolder + "\init.sqf");
 };
 
-execvm "mission\second\initMPlus.sqf";
-
 DAC_Basic_Value = 0;execVM "DAC\DAC_Config_Creator.sqf";
 call compile preprocessFile "scripts\=BTC=_revive\=BTC=_revive_init.sqf";		// revive
 execVM "R3F_LOG\init.sqf";
 
 if (isServer) then {[1000,-1,true,100,1000,1000]execvm "zbe_cache\main.sqf"};
 //execFSM "core\fsm\ZBE_HCCache.fsm";
-
 
 [] execVM "scripts\DOM_repair\init.sqf";
 [] execVM "scripts\DOM_squad\init.sqf";
