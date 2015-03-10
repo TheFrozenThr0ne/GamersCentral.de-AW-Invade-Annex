@@ -17,7 +17,7 @@ Helmet Camera
 
 Transport Logistics - [R3F] Logistics
 
-+ + Teleport to far places
+* Teleport to far places
 
 MHQ Vehicle
 
@@ -31,9 +31,9 @@ Taru MOD Pod (fixed)
 
 HALO Jump (Only available when less than 2 Transport Vortex Pilots)
 
-+ + Restricted Community only Vehicles (Follow to do below to use this)
+* Restricted Community only Vehicles (Follow to do below to use this)
 
-+ + PVP Function - (You will get a Flag Pole as Side Mission reward which allow you to Join the OPFOR Side to AO for 15 Minutes)
+* PVP Function - (You will get a Flag Pole as Side Mission reward which allow you to Join the OPFOR Side to AO for 15 Minutes)
 
 
 
