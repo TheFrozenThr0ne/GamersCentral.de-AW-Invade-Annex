@@ -6,7 +6,7 @@ _rules = parseText "New to this Mission? Read the Description and Information - 
 _txt = composeText [_image, _sep, _main, _sep, _rules];
 _txtRep = composeText [_image, _sep, _main, _sep, _rules];
 
-sleep 5;
+sleep 15;
 hint _txt;
 //sleep 180;
 //hint _txt;

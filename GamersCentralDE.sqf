@@ -221,10 +221,10 @@ player createDiaryRecord ["MissionInfo",["Description GER", "
 //-------------------------------------------------- Change Log
 player createDiaryRecord ["changelog",
 [
-"20.0",
+"20.1",
 "
-<br />- [CHANGED] Inceased Halo Jump Pilot Restriction
-<br />- [ADDED] Transport Logistic Pilot Slot
+<br />- [APPLIED] AW Invade and Annex Update 2.82D
+<br />- [ADDED] Member Join Hint Message
 <br />
 <br />
 <br />
@@ -234,23 +234,4 @@ player createDiaryRecord ["changelog",
 <br />- TeamSpeak: TS3.GamersCentral.de
 <br />- WWW: GamersCentral.de
 <br />  Edited by GamersCentral.de - MaDmaX[GC]
-"
-
-player createDiaryRecord ["changelog",
-[
-"19.6",
-"
-<br />- [FIXED] Taru Rotor Damage
-<br />- [FIXED] Support menu Map Marker
-<br />- [ADDED] HALO JUMP Restriction - If more than 2 Pilots then Halo Jump is not available anymore
-<br />
-<br />
-<br />
-<br />  Contact us:
-<br />
-<br />- eMail: Support@GamersCentral.de
-<br />- TeamSpeak: TS3.GamersCentral.de
-<br />- WWW: GamersCentral.de
-<br />  Edited by GamersCentral.de - MaDmaX[GC]
-"
-]];
+"]];

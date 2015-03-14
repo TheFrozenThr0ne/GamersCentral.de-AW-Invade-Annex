@@ -28,6 +28,43 @@ _pos = getMarkerPos (_this select 0);
 _enemiesArray = [grpNull];
 _x = 0;
 
+//---------- SNIPERS
+	
+for "_x" from 1 to PARAMS_SniperTeamsPatrol do {
+	_sniperGroup = createGroup east;
+	_randomPos = [getMarkerPos currentAO, 750, 100, 10] call BIS_fnc_findOverwatch;
+	_sniperGroup = [_randomPos, EAST,(configfile >> "CfgGroups" >> "East" >> "OPF_F" >> "Infantry" >> "OI_SniperTeam")] call BIS_fnc_spawnGroup;
+	_sniperGroup setBehaviour "COMBAT";
+	_sniperGroup setCombatMode "RED";
+	_sniperGroup setVariable ["NOPATHING",1,false];	
+	_enemiesArray = _enemiesArray + [_sniperGroup];
+
+	{
+		_x addCuratorEditableObjects [units _sniperGroup, false];
+	} foreach adminCurators;
+
+};
+
+//---------- INFANTRY PATROLS RANDOM
+	
+for "_x" from 1 to PARAMS_GroupPatrol do {
+	_patrolGroup = createGroup east;
+	_randomPos = [[[getMarkerPos currentAO, (PARAMS_AOSize / 1.2)],[]],["water","out"]] call BIS_fnc_randomPos;
+	_patrolGroup = [_randomPos, EAST, (configfile >> "CfgGroups" >> "East" >> "OPF_F" >> "Infantry" >> [INF_TYPE] call BIS_fnc_selectRandom)] call BIS_fnc_spawnGroup;
+	[_patrolGroup, getMarkerPos currentAO, 600] call BIS_fnc_taskPatrol;
+	_patrolGroup setVariable ["VCOM_Unit_AIWarnDistance",200,false];
+	_patrolGroup setVariable ["NOPATHING",1,false];	
+	
+	_wp = _patrolGroup addWaypoint [getMarkerPos currentAO, 0, 750];
+	
+	_enemiesArray = _enemiesArray + [_patrolGroup];
+	
+	{
+		_x addCuratorEditableObjects [units _patrolGroup, false];
+	} foreach adminCurators;
+
+};
+
 //---------- STATIC MG WEAPONS Tower
 
 for "_x" from 1 to PARAMS_StaticMG do {
