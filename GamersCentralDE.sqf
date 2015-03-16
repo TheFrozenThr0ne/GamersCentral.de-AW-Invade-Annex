@@ -221,6 +221,26 @@ player createDiaryRecord ["MissionInfo",["Description GER", "
 //-------------------------------------------------- Change Log
 player createDiaryRecord ["changelog",
 [
+"20.2",
+"
+<br />- [ADDED] Mi-48 Kajman Community Members Only
+<br />- [ADDED] Mi-48 Kajman to Squad Leader Support Menu
+<br />- [ADDED] Taru POD Liftable Factory
+<br />- [ADDED] Invisible Protection at Aircraft Repair/Rearm Service Point
+<br />- [ADDED] Community Slot Restriction
+<br />
+<br />
+<br />
+<br />  Contact us:
+<br />
+<br />- eMail: Support@GamersCentral.de
+<br />- TeamSpeak: TS3.GamersCentral.de
+<br />- WWW: GamersCentral.de
+<br />  Edited by GamersCentral.de - MaDmaX[GC]
+"]];
+
+player createDiaryRecord ["changelog",
+[
 "20.1",
 "
 <br />- [APPLIED] AW Invade and Annex Update 2.82D

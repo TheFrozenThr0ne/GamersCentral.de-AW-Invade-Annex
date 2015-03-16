@@ -19,6 +19,8 @@ if (isServer) then {
   [] execVM (externalConfigFolder + "\init.sqf");
 };
 
+if (isServer) then {OnPlayerConnected "[_uid,_name] execVM ""members\checkslot.sqf""";};
+
 DAC_Basic_Value = 0;execVM "DAC\DAC_Config_Creator.sqf";
 call compile preprocessFile "scripts\=BTC=_revive\=BTC=_revive_init.sqf";		// revive
 execVM "R3F_LOG\init.sqf";
@@ -56,4 +58,4 @@ if (isServer) then {
 waitUntil {!isNull player};
 //Change the 2 arrays below for your heli names, eg ["aHeli1", "aHeli2"], ["tHeli1", "tHeli2"]
 //Helicopter Names MUST BE IN "QUOTES!"
-[player, ["aHeli1", "aHeli2", "aHeli3", "aHeli4", "aHeli5"], ["tHeli1", "tHeli2", "tHeli3", "tHeli4", "tHeli5", "tHeli6"]] execVM "scripts\supportMenu\supportMenuInit.sqf";
+[player, ["aHeli1", "aHeli2", "aHeli3", "aHeli4", "aHeli5", "aHeli6"], ["tHeli1", "tHeli2", "tHeli3", "tHeli4", "tHeli5", "tHeli6", "tHeli7"]] execVM "scripts\supportMenu\supportMenuInit.sqf";

@@ -39,7 +39,7 @@ _dropHeli = ["B_Heli_Transport_01_camo_F","B_Heli_Transport_01_F"]; 			// drop c
 _uav = ["B_UAV_02_CAS_F","B_UAV_02_F","B_UGV_01_F","B_UGV_01_rcws_F"];			// UAVs
 _mhq = ["B_Truck_01_covered_F"];
 _buzzard = ["I_Plane_Fighter_03_CAS_F"];
-_pods = ["Land_Pod_Heli_Transport_04_ammo_F","Land_Pod_Heli_Transport_04_covered_F","Land_Pod_Heli_Transport_04_repair_F","Land_Pod_Heli_Transport_04_repair_F"];					// strider
+_pods = ["Land_Pod_Heli_Transport_04_box_F","Land_Pod_Heli_Transport_04_ammo_F","Land_Pod_Heli_Transport_04_covered_F","Land_Pod_Heli_Transport_04_repair_F","Land_Pod_Heli_Transport_04_repair_F"];					// strider
 _podsAction = ["Land_Pod_Heli_Transport_04_ammo_F"];					// strider
 
 //============================================= SORT
