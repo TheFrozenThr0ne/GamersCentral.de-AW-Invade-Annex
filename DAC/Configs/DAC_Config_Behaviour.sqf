@@ -19,7 +19,7 @@ switch (_this select 0) do
 	case 0:
 	{
 		//_setSkill = ["aimingAccuracy","aimingShake","aimingSpeed","Endurance","spotDistance","spotTime","courage","reloadSpeed","commanding","general"];
-		_setSkill   = [[0.2,0.8],[0.2,0.8],[0.2,0.8],[0.2,0.8],[0.2,0.8],[0.2,0.8],[0.2,0.8],[0.2,0.8],[0.2,0.8],[0.2,0.8]];
+		_setSkill   = [[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9]];
 		_setCombat  = ["green","white","yellow"];
 		_setBehav   = ["careless","safe","aware"];
 		_setSpeed   = ["limited","normal","full"];
@@ -40,7 +40,7 @@ switch (_this select 0) do
 	case 1:
 	{
 		//_setSkill = ["aimingAccuracy","aimingShake","aimingSpeed","Endurance","spotDistance","spotTime","courage","reloadSpeed","commanding","general"];
-		_setSkill   = [[0.2,0.8],[0.2,0.8],[0.2,0.8],[0.2,0.8],[0.2,0.8],[0.2,0.8],[0.2,0.8],[0.2,0.8],[0.2,0.8],[0.2,0.8]];
+		_setSkill   = [[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9]];
 		_setCombat  = ["green","white","yellow"];
 		_setBehav   = ["careless","safe","aware"];
 		_setSpeed   = ["limited","normal","full"];
@@ -61,7 +61,7 @@ switch (_this select 0) do
 	case 2:
 	{
 		//_setSkill = ["aimingAccuracy","aimingShake","aimingSpeed","Endurance","spotDistance","spotTime","courage","reloadSpeed","commanding","general"];
-		_setSkill   = [[0.2,0.8],[0.2,0.8],[0.2,0.8],[0.2,0.8],[0.2,0.8],[0.2,0.8],[0.2,0.8],[0.2,0.8],[0.2,0.8],[0.2,0.8]];
+		_setSkill   = [[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9]];
 		_setCombat  = ["green","white","yellow"];
 		_setBehav   = ["careless","safe","aware"];
 		_setSpeed   = ["limited","normal","full"];
@@ -82,7 +82,8 @@ switch (_this select 0) do
 	case 3:
 	{
 		//_setSkill = [global min,global max];
-		_setSkill   = [0.1,0.2];
+		//_setSkill   = [0.1,0.2];
+		_setSkill   = [[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9]];
 		_setCombat  = ["green","white","yellow"];
 		_setBehav   = ["careless","safe","aware"];
 		_setSpeed   = ["limited","normal","full"];
@@ -103,7 +104,8 @@ switch (_this select 0) do
 	case 4:
 	{
 		//_setSkill = [global min,global max];
-		_setSkill   = [0.4,0.8];
+		//_setSkill   = [0.5,0.9];
+		_setSkill   = [[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9]];
 		_setCombat  = ["yellow"];
 		_setBehav   = ["aware"];
 		_setSpeed   = ["limited","normal","full"];

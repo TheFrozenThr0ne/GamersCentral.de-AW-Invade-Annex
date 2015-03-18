@@ -158,7 +158,7 @@ class Mission
 	randomSeed=12935265;
 	class Intel
 	{
-		briefingName="Co-60 AW Invade&Annex 2.82D [HaloJump] [20.2] GamersCentral.de";
+		briefingName="Co-60 AW Invade&Annex 2.82D [HaloJump] [20.3] GamersCentral.de";
 		overviewText="Edited by GamersCentral.de[GC]";
 		resistanceWest=0;
 		resistanceEast=1;
@@ -2863,7 +2863,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=843;
+		items=860;
 		class Item0
 		{
 			position[]={11584.9,23.361359,11913.601};
@@ -10856,7 +10856,7 @@ class Mission
 			vehicle="Land_Billboard_F";
 			leader=1;
 			skill=0.60000002;
-			init="this allowDamage false;this enableSimulation false;this setVariable [""R3F_LOG_disabled"", true];";
+			init="this setObjectTextureGlobal [0, ""media\images\billboardads.jpg""];this allowDamage false;this enableSimulation false;this setVariable [""R3F_LOG_disabled"", true];";
 		};
 		class Item786
 		{
@@ -11475,10 +11475,201 @@ class Mission
 			text="nato_medium_factory_1";
 			init="nul = [this,""nato_medium_factory_1"",0.5] execVM ""scripts\mark_unit.sqf""; nul = [this,""nato_medium_factory_1"",0.5] execVM ""scripts\mark_unit.sqf"";nul = [this, 250000, west, ""MEDIUM""] execVM ""R3F_LOG\USER_FUNCT\init_creation_factory.sqf"";nul = [this, ""medFactory""] execVM ""R3F_LOG\USER_FUNCT\do_not_lose_it.sqf"";this allowDamage false;this setVariable [""R3F_LOG_disabled"", false];";
 		};
+		class Item843
+		{
+			position[]={13725.904,19.318523,16104.702};
+			azimut=203.00569;
+			offsetY=-10;
+			id=959;
+			side="EMPTY";
+			vehicle="Land_Billboard_F";
+			skill=0.60000002;
+			init="this setObjectTexture [0, ""media\images\billboard.jpg""]; this allowDamage false;";
+		};
+		class Item844
+		{
+			position[]={12621.155,16.882978,15893.16};
+			azimut=107.54036;
+			offsetY=-10;
+			id=960;
+			side="EMPTY";
+			vehicle="Land_Billboard_F";
+			skill=0.60000002;
+			init="this setObjectTexture [0, ""media\images\billboard.jpg""]; this allowDamage false;";
+		};
+		class Item845
+		{
+			position[]={10539.406,94.041313,15912.773};
+			azimut=329.83301;
+			offsetY=-10;
+			id=961;
+			side="EMPTY";
+			vehicle="Land_Billboard_F";
+			skill=0.60000002;
+			init="this setObjectTexture [0, ""media\images\billboardads.jpg""]; this allowDamage false;";
+		};
+		class Item846
+		{
+			position[]={10527.104,94.12384,15894.449};
+			azimut=144.53839;
+			offsetY=-10;
+			id=962;
+			side="EMPTY";
+			vehicle="Land_Billboard_F";
+			skill=0.60000002;
+			init="this setObjectTexture [0, ""media\images\billboard.jpg""]; this allowDamage false;";
+		};
+		class Item847
+		{
+			position[]={8736.5986,94.014847,15917.332};
+			azimut=430.82153;
+			offsetY=-10;
+			id=963;
+			side="EMPTY";
+			vehicle="Land_Billboard_F";
+			skill=0.60000002;
+			init="this setObjectTexture [0, ""media\images\billboard.jpg""]; this allowDamage false;";
+		};
+		class Item848
+		{
+			position[]={8696.8896,92.724495,15936.543};
+			azimut=342.49899;
+			offsetY=-10;
+			id=964;
+			side="EMPTY";
+			vehicle="Land_Billboard_F";
+			skill=0.60000002;
+			init="this setObjectTexture [0, ""media\images\billboardads.jpg""]; this allowDamage false;";
+		};
+		class Item849
+		{
+			position[]={15812.399,14.257181,17418.656};
+			azimut=310.11444;
+			offsetY=-10;
+			id=965;
+			side="EMPTY";
+			vehicle="Land_Billboard_F";
+			skill=0.60000002;
+			init="this setObjectTexture [0, ""media\images\billboard.jpg""]; this allowDamage false;";
+		};
+		class Item850
+		{
+			position[]={15810.723,14.270038,17421.926};
+			azimut=189.258;
+			offsetY=-10;
+			id=966;
+			side="EMPTY";
+			vehicle="Land_Billboard_F";
+			skill=0.60000002;
+			init="this setObjectTexture [0, ""media\images\billboardads.jpg""]; this allowDamage false;";
+		};
+		class Item851
+		{
+			position[]={15808.768,14.242334,17419.336};
+			azimut=65.167198;
+			offsetY=-10;
+			id=967;
+			side="EMPTY";
+			vehicle="Land_Billboard_F";
+			skill=0.60000002;
+			init="this setObjectTexture [0, ""media\images\billboardads.jpg""]; this allowDamage false;";
+		};
+		class Item852
+		{
+			position[]={16199.991,24.419153,17375.285};
+			azimut=108.537;
+			offsetY=-10;
+			id=968;
+			side="EMPTY";
+			vehicle="Land_Billboard_F";
+			skill=0.60000002;
+			init="this setObjectTexture [0, ""media\images\billboardads.jpg""]; this allowDamage false;";
+		};
+		class Item853
+		{
+			position[]={18852.121,31.167002,16633.898};
+			azimut=190.953;
+			offsetY=-10;
+			id=969;
+			side="EMPTY";
+			vehicle="Land_Billboard_F";
+			skill=0.60000002;
+			init="this setObjectTexture [0, ""media\images\billboardads.jpg""]; this allowDamage false;";
+		};
+		class Item854
+		{
+			position[]={20783.816,36.442017,16626.469};
+			azimut=130.866;
+			offsetY=-10;
+			id=970;
+			side="EMPTY";
+			vehicle="Land_Billboard_F";
+			skill=0.60000002;
+			init="this setObjectTexture [0, ""media\images\billboardads.jpg""]; this allowDamage false;";
+		};
+		class Item855
+		{
+			position[]={16643.266,4.8959837,15702.775};
+			azimut=-200.951;
+			offsetY=-10;
+			id=971;
+			side="EMPTY";
+			vehicle="Land_Billboard_F";
+			skill=0.60000002;
+			init="this setObjectTexture [0, ""media\images\billboardads.jpg""]; this allowDamage false;";
+		};
+		class Item856
+		{
+			position[]={17842.766,31.235588,12810.47};
+			azimut=-203.343;
+			offsetY=-10;
+			id=972;
+			side="EMPTY";
+			vehicle="Land_Billboard_F";
+			skill=0.60000002;
+			init="this setObjectTexture [0, ""media\images\billboardads.jpg""]; this allowDamage false;";
+		};
+		class Item857
+		{
+			position[]={11691.006,57.415325,18848.566};
+			azimut=-69.071609;
+			offsetY=-10;
+			id=973;
+			side="EMPTY";
+			vehicle="Land_Billboard_F";
+			skill=0.60000002;
+			init="this setObjectTexture [0, ""media\images\billboard.jpg""]; this allowDamage false;";
+		};
+		class Item858
+		{
+			position[]={13720.346,19.212418,16107.069};
+			azimut=203.27702;
+			offsetY=-1;
+			special="NONE";
+			id=974;
+			side="EMPTY";
+			vehicle="Land_Billboard_F";
+			leader=1;
+			skill=0.60000002;
+			init="this setObjectTextureGlobal [0, ""media\images\billboardads.jpg""];this allowDamage false;this enableSimulation false;this setVariable [""R3F_LOG_disabled"", true];";
+		};
+		class Item859
+		{
+			position[]={12619.28,16.864798,15915.438};
+			azimut=112.75545;
+			offsetY=-1;
+			special="NONE";
+			id=975;
+			side="EMPTY";
+			vehicle="Land_Billboard_F";
+			leader=1;
+			skill=0.60000002;
+			init="this setObjectTextureGlobal [0, ""media\images\billboardads.jpg""];this allowDamage false;this enableSimulation false;this setVariable [""R3F_LOG_disabled"", true];";
+		};
 	};
 	class Markers
 	{
-		items=201;
+		items=204;
 		class Item0
 		{
 			position[]={-15683.114,0.0011896361,-3827.8438};
@@ -13011,6 +13202,24 @@ class Mission
 			name="nato_medium_factory_1";
 			text="MEDIUM LIFTABLE FACTORY";
 			type="b_installation";
+		};
+		class Item201
+		{
+			position[]={18841.84,31.429543,16647.262};
+			name="Rodopoli_1";
+			type="Empty";
+		};
+		class Item202
+		{
+			position[]={20966.891,41.594646,16969.035};
+			name="Paros_1";
+			type="Empty";
+		};
+		class Item203
+		{
+			position[]={12312.134,23.048872,15726.695};
+			name="Lakka_1";
+			type="Empty";
 		};
 	};
 	class Sensors

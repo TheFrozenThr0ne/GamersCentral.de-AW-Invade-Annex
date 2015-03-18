@@ -261,7 +261,7 @@ R3F_LOG_CFG_can_lift = R3F_LOG_CFG_can_lift +
 	"I_Heli_Transport_02_F", "O_Heli_Light_02_unarmed_F",
 	"B_Heli_Transport_03_unarmed_F", "O_Heli_Transport_04_covered_F",
 	"C_Heli_Light_01_civil_F", "B_Heli_Transport_03_F",
-	""
+	"O_Heli_Attack_02_black_F"
 ];
 
 /**

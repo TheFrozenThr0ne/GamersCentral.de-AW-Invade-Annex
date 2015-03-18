@@ -18,15 +18,15 @@ private ["_mission","_missionList","_currentMission","_nextMission","_loopTimeou
 _loopTimeout = 20;
 
 _missionList = [
-	"regionNWCaches",
+	//"regionNWCaches",
 	"regionNW",
-	"regionNECaches",
+	//"regionNECaches",
 	"regionNE",
-	"regionSWCaches",
+	//"regionSWCaches",
 	"regionSW",
-	"regionSECaches",
+	//"regionSECaches",
 	"regionSE",
-	"regionCECaches",
+	//"regionCECaches",
 	"regionCE"
 ];
 
