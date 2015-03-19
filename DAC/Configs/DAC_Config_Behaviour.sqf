@@ -83,7 +83,7 @@ switch (_this select 0) do
 	{
 		//_setSkill = [global min,global max];
 		//_setSkill   = [0.1,0.2];
-		_setSkill   = [[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9]];
+		_setSkill   = [0.1,0.2];
 		_setCombat  = ["green","white","yellow"];
 		_setBehav   = ["careless","safe","aware"];
 		_setSpeed   = ["limited","normal","full"];
@@ -105,8 +105,7 @@ switch (_this select 0) do
 	{
 		//_setSkill = [global min,global max];
 		//_setSkill   = [0.5,0.9];
-		_setSkill   = [[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9],[0.5,0.9]];
-		_setCombat  = ["yellow"];
+		_setSkill   = [0.4,0.8];_setCombat  = ["yellow"];
 		_setBehav   = ["aware"];
 		_setSpeed   = ["limited","normal","full"];
 		_setForm    = ["line","vee","column","wedge","stag column","ech left","ech right","file","diamond"];
