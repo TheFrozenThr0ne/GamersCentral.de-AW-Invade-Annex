@@ -19,6 +19,12 @@ if (isServer) then {
   [] execVM (externalConfigFolder + "\init.sqf");
 };
 
+// Admin reserved slot
+// You can reserve admin slot	
+INS_REV_CFG_reserved_slot = true;
+INS_REV_CFG_reserved_slot_units = ["bis_curatorUnit_1","bis_curatorUnit_2","bis_curatorUnit_3"];
+[] execVM "scripts\reserved_slot\reserved_slot.sqf";
+
 if (isServer) then {OnPlayerConnected "[_uid,_name] execVM ""members\checkslot.sqf""";};
 
 DAC_Basic_Value = 0;execVM "DAC\DAC_Config_Creator.sqf";
