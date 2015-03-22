@@ -16,7 +16,7 @@ Notes:
 	
 ______________________________________________*/
 
-private ["_target11","_target22","_target33","_targetArrayOthers","_posOthers","_iOthers","_positionOthers","_flatPosOthers","_roughPosOthers","_targetStartTextOthers","_targetsOthers","_targetsLeftOthers","_dtt","_enemiesArrayOthers","_unitsArrayOthers","_radioTowerDownTextOthers","_targetCompleteTextOthers","_regionCompleteTextOthers","_nullOthers","_minesOthers","_chanceOthers","_tower1Others","_tower2Others","_tower3Others"];
+private ["_targetSecondary1","_targetSecondary2","_targetSecondary3","_targetArrayOthers","_posOthers","_iOthers","_positionOthers","_flatPosOthers","_roughPosOthers","_targetStartTextOthers","_targetsOthers","_targetsLeftOthers","_dtt","_enemiesArrayOthers","_unitsArrayOthers","_radioTowerDownTextOthers","_targetCompleteTextOthers","_regionCompleteTextOthers","_nullOthers","_minesOthers","_chanceOthers","_tower1Others","_tower2Others","_tower3Others"];
 eastSide = createCenter east;
 
 //---------------------------------------------- AO location marker array
@@ -25,13 +25,13 @@ _targetsOthers = ["Sfaka","Zaros Bay","Faronaki Beach"];
 
 //----------------------------------------------- SELECT A FEW RANDOM AOs
 
-_target11 = _targetsOthers call BIS_fnc_selectRandom;
-_targetsOthers = _targetsOthers - [_target11];
-_target22 = _targetsOthers call BIS_fnc_selectRandom;
-_targetsOthers = _targetsOthers - [_target22];
-_target33 = _targetsOthers call BIS_fnc_selectRandom;
+_targetSecondary1 = _targetsOthers call BIS_fnc_selectRandom;
+_targetsOthers = _targetsOthers - [_targetSecondary1];
+_targetSecondary2 = _targetsOthers call BIS_fnc_selectRandom;
+_targetsOthers = _targetsOthers - [_targetSecondary2];
+_targetSecondary3 = _targetsOthers call BIS_fnc_selectRandom;
 
-_targetArrayOthers = [_target11,_target22,_target33];
+_targetArrayOthers = [_targetSecondary1,_targetSecondary2,_targetSecondary3];
 
 		
 //----------------------------------------------- AO MAIN SEQUENCE

@@ -13,7 +13,8 @@ Description:
 	Client scripts and event handlers.
 ______________________________________________________*/
 
-enableSentences FALSE;															
+enableSentences TRUE;
+enableRadio false;
 enableSaving [FALSE,FALSE];
 player enableFatigue FALSE;
 
