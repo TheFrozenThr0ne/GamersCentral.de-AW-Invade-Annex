@@ -19,9 +19,7 @@ _loopTimeoutOthers = 20;
 
 _missionListOthers = [
 	"regionN",
-	"regionE",
-	"regionS",
-	"regionW"
+	"regionE"
 ];
 
 

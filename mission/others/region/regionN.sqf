@@ -21,7 +21,7 @@ eastSide = createCenter east;
 
 //---------------------------------------------- AO location marker array
 
-_targetsOthers = ["Krya Nera Hills","Thronos"];
+_targetsOthers = ["Krya Nera Hills","Thronos","Agios Panagiotis","Agia Stemma","Magos","Military Factory","Agios Minas","Amoni","Agia Stemma"];
 
 //----------------------------------------------- SELECT A FEW RANDOM AOs
 
