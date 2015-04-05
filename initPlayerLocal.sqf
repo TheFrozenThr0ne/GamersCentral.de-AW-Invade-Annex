@@ -154,7 +154,7 @@ _email = _infoSquad select 2;
 // replace line below with your Squad xml's email
 if (_email == "Support@GamersCentral.de") then {
 
-GlobalHint = format["<t align='center' size='2.2' color='#FF0000'>%1<br/></t><t size='1.4' color='#33CCFF'>%2</t><br/>has joined the server, To get involved in the GamersCentral community, register an account at www.Join.GamersCentral.de and get stuck in!</t><br/>",_squad,_name];
+GlobalHint = format["<t align='center' size='2.2' color='#FF0000'>%1<br/></t><t size='1.4' color='#33CCFF'>%2</t><br/>has joined the server, To get involved in the GamersCentral community, Join our Steam Community Group GamersCentral or if youre from Germany then go to our Community Website at http://GamersCentral.de and get stuck in!</t><br/>",_squad,_name];
 
 hint parseText GlobalHint; publicVariable "GlobalHint";
 } else {};

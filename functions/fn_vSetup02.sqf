@@ -37,7 +37,7 @@ _slingable = ["B_Heli_Light_01_F"];												// slingable
 _notSlingable = ["B_Heli_Light_01_armed_F", "B_Heli_Attack_01_F"];				// not slingable
 _dropHeli = ["B_Heli_Transport_01_camo_F","B_Heli_Transport_01_F"]; 			// drop capable
 _uav = ["B_UAV_02_CAS_F","B_UAV_02_F","B_UGV_01_F","B_UGV_01_rcws_F"];			// UAVs
-_mhq = ["B_Truck_01_covered_F"];
+_mhq = ["B_Truck_01_covered_F","O_Truck_03_transport_F","B_Truck_01_transport_F"];
 _buzzard = ["I_Plane_Fighter_03_CAS_F"];
 _pods = ["Land_Pod_Heli_Transport_04_box_F","Land_Pod_Heli_Transport_04_ammo_F","Land_Pod_Heli_Transport_04_covered_F","Land_Pod_Heli_Transport_04_repair_F","Land_Pod_Heli_Transport_04_repair_F"];					// strider
 _podsAction = ["Land_Pod_Heli_Transport_04_ammo_F"];					// strider
@@ -112,6 +112,7 @@ if (_t in _mhq) then {
 	_u addAction ["<t color='#ff1111'>VAS</t>","scripts\VAS\open.sqf",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];
 	_u addAction ["Quick Gear Save",QS_fnc_saveInventory,[],7,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];
 	_u addAction ["View Distance Settings",TAWVD_fnc_openTAWVD,[],-98,false,false,"",''];
+	null = [_u, west] execVM "CHHQ.sqf";
 };
 
 //===== Tv Guided Bomb

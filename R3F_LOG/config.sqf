@@ -287,7 +287,7 @@ R3F_LOG_CFG_can_be_lifted = R3F_LOG_CFG_can_be_lifted +
 	"B_Truck_01_medical_F", "B_Truck_01_fuel_F",
 	"B_Truck_01_Repair_F", "B_Truck_01_transport_F",
 	"B_G_Offroad_01_armed_F", "B_UGV_01_rcws_F",
-	"Land_CargoBox_V1_F"
+	"Land_CargoBox_V1_F","O_Truck_03_transport_F"
 ];
 
 
@@ -323,7 +323,7 @@ R3F_LOG_CFG_can_transport_cargo = R3F_LOG_CFG_can_transport_cargo +
 	["B_G_Offroad_01_F", 50], ["B_APC_Tracked_01_CRV_F", 50],
 	["B_APC_Wheeled_01_cannon_F", 50], ["B_APC_Tracked_01_rcws_F", 50],
 	["I_APC_tracked_03_cannon_F", 50], ["B_MBT_01_TUSK_F", 50],
-	["O_MBT_02_cannon_F", 50]
+	["O_MBT_02_cannon_F", 50],["O_Truck_03_transport_F", 500]
 ];
 
 /**

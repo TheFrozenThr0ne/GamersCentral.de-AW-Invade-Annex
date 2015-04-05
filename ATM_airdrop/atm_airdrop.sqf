@@ -19,7 +19,7 @@ _functions = ([] execVM "ATM_airdrop\functions.sqf");
 
 waitUntil {scriptDone _functions};
 
-if ((call GetTransportPilotsCount) > 4) exitWith {player sideChat "More than 4 Pilots available - Ask VORTEX pilot, soldier!"};
+if ((call GetTransportPilotsCount) > 3) exitWith {player sideChat "More than 3 Pilots available - Ask VORTEX pilot, soldier!"};
 
 		_position = GetPos player;
 		_z = _position select 2;
