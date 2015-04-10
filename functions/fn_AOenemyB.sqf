@@ -52,10 +52,8 @@ for "_x" from 1 to PARAMS_GroupPatrol do {
 	_randomPos = [[[getMarkerPos currentAO, (PARAMS_AOSize / 1.2)],[]],["water","out"]] call BIS_fnc_randomPos;
 	_patrolGroup = [_randomPos, EAST, (configfile >> "CfgGroups" >> "East" >> "OPF_F" >> "Infantry" >> [INF_TYPE] call BIS_fnc_selectRandom)] call BIS_fnc_spawnGroup;
 	[_patrolGroup, getMarkerPos currentAO, 600] call BIS_fnc_taskPatrol;
-	_patrolGroup setVariable ["VCOM_Unit_AIWarnDistance",200,false];
-	_patrolGroup setVariable ["NOPATHING",1,false];	
 	
-	_wp = _patrolGroup addWaypoint [getMarkerPos currentAO, 0, 750];
+	_wp = _patrolGroup addWaypoint [getMarkerPos currentAO, 0, 600];
 	
 	_enemiesArray = _enemiesArray + [_patrolGroup];
 	

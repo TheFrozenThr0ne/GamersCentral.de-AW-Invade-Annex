@@ -34,9 +34,9 @@ for "_x" from 1 to PARAMS_OverwatchSecondary do {
 	_overwatchGroup = createGroup east;
 	_randomPos = [getMarkerPos currentA, 300, 50, 10] call BIS_fnc_findOverwatch;
 	_overwatchGroup = [_randomPos, East, (configfile >> "CfgGroups" >> "East" >> "OPF_F" >> "UInfantry" >> [INF_URBANTYPE] call BIS_fnc_selectRandom)] call BIS_fnc_spawnGroup;
-	[_overwatchGroup, _randomPos, 200] call BIS_fnc_taskPatrol;	
+	[_overwatchGroup, _randomPos, 250] call BIS_fnc_taskPatrol;	
 	
-	_wp = _overwatchGroup addWaypoint [getMarkerPos currentA, 0, 300];
+	_wp = _overwatchGroup addWaypoint [getMarkerPos currentA, 0, 250];
 	
 	_enemiesArray = _enemiesArray + [_overwatchGroup];
 
@@ -53,9 +53,9 @@ for "_x" from 1 to PARAMS_GroupPatrolSecondary do {
 	_patrolGroup = createGroup east;
 	_randomPos = [[[getMarkerPos currentA, (PARAMS_AOSizeSecondary / 1.2)],[]],["water","out"]] call BIS_fnc_randomPos;
 	_patrolGroup = [_randomPos, EAST, (configfile >> "CfgGroups" >> "East" >> "OPF_F" >> "Infantry" >> [INF_TYPE] call BIS_fnc_selectRandom)] call BIS_fnc_spawnGroup;
-	[_patrolGroup, getMarkerPos currentA, 300] call BIS_fnc_taskPatrol;
+	[_patrolGroup, getMarkerPos currentA, 250] call BIS_fnc_taskPatrol;
 	
-	_wp = _patrolGroup addWaypoint [getMarkerPos currentA, 0, 300];
+	_wp = _patrolGroup addWaypoint [getMarkerPos currentA, 0, 250];
 	
 	_enemiesArray = _enemiesArray + [_patrolGroup];
 	
@@ -68,7 +68,7 @@ for "_x" from 1 to PARAMS_GroupPatrolSecondary do {
 //=========== ENEMIES IN BUILDINGS
 
 if (PARAMS_EnemiesInBuildings != 0) then {
-	_town = _pos nearObjects ["House",500];
+	_town = _pos nearObjects ["House",300];
 	if ((count _town) > 6) then {
 		_indArray = getArray (missionConfigFile >> "faction" >> "ind" >> "units");
 		_toSpawn = [];
@@ -78,7 +78,7 @@ if (PARAMS_EnemiesInBuildings != 0) then {
 		};
 		_AOgarrisonGroup = createGroup resistance;
 		_AOgarrisonGroup = [_pos,RESISTANCE,_toSpawn] call BIS_fnc_spawnGroup;
-		0 = [_pos,units _AOgarrisonGroup,500,0,[0,20],true,true] call SHK_fnc_buildingPos02;
+		0 = [_pos,units _AOgarrisonGroup,300,0,[0,20],true,true] call SHK_fnc_buildingPos02;
 		[(units _AOgarrisonGroup)] call QS_fnc_setSkill2;
 		
 		{_x addCuratorEditableObjects [(units _AOgarrisonGroup),FALSE];} count allCurators;	
@@ -98,5 +98,5 @@ if (PARAMS_EnemiesInBuildings != 0) then {
 	{
 		_x addCuratorEditableObjects [units _newGrp, false];
 	} forEach adminCurators;		
-} forEach (getMarkerPos currentA nearObjects ["House", 400]);
+} forEach (getMarkerPos currentA nearObjects ["House", 300]);
 _enemiesArray;

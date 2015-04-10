@@ -1,20 +1,22 @@
-_uid = _this select 0;
-_name = _this select 1;
+/* 
+ReservedSlot.sqf by Kahna
 
-// get a reference of the current object (unit) being connected
-_unit = objNull;
-{
-	if ((isPlayer _x) and (_uid == getPlayerUID _x)) then {
-		_unit = _x;
-	};
-}forEach playableUnits;
+Initially call this script in the Init.sqf and then include it in whatever script you use to respawn players,
+otherwise the respawned player will not have the Reserved Slot script applied to it.
 
-//list of units (editor placed)
-_slotsA = ["s3","s77","s78"];
-//_slotsB = [wslot41];
+*/
 
+private ["_reserved_units", "_reserved_uids", "_uid"];
 
-//list of UIDs on A slots
+waitUntil {!isNull player};
+waitUntil {(vehicle player) == player};
+waitUntil {(getPlayerUID player) != ""};
+
+// Variable Name of the Player Character to be restricted. //
+_reserved_units = ["s3","s77","s78"];
+
+// The player UID is a 17 digit number found in the profile tab. //
+_reserved_uids = ["7656119xxxxxxxx","7656119xxxxxxxx","7656119xxxxxxxx"];
 masterUIDArray = [
   "76561198001220177", // MaDmaX
   "76561198052066770", // Bens
@@ -275,36 +277,40 @@ masterUIDArray = [
   "76561198045790298", // BadVolt
   "76561198090074140", // Pvt.Pac
   "76561198073166098", // Hasan Miller
-  "76561198040872059" // Exochrome
+  "76561198040872059", // Exochrome
+  "76561198014843679", // FIREFLY
+  "76561198145502225", // [USAF]KillerPowa95
+  "76561198056447539", // Troll Shark
+  "76561198166572342", // Neuralbow
+  "76561198034701047", // Daniel
+  "76561198041938624", // Dew_Gabe
+  "76561198073195230", // Fi5hhead
+  "76561198040513782", // Milian
+  "76561198050953450", // Lt. Basura
+  "76561198147734653", // Bjorn
+  "76561198079684165", // John Smith
+  "76561198120661999" // Col.Milly.Kerry
 ];
+// Stores the connecting player's UID //
+_uid = getPlayerUID player;
 
 
-//list of UIDs on B slots
-//_allowedBUIDs = ["987654","456789"];
-
+if (((vehicleVarName player) in _reserved_units) && !(_uid in masterUIDArray)) then
 {
-	if ((isPlayer _x) and (_unit == _x)) then {
-		{
-			if (_uid != _x) then {
-				hint "Attention!\nYou using an Member Slot! Join our Community - www.Join.GamersCentral.de!";
-				titleText ["Attention! You using an Member Slot! Join our Community - www.Join.GamersCentral.de!","BLACK FADED"];
-				sleep 5;
-				endMission "LOSER";
-			};
-		}forEach _masterUIDArray;
+titleText ["", "BLACK OUT"];
+// disableUserInput true;
+hint "You are in a community slot! You will be kicked to the lobby in 15 seconds!";
+sleep 5;
+hint "You are in a community slot! You will be kicked to the lobby in 10 seconds!";
+sleep 5;
+hint "You are in a community slot! You will be kicked to the lobby in 5 seconds!";
+sleep 5;
+titleText ["", "BLACK IN"];
+// disableUserInput false;
+failMission "end1";
+}else{
+	if(!respawnEH_Added)then{
+		player addEventHandler["Respawn",{[] execVM format["%1", __FILE__]}];
+		respawnEH_Added = true;
 	};
-}forEach _slotsA;
-
-/*
-{
-	if ((isPlayer _x) and (_unit == _x)) then {
-		{
-			if (_uid != _x) then {
-				hint "Attention!\nYou using an Member Slot! Join our Community - www.Join.GamersCentral.de!";
-				titleText ["Attention! You using an Member Slot! Join our Community - www.Join.GamersCentral.de!","BLACK FADED"];
-				sleep 5;
-				endMission "LOSER";
-			};
-		}forEach _allowedBUIDs;
-	};
-}forEach _slotsB;*/
+};

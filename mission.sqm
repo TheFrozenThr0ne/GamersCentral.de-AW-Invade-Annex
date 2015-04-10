@@ -163,7 +163,7 @@ class Mission
 	randomSeed=12935265;
 	class Intel
 	{
-		briefingName="Co-60 AW Invade&Annex 2.82D [HaloJump] [20.8] GamersCentral.de";
+		briefingName="Co-60 AW Invade&Annex 2.82D [HaloJump] [20.9] GamersCentral.de";
 		overviewText="Edited by GamersCentral.de[GC]";
 		resistanceWest=0;
 		resistanceEast=1;
@@ -2983,7 +2983,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=863;
+		items=864;
 		class Item0
 		{
 			position[]={11584.9,23.361359,11913.601};
@@ -11807,7 +11807,7 @@ class Mission
 			side="EMPTY";
 			vehicle="O_Truck_03_transport_F";
 			skill=0.60000002;
-			init="0 = [this,30,FALSE,QS_fnc_vSetup02] spawn QS_fnc_vMonitor;";
+			init="0 = [this,30,FALSE,QS_fnc_vSetup02] spawn QS_fnc_vMonitor;null = [this, west] execVM ""CHHQ.sqf"";this addAction [""<t color='#ff1111'>VAS</t>"",""scripts\VAS\open.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];   this addAction [""Quick Gear Save"",QS_fnc_saveInventory,[],7,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];   0 = [this] execVM ""scripts\VAserver.sqf"";   this addAction [""View Distance Settings"",TAWVD_fnc_openTAWVD,[],-98,false,false,"""",''];";
 			syncId=69;
 			synchronizations[]={0};
 		};
@@ -11819,9 +11819,18 @@ class Mission
 			side="EMPTY";
 			vehicle="B_Truck_01_transport_F";
 			skill=0.60000002;
-			init="0 = [this,30,FALSE,QS_fnc_vSetup02] spawn QS_fnc_vMonitor;";
+			init="0 = [this,30,FALSE,QS_fnc_vSetup02] spawn QS_fnc_vMonitor;null = [this, west] execVM ""CHHQ.sqf"";this addAction [""<t color='#ff1111'>VAS</t>"",""scripts\VAS\open.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];   this addAction [""Quick Gear Save"",QS_fnc_saveInventory,[],7,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];   0 = [this] execVM ""scripts\VAserver.sqf"";   this addAction [""View Distance Settings"",TAWVD_fnc_openTAWVD,[],-98,false,false,"""",''];";
 			syncId=70;
 			synchronizations[]={0};
+		};
+		class Item863
+		{
+			position[]={15098.765,17.91,17115.443};
+			azimut=107.3708;
+			id=983;
+			side="EMPTY";
+			vehicle="Land_Pod_Heli_Transport_04_bench_F";
+			skill=0.60000002;
 		};
 	};
 	class Markers

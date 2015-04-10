@@ -388,7 +388,7 @@ class Params
 				title = "Groups Patrolling AO";
 				values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
 				texts[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
-				default = 1; // default 11... remember, more AI = less FPS
+				default = 10; // default 11... remember, more AI = less FPS
 			};
 	
 		class SniperTeamsPatrol {

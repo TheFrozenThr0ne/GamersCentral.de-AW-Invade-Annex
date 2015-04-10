@@ -166,13 +166,14 @@ while { count _targetArray > 0 } do {
 			_aoPos = getMarkerpos currentAO;
 			sleep 5;
 			
-			_enemiesArray = [currentAO] call QS_fnc_AOenemyB;
+			_enemiesArray = [currentAO] call QS_fnc_AOenemy;
+			//_enemiesArray = [currentAO] call QS_fnc_AOenemyB;
 			sleep 5;
 			
-			waituntil{DAC_NewZone == 0};
-			_DACvalues = ["Main_AO",[2,0,0],[14,4,50,5],[5,2,30,5],[4,1,20,5],[],[0,0,0,0]];
-			[_aoPos,PARAMS_AOSize,PARAMS_AOSize,0,0,_DACvalues] call DAC_fNewZone;
-			waituntil{DAC_NewZone == 0};
+			//waituntil{DAC_NewZone == 0};
+			//_DACvalues = ["Main_AO",[2,0,0],[14,4,50,5],[5,2,30,5],[4,1,20,5],[],[0,0,0,0]];
+			//[_aoPos,PARAMS_AOSize,PARAMS_AOSize,0,0,_DACvalues] call DAC_fNewZone;
+			//waituntil{DAC_NewZone == 0};
 			
 			
 			if (PARAMS_AOReinforcementParaDrop == 1) then {
