@@ -34,7 +34,7 @@ for [ {_i = 0}, {_i < count(paramsArray)}, {_i = _i + 1} ] do {
 _null = [] execVM "scripts\vehicle\crew\crew.sqf"; 								// vehicle HUD
 _null = [] execVM 'scripts\group_manager.sqf';									// group manager
 _null = [] execVM "scripts\restrictions.sqf"; 									// gear restrictions and safezone
-_null = [] execVM "scripts\pilotCheck.sqf"; 									// pilots only
+_null = [] execVM "scripts\pilotCheck1.sqf"; 									// pilots only
 _null = [] execVM "scripts\jump.sqf";											// jump action
 _null = [] execVM "scripts\misc\diary.sqf";										// diary tabs	
 _null = [] execVM "scripts\icons.sqf";											// blufor map tracker Quicksilver

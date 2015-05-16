@@ -46,9 +46,9 @@ _sniperOpt = ["optic_SOS","optic_LRPS"];
 
 
 
-/*_basePos = getMarkerPos "respawn_west";
+_basePos = getMarkerPos "respawn_west";
 _szmkr = getMarkerPos "safezone_marker";
-#define SZ_RADIUS 125
+#define SZ_RADIUS 650
 
 _EHFIRED = {
 	deleteVehicle (_this select 6);
@@ -74,7 +74,7 @@ if (_firstRun) then {
 		_insideSafezone = FALSE;
 	};
 };
-*/
+
 
 restrict_Thermal = false;
 restrict_LMG = false;
@@ -168,7 +168,7 @@ while {true} do {
 
 
 	//===================================== SAFE ZONE MANAGER
-	/*
+	
 	_szmkr = getMarkerPos "safezone_marker";
 	if (_insideSafezone) then {
 		if ((player distance _szmkr) > SZ_RADIUS) then {
@@ -193,5 +193,5 @@ while {true} do {
 		sleep 1;
 	} else {
 		sleep 20;
-	}*/
+	}
 };

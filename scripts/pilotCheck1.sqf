@@ -11,6 +11,7 @@ added check for jet pilot -bread
 true spawn {
 
     _pilots = ["B_Helipilot_F"];
+	_attackpilots = ["B_helicrew_F"];
 	_jetpilots = ["B_Pilot_F"];
     _aircraft_nocopilot = ["B_Heli_Transport_01_camo_F", "B_Heli_Transport_01_F", "I_Heli_Transport_02_F", "O_Heli_Light_02_F", "O_Heli_Light_02_unarmed_F", "B_Heli_Light_01_armed_F","I_Plane_Fighter_03_CAS_F","B_Plane_CAS_01_F"];
 
@@ -18,7 +19,8 @@ true spawn {
 
     _iampilot = ({typeOf player == _x} count _pilots) > 0;
 	_iamjetpilot = ({typeOf player == _x} count _jetpilots) > 0;
-
+	_iamattackpilot = ({typeOf player == _x} count _attackpilots) > 0;
+	
     while { true } do {
         _oldvehicle = vehicle player;
         waitUntil {vehicle player != _oldvehicle};
@@ -36,7 +38,7 @@ true spawn {
 						player action ["getOut", _veh];
 					};
 				};
-				if(!_iampilot) then {
+				if((!_iampilot) && !(_iamattackpilot)) then {
 					_forbidden = [driver _veh];
 					if(player in _forbidden) then {
 						systemChat "You must be a helicopter pilot to fly this aircraft";

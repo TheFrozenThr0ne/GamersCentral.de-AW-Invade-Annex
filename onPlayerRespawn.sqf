@@ -82,7 +82,7 @@ player setVariable ["seated",FALSE];
 player addAction ["Clear vehicle inventory",QS_fnc_actionClearInventory,[],-97,FALSE,FALSE,'','[] call QS_fnc_conditionClearInventory'];
 
 [player] execVM "scripts\simpleEP.sqf";
-nul = [player] execVM "scripts\no_shooting.sqf";
+// nul = [player] execVM "scripts\no_shooting.sqf";
 
 //======================= Add players to Zeus
 

@@ -7,7 +7,7 @@ Description: Separate pilot respawn
 if (PARAMS_PilotRespawn == 0) exitWith {};
 
 _pos = getMarkerPos "respawn_pilot_attack";
-_pilots = ["B_Pilot_F"];
+_pilots = ["B_Pilot_F","B_helicrew_F"];
 _iampilot = ({typeOf player == _x} count _pilots) > 0;
 if (_iampilot) then {
 	player setDir 140;
