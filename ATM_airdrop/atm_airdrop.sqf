@@ -12,15 +12,15 @@ private ["_position","_cut","_dialog","_s_alt","_s_alt_text","_sound","_sound2",
 
 	waitUntil { !isNull player };
 	
-Cooldown = 1;
-//Your code
+
 
 _functions = ([] execVM "ATM_airdrop\functions.sqf");
 
 waitUntil {scriptDone _functions};
 
 if ((call GetTransportPilotsCount) > 3) exitWith {player sideChat "More than 3 Pilots available - Ask VORTEX pilot, soldier!"};
-
+Cooldown = 1;
+//Your code
 		_position = GetPos player;
 		_z = _position select 2;
 		Altitude = 500;

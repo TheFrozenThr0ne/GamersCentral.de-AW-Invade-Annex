@@ -81,8 +81,7 @@ class Mission
 		"A3_Missions_F_Curator",
 		"A3_Air_F_Beta_Heli_Attack_02",
 		"A3_Data_F_Curator_Virtual",
-		"A3_Modules_F_Intel",
-		"A3_Soft_F_EPC_Truck_03"
+		"A3_Modules_F_Intel"
 	};
 	addOnsAuto[]=
 	{
@@ -157,13 +156,12 @@ class Mission
 		"A3_Armor_F_Slammer",
 		"A3_Armor_F_T100K",
 		"A3_Air_F_Beta_Heli_Attack_02",
-		"A3_Soft_F_EPC_Truck_03",
 		"a3_map_altis"
 	};
 	randomSeed=12935265;
 	class Intel
 	{
-		briefingName="Co-60 AW Invade&Annex 2.82D [HaloJump] [20.9] GamersCentral.de";
+		briefingName="Co-60 AW Invade&Annex 2.82D [HaloJump] [21.0] GamersCentral.de";
 		overviewText="Edited by GamersCentral.de[GC]";
 		resistanceWest=0;
 		resistanceEast=1;
@@ -1074,7 +1072,7 @@ class Mission
 					skill=0.60000002;
 					text="curatorEditable";
 					syncId=0;
-					synchronizations[]={24,25,26,33,34,32,50,56,55,53,54,37,41,36,40,39,52,49,35,47,46,45,51,31,48,58,57,38,27,42,43,44,28,30,29,59,60,1,61,62,63,14,3,5,6,9,10,11,4,2,7,12,13,8,66,65,67,15,16,17,68,19,20,21,22,23,70,69};
+					synchronizations[]={24,25,26,33,34,32,50,56,55,53,54,37,41,36,40,39,52,49,35,47,46,45,51,31,48,58,57,38,27,42,43,44,28,30,29,59,60,1,61,62,63,14,3,5,6,9,10,11,4,2,7,12,13,8,66,65,67,15,16,17,68,19,20,21,22,23};
 				};
 			};
 		};
@@ -2983,7 +2981,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=864;
+		items=862;
 		class Item0
 		{
 			position[]={11584.9,23.361359,11913.601};
@@ -11801,33 +11799,9 @@ class Mission
 		};
 		class Item861
 		{
-			position[]={14931.236,17.91,16941.498};
-			azimut=77.600899;
-			id=981;
-			side="EMPTY";
-			vehicle="O_Truck_03_transport_F";
-			skill=0.60000002;
-			init="0 = [this,30,FALSE,QS_fnc_vSetup02] spawn QS_fnc_vMonitor;null = [this, west] execVM ""CHHQ.sqf"";this addAction [""<t color='#ff1111'>VAS</t>"",""scripts\VAS\open.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];   this addAction [""Quick Gear Save"",QS_fnc_saveInventory,[],7,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];   0 = [this] execVM ""scripts\VAserver.sqf"";   this addAction [""View Distance Settings"",TAWVD_fnc_openTAWVD,[],-98,false,false,"""",''];";
-			syncId=69;
-			synchronizations[]={0};
-		};
-		class Item862
-		{
-			position[]={14932.722,17.91,16935.443};
-			azimut=1158.84;
-			id=982;
-			side="EMPTY";
-			vehicle="B_Truck_01_transport_F";
-			skill=0.60000002;
-			init="0 = [this,30,FALSE,QS_fnc_vSetup02] spawn QS_fnc_vMonitor;null = [this, west] execVM ""CHHQ.sqf"";this addAction [""<t color='#ff1111'>VAS</t>"",""scripts\VAS\open.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];   this addAction [""Quick Gear Save"",QS_fnc_saveInventory,[],7,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];   0 = [this] execVM ""scripts\VAserver.sqf"";   this addAction [""View Distance Settings"",TAWVD_fnc_openTAWVD,[],-98,false,false,"""",''];";
-			syncId=70;
-			synchronizations[]={0};
-		};
-		class Item863
-		{
 			position[]={15098.765,17.91,17115.443};
 			azimut=107.3708;
-			id=983;
+			id=981;
 			side="EMPTY";
 			vehicle="Land_Pod_Heli_Transport_04_bench_F";
 			skill=0.60000002;
