@@ -11081,7 +11081,7 @@ class Mission
 			vehicle="FlagPole_F";
 			skill=0.60000002;
 			text="BTC_base_flag_west";
-			init="this setFlagTexture ""media\images\GCFlag.jpg"";this allowDamage false;this setVariable [""R3F_LOG_disabled"", true];null = [this, west] execVM ""CHHQ.sqf"";this addAction[""<t color='#ff9900'>HALO Jump</t>"", ""ATM_airdrop\atm_airdrop.sqf""];this addAction[""<t color='#EB4E00'>Move to Logistics and Rewards</t> (BASE)"", ""scripts\teleport\setPosMHQSpawn.sqf""];this addAction[""<t color='#00CCCC'>Move to Transport Helicopters/Armor</t> (BASE)"", ""scripts\teleport\setPosTransportPilotSpawn.sqf""];this addAction[""<t color='#B000EB'>Move to Planes and Attack Helis</t>"", ""scripts\teleport\setPosJets.sqf""];this addAction[""<t color='#1F00EB'>Move to Harbor</t> (SOUTH)"", ""scripts\teleport\setPosHarbor.sqf""];";
+			init="this setFlagTexture ""media\images\GCFlag.jpg"";this allowDamage false;this setVariable [""R3F_LOG_disabled"", true];this addAction[""<t color='#ff9900'>HALO Jump</t>"", ""ATM_airdrop\atm_airdrop.sqf""];this addAction[""<t color='#EB4E00'>Move to Logistics and Rewards</t> (BASE)"", ""scripts\teleport\setPosMHQSpawn.sqf""];this addAction[""<t color='#00CCCC'>Move to Transport Helicopters/Armor</t> (BASE)"", ""scripts\teleport\setPosTransportPilotSpawn.sqf""];this addAction[""<t color='#B000EB'>Move to Planes and Attack Helis</t>"", ""scripts\teleport\setPosJets.sqf""];this addAction[""<t color='#1F00EB'>Move to Harbor</t> (SOUTH)"", ""scripts\teleport\setPosHarbor.sqf""];";
 		};
 		class Item791
 		{

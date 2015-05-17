@@ -19,8 +19,6 @@ if (isServer) then {
   [] execVM (externalConfigFolder + "\init.sqf");
 };
 
-CHHQ_showMarkers = true;
-
 // Admin reserved slot
 // You can reserve admin slot	
 INS_REV_CFG_reserved_slot = true;
