@@ -49,7 +49,7 @@ corpseRemovalMaxTime = 120;								// Max time before removal
 
 //------------------------- Includes / Functions
 	
-#include "scripts\VAS\menu.hpp" 						// VAS
+#include "VAS\menu.hpp" 						// VAS
 #include "scripts\taw_vd\dialog.hpp" 					// TAW View Distance
 #include "scripts\vehicle\crew\common.hpp"  			// vehicle crew hud
 #include "scripts\=BTC=_revive\=BTC=_respawn.h"			// BTC medic revive system
@@ -63,7 +63,7 @@ corpseRemovalMaxTime = 120;								// Max time before removal
 class CfgFunctions
 	{
 		#include "functions\cfgfunctions.hpp"			// Integrated I&A functions
-		#include "scripts\VAS\cfgfunctions.hpp"			// VAS
+		#include "VAS\cfgfunctions.hpp"			// VAS
 		#include "scripts\taw_vd\CfgFunctions.hpp"		// View distance
 	    class FETT {									// Curator synch http://forums.bistudio.com/showthread.php?176691-Making-placed-units-be-editable-for-every-Zeus
 	        class curator {

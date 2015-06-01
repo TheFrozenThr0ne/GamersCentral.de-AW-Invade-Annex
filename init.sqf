@@ -14,6 +14,10 @@ Description:
 	Deprecated initialization file, still using until the below is correctly partitioned between server and client.
 ______________________________________________________*/
 
+
+//Execute scripts
+[] execVM "VCOM_Driving\init.sqf";
+
 if (isServer) then {
   externalConfigFolder = "\InvadeAnnex_settings";
   [] execVM (externalConfigFolder + "\init.sqf");
