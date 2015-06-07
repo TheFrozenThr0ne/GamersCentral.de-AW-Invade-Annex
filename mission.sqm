@@ -2881,7 +2881,7 @@ class Mission
 					rank="MAJOR";
 					skill=0.60000002;
 					text="Quartermaster_1";
-					init="removeAllWeapons this; this allowDamage false;this addAction [""<t color='#ff1111'>VAS</t>"",""scripts\VAS\open.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];this enablesimulation false; this addAction [""Quick Gear Save"",QS_fnc_saveInventory,[],7,true,true,'((vehicle player) == player) && ((player distance _target) < 5)']; 0 = [this] execVM ""scripts\VAserver.sqf"";this addAction [""View Distance Settings"",TAWVD_fnc_openTAWVD,[],-98,false,false,"""",''];";
+					init="removeAllWeapons this; this allowDamage false;this addAction [""<t color='#ff1111'>VAS</t>"",""VAS\open.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];this enablesimulation false; this addAction [""Quick Gear Save"",QS_fnc_saveInventory,[],7,true,true,'((vehicle player) == player) && ((player distance _target) < 5)']; 0 = [this] execVM ""scripts\VAserver.sqf"";this addAction [""View Distance Settings"",TAWVD_fnc_openTAWVD,[],-98,false,false,"""",''];";
 				};
 			};
 		};
@@ -2903,7 +2903,7 @@ class Mission
 					rank="MAJOR";
 					skill=0.60000002;
 					text="Quartermaster_2";
-					init="removeAllWeapons this; this allowDamage false;this addAction [""<t color='#ff1111'>VAS</t>"",""scripts\VAS\open.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];this enablesimulation false; this addAction [""Quick Gear Save"",QS_fnc_saveInventory,[],7,true,true,'((vehicle player) == player) && ((player distance _target) < 5)']; 0 = [this] execVM ""scripts\VAserver.sqf"";this addAction [""View Distance Settings"",TAWVD_fnc_openTAWVD,[],-98,false,false,"""",''];";
+					init="removeAllWeapons this; this allowDamage false;this addAction [""<t color='#ff1111'>VAS</t>"",""VAS\open.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];this enablesimulation false; this addAction [""Quick Gear Save"",QS_fnc_saveInventory,[],7,true,true,'((vehicle player) == player) && ((player distance _target) < 5)']; 0 = [this] execVM ""scripts\VAserver.sqf"";this addAction [""View Distance Settings"",TAWVD_fnc_openTAWVD,[],-98,false,false,"""",''];";
 				};
 			};
 		};
@@ -5509,7 +5509,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=0.60000002;
 			text="ammo2_1_1";
-			init="this addAction [""<t color='#ff1111'>VAS</t>"",""scripts\VAS\open.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)']; this allowDamage false; this enableSimulation false;this setVariable [""R3F_LOG_disabled"", true];";
+			init="this addAction [""<t color='#ff1111'>VAS</t>"",""VAS\open.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)']; this allowDamage false; this enableSimulation false;this setVariable [""R3F_LOG_disabled"", true];";
 		};
 		class Item257
 		{
@@ -6888,7 +6888,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=0.60000002;
 			text="myBox";
-			init="this setVariable [""R3F_LOG_disabled"", true];this allowDamage false; this enableSimulation false;this addAction [""<t color='#ff1111'>VAS</t>"",""scripts\VAS\open.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];  this addAction [""Quick Gear Save"",QS_fnc_saveInventory,[],7,true,true,'((vehicle player) == player) && ((player distance _target) < 5)']; 0 = [this] execVM ""scripts\VAserver.sqf"";";
+			init="this setVariable [""R3F_LOG_disabled"", true];this allowDamage false; this enableSimulation false;this addAction [""<t color='#ff1111'>VAS</t>"",""VAS\open.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];  this addAction [""Quick Gear Save"",QS_fnc_saveInventory,[],7,true,true,'((vehicle player) == player) && ((player distance _target) < 5)']; 0 = [this] execVM ""scripts\VAserver.sqf"";";
 		};
 		class Item404
 		{
@@ -7071,7 +7071,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=0.60000002;
 			text="ammo5_1";
-			init="this addAction [""<t color='#ff1111'>VAS</t>"",""scripts\VAS\open.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)']; this allowDamage false; this enableSimulation false; this addAction [""Quick Gear Save"",QS_fnc_saveInventory,[],7,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];";
+			init="this addAction [""<t color='#ff1111'>VAS</t>"",""VAS\open.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)']; this allowDamage false; this enableSimulation false; this addAction [""Quick Gear Save"",QS_fnc_saveInventory,[],7,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];";
 		};
 		class Item419
 		{
@@ -8833,7 +8833,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="ammo1";
-			init="this addAction [""<t color='#ff1111'>VAS</t>"",""scripts\VAS\open.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)']; this allowDamage false; this enableSimulation false; this addAction [""Quick Gear Save"",QS_fnc_saveInventory,[],7,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];";
+			init="this addAction [""<t color='#ff1111'>VAS</t>"",""VAS\open.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)']; this allowDamage false; this enableSimulation false; this addAction [""Quick Gear Save"",QS_fnc_saveInventory,[],7,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];";
 		};
 		class Item580
 		{
@@ -11192,7 +11192,7 @@ class Mission
 			vehicle="B_Truck_01_covered_F";
 			skill=0.60000002;
 			text="MHQ_Supply";
-			init="this setVariable [""R3F_LOG_disabled"", false];      this addAction [""<t color='#ff1111'>VAS</t>"",""scripts\VAS\open.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];   this addAction [""Quick Gear Save"",QS_fnc_saveInventory,[],7,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];   0 = [this] execVM ""scripts\VAserver.sqf"";   this addAction [""View Distance Settings"",TAWVD_fnc_openTAWVD,[],-98,false,false,"""",''];";
+			init="this setVariable [""R3F_LOG_disabled"", false];      this addAction [""<t color='#ff1111'>VAS</t>"",""VAS\open.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];   this addAction [""Quick Gear Save"",QS_fnc_saveInventory,[],7,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];   0 = [this] execVM ""scripts\VAserver.sqf"";   this addAction [""View Distance Settings"",TAWVD_fnc_openTAWVD,[],-98,false,false,"""",''];";
 			syncId=66;
 			synchronizations[]={0};
 		};
@@ -11618,7 +11618,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_CargoBox_V1_F";
 			skill=0.60000002;
-			init="nul = [this,""Supply2"",0.5] execVM ""scripts\mark_unit.sqf""; nul = [this,""Supply2"",0.5] execVM ""scripts\mark_unit.sqf"";this allowDamage false; this enableSimulation false;this addAction [""<t color='#ff1111'>VAS</t>"",""scripts\VAS\open.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];  this addAction [""Quick Gear Save"",QS_fnc_saveInventory,[],7,true,true,'((vehicle player) == player) && ((player distance _target) < 5)']; 0 = [this] execVM ""scripts\VAserver.sqf"";";
+			init="nul = [this,""Supply2"",0.5] execVM ""scripts\mark_unit.sqf""; nul = [this,""Supply2"",0.5] execVM ""scripts\mark_unit.sqf"";this allowDamage false; this enableSimulation false;this addAction [""<t color='#ff1111'>VAS</t>"",""VAS\open.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];  this addAction [""Quick Gear Save"",QS_fnc_saveInventory,[],7,true,true,'((vehicle player) == player) && ((player distance _target) < 5)']; 0 = [this] execVM ""scripts\VAserver.sqf"";";
 			syncId=71;
 			synchronizations[]={0};
 		};
