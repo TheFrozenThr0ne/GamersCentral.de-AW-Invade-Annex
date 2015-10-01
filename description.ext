@@ -48,7 +48,8 @@ corpseRemovalMinTime = 60;								// Min time before removal
 corpseRemovalMaxTime = 120;								// Max time before removal
 
 //------------------------- Includes / Functions
-	
+#include "JWC_CASFS\casDefine.hpp"
+#include "JWC_CASFS\casMenu.hpp"	
 #include "VAS\menu.hpp" 						// VAS
 #include "scripts\taw_vd\dialog.hpp" 					// TAW View Distance
 #include "scripts\vehicle\crew\common.hpp"  			// vehicle crew hud
@@ -772,6 +773,28 @@ class vts_weaponresting_sound
 		sound[] = {"scripts\vts_weaponresting\vts_weaponresting.wav", 1, 1};
 		titles[] = {};
 	};
+	
+	class cantDo
+	{
+		name="cantDo";
+		sound[]={"JWC_CASFS\cantDo.ogg",1.0,1.0};
+		titles[]={};
+	};
+
+	class fire
+	{
+		name="fire";
+		sound[]={"JWC_CASFS\fire.ogg",db+12,1.0};
+		titles[]={};
+	};
+
+	class pain
+	{
+		name="pain";
+		sound[]={"JWC_CASFS\pain.ogg",1.0,1.0};
+		titles[]={};
+	};
+	
 };
 
 /*

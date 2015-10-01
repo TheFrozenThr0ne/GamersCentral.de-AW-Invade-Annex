@@ -81,6 +81,10 @@ inventory_cleared = FALSE;
 player setVariable ["seated",FALSE];
 player addAction ["Clear vehicle inventory",QS_fnc_actionClearInventory,[],-97,FALSE,FALSE,'','[] call QS_fnc_conditionClearInventory'];
 
+if !(vehicleVarName player in JWC_CASarray) exitWith {};
+closeDialog 0;
+[JWC_MaxD, JWC_lock, JWC_num] execVM "JWC_CASFS\addAction.sqf";
+
 [player] execVM "scripts\simpleEP.sqf";
 // nul = [player] execVM "scripts\no_shooting.sqf";
 
