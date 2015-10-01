@@ -255,6 +255,25 @@ player createDiaryRecord ["changelog",
 
 player createDiaryRecord ["changelog",
 [
+"20.3",
+"
+<br />- [ADDED] Playable Field Close Air Support
+<br />- [CHANGED] Updated to latest AW Invade and Annex Version
+<br />- [CHANGED] Marksman DLC restricted to Marksman only
+<br />- [CHANGED] VAS has been updated
+<br />
+<br />
+<br />
+<br />  Contact us:
+<br />
+<br />- eMail: Support@GamersCentral.de
+<br />- TeamSpeak: TS3.GamersCentral.de
+<br />- WWW: GamersCentral.de
+<br />  Edited by GamersCentral.de - MaDmaX[GC]
+"]];
+
+player createDiaryRecord ["changelog",
+[
 "20.2",
 "
 <br />- [ADDED] Mi-48 Kajman Community Members Only

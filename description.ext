@@ -463,6 +463,13 @@ class Params
 			default = 0;
 		};
 		
+		class rMarksman {
+			title = "Restrict Marksman Weapons";
+			values[] = {0,1};
+			texts[] = {"DISABLED","ENABLED"};
+			default = 1;
+		};
+		
 		class rSOptics {
 			title = "Specialise Sniper Optics";
 			values[] = {0,1};

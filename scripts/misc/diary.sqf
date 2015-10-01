@@ -112,13 +112,13 @@ player createDiaryRecord ["mods",
 "
 <br /> Mods currently allowed (subject to change without notice):<br /><br />
 
-<br />- CBA - RC4 - Required to run the below mods.
+<br />- CBA - Required to run the below mods.
 		http://www.armaholic.com/page.php?id=18768<br /><br />
 		
-<br />- JSRS - 2.2 - Enhanced sounds and audio.
+<br />- JSRS - Enhanced sounds and audio.
 		http://www.armaholic.com/page.php?id=22150<br /><br />
 		
-<br />- Blastcore - R3 - Enhanced visual effects.
+<br />- Blastcore - Enhanced visual effects.
 		http://www.armaholic.com/page.php?id=23899<br /><br />
 		
 <br />- ShackTac Fireteam HUD - v140302 - Situational awareness HUD
