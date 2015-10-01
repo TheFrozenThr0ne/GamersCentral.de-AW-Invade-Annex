@@ -82,7 +82,8 @@ class Mission
 		"A3_Air_F_Beta_Heli_Attack_02",
 		"A3_Data_F_Curator_Virtual",
 		"A3_Modules_F_Intel",
-		"3DEN"
+		"3DEN",
+		"A3_Characters_F_OPFOR"
 	};
 	addOnsAuto[]=
 	{
@@ -163,7 +164,7 @@ class Mission
 	randomSeed=12935265;
 	class Intel
 	{
-		briefingName="Co-60 AW Invade&Annex 2.83I [HaloJump] [21.3] GamersCentral.de";
+		briefingName="Co-60 AW Invade&Annex 2.83I [HaloJump] [21.4] GamersCentral.de";
 		overviewText="Edited by GamersCentral.de - MaDmaX[GC]";
 		resistanceWest=0;
 		resistanceEast=1;
@@ -13573,7 +13574,7 @@ class Mission
 	};
 	class Sensors
 	{
-		items=22;
+		items=23;
 		class Item0
 		{
 			position[]={-256.8938,-0.092763841,658.35046};
@@ -13930,6 +13931,18 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			name="nobomb2";
+			class Effects
+			{
+			};
+		};
+		class Item22
+		{
+			position[]={-32.086182,-0.30672365,4514.7896};
+			activationBy="ALPHA";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expActiv="{diag_log text format [""%1"",BTC_logic getVariable (getPlayerUID _x)];} foreach allunits";
 			class Effects
 			{
 			};

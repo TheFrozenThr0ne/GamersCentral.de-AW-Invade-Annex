@@ -212,7 +212,7 @@ while { count _targetArray > 0 } do {
 	
 	if (PARAMS_AOReinforcementJet == 1) then {
 		[] spawn {
-			sleep (30 + (random 180));
+			sleep (180 + (random 500));
 			if (alive radioTower) then {
 				while {(alive radioTower)} do {
 					[] call QS_fnc_enemyCAS;

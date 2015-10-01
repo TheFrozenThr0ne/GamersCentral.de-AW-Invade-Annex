@@ -176,7 +176,7 @@ while { count _targetArray > 0 } do {
 	
 	if (PARAMS_AOReinforcementJet == 1) then {
 		[] spawn {
-		sleep (30 + (random 180));
+		sleep (180 + (random 500));
 			while {true} do {
 					[] call QS_fnc_enemyCAS;
 					sleep (480 + (random 480));
