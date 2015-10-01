@@ -16,6 +16,8 @@ ______________________________________________________*/
 
 ["Initialize"] call BIS_fnc_dynamicGroups;
 
+[] execVM "VCOMAI\init.sqf";
+
 //Execute scripts
 [] execVM "VCOM_Driving\init.sqf";
 

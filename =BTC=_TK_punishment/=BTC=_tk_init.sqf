@@ -16,7 +16,16 @@ BTC_fnc_tk_PVEH =
 	_array = _this select 1;
 	_name  = _array select 0;
 	_punisher = _array select 1;
-	hint format ["%1 has committed TK and has been punished by %2",_name,_punisher];
+	//hint format ["%1 has committed TK and has been punished by %2",_name,_punisher];
+	
+	_kill = format
+	[
+		"<t size='1.5' align='center' color='#E00000'>%1</t><br/>____________________<br/>has committed TK and has been punished by <t color='#00B2EE'>%2</t>",
+		_name,
+		_punisher
+	];	
+	GlobalHint = _kill; publicVariable "GlobalHint"; hint parseText GlobalHint;
+	
 	if (name player == _name) then {_spawn = [] spawn BTC_Teamkill;};
 };
 BTC_EH_killed =
@@ -65,13 +74,14 @@ BTC_Teamkill =
 			disableUserInput true;
 			if (BTC_teamkiller == BTC_tk_last_warning) then
 			{
-				_msg = "STOP TEAMKILLING, LAST WARNING";
+				_msg = "STOP TEAMKILLING, LAST WARNING!!!";
 			} else {_msg = "YOU HAVE BEEN PUNISHED FOR TEAMKILLING!";};
 			player setPos [0,0,0];
 			_n = 0;
 			while {_n < 60} do
 			{
-				titleText [_msg,"BLACK FADED"];
+				hintC _msg;
+				//titleText [_msg,"BLACK FADED"];
 				_n = _n + 1;
 				sleep 1;
 			};

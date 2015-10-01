@@ -1,0 +1,517 @@
+/*%FSM<COMPILE "C:\Program Files (x86)\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, DangerIdentify">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"DEFINE_ENUM_BEG",-1,250,-1060.000000,-470.000000,-720.000000,-300.000000,0.000000,"DEFINE_ENUM_BEG(DangerCause)" \n "  DCEnemyDetected, // the first enemy detected" \n "  DCFire, // fire visible" \n "  DCHit, // vehicle hit" \n "  DCEnemyNear, // enemy very close to me" \n "  DCExplosion, // explosion detected" \n "  DCDeadBodyGroup, // dead soldier from my group found" \n "  DCDeadBody, // other dead soldier found" \n "  DCScream // hit soldier screaming" \n "DEFINE_ENUM_END(DangerCause)" \n ""};
+item1[] = {"Dead",4,218,-710.000000,-800.000000,-660.000000,-750.000000,1000.000000,"Dead"};
+item2[] = {"Exit",1,250,-710.000000,-880.000000,-660.000000,-830.000000,0.000000,"Exit"};
+item3[] = {"ContinueLoop",8,218,-350.000000,340.000000,-260.000000,390.000000,0.000000,"ContinueLoop"};
+item4[] = {"Dead",4,218,-670.000000,150.000000,-620.000000,200.000000,1000.000000,"Dead"};
+item5[] = {"Exit_1",1,250,-670.000000,70.000000,-620.000000,120.000000,0.000000,"Exit"};
+item6[] = {"Threat_Detection",0,250,-740.000000,-660.000000,-620.000000,-590.000000,0.000000,"Threat Detection"};
+item7[] = {"",7,210,15.999998,316.000000,24.000002,323.999969,0.000000,""};
+item8[] = {"",7,210,-9.000000,-524.000061,-1.000000,-516.000000,0.000000,""};
+item9[] = {"DEAD_BODY_FOUND",4,218,-810.000000,-70.000000,-700.000000,0.000000,70.000000,"DEAD BODY FOUND"};
+item10[] = {"COMBAT",4,218,-950.000000,-70.000000,-840.000000,0.000000,120.000000,"COMBAT"};
+item11[] = {"Stop_to_fire",2,4346,-940.000000,80.000000,-850.000000,130.000000,0.000000,"Stop to fire"};
+item12[] = {"Continue",2,250,-700.000000,290.000000,-610.000000,340.000000,0.000000,"Continue"};
+item13[] = {"Timeout",4,218,-880.000000,160.000000,-790.000000,210.000000,0.000000,"Timeout"};
+item14[] = {"EXPLOSION_",4,218,-670.000000,-80.000000,-560.000000,-10.000000,80.000000,"EXPLOSION" \n ""};
+item15[] = {"Destroyed",4,218,-940.000000,210.000000,-850.000000,260.000000,1.000000,"Destroyed"};
+item16[] = {"ENEMY_SPOTTED",4,218,-390.000000,-70.000000,-270.000000,0.000000,100.000000,"ENEMY SPOTTED"};
+item17[] = {"Combat_Mode",2,250,-510.000000,90.000000,-390.000000,140.000000,0.000000,"Combat Mode"};
+item18[] = {"_UseAI_NO",4,218,-630.000000,-790.000000,-550.000000,-750.000000,900.000000,"_UseAI NO"};
+item19[] = {"ENEMY_HEARD",4,218,-530.000000,-80.000000,-410.000000,-10.000000,90.000000,"ENEMY HEARD"};
+item20[] = {"Wait",4,218,-380.000000,-290.000000,-300.000000,-240.000000,0.000000,"Wait"};
+item21[] = {"isPlayer",4,218,-800.000000,-790.000000,-720.000000,-750.000000,800.000000,"isPlayer"};
+item22[] = {"Wait",4,218,-490.000000,280.000000,-410.000000,330.000000,0.000000,"Wait"};
+item23[] = {"InsideVehicle",2,250,-1110.000000,130.000000,-1020.000000,180.000000,0.000000,"InsideVehicle"};
+item24[] = {"COMBAT_AND_INVEH",4,218,-1090.000000,-110.000000,-980.000000,-40.000000,70.000000,"COMBAT AND INVEHICLE"};
+item25[] = {"_",8,218,-1070.000000,320.000000,-980.000000,370.000000,0.000000,""};
+item26[] = {"Dead",4,218,-1270.000000,70.000000,-1220.000000,120.000000,1000.000000,"Dead"};
+item27[] = {"Exit_2",1,250,-1270.000000,-10.000000,-1220.000000,40.000000,0.000000,"Exit"};
+item28[] = {"_",8,218,-650.000000,-480.000000,-560.000000,-430.000000,0.000000,""};
+item29[] = {"Threat_Decisions",3,250,-550.000000,-300.000000,-460.000000,-250.000000,0.000000,"Threat Decisions"};
+item30[] = {"Dead",4,218,-380.000000,-500.000000,-330.000000,-450.000000,1000.000000,"Dead"};
+item31[] = {"Exit_3",1,250,-380.000000,-580.000000,-330.000000,-530.000000,0.000000,"Exit"};
+item32[] = {"_UseAI_NO",4,218,-300.000000,-490.000000,-220.000000,-450.000000,900.000000,"_UseAI NO"};
+item33[] = {"isPlayer",4,218,-470.000000,-490.000000,-390.000000,-450.000000,800.000000,"isPlayer"};
+item34[] = {"GARRISON_CLEAR",4,218,-220.000000,-50.000000,-100.000000,20.000000,110.000000,"GARRISON CLEAR"};
+version=1;
+class LayoutItems
+{
+	class Item0
+	{
+		class ItemInfo
+		{
+			FontFace="Arial";
+			FontHeight=10;
+			lStyle=1;
+		};
+	};
+};
+link0[] = {1,2};
+link1[] = {3,7};
+link2[] = {4,5};
+link3[] = {6,1};
+link4[] = {6,18};
+link5[] = {6,21};
+link6[] = {6,28};
+link7[] = {7,8};
+link8[] = {8,29};
+link9[] = {9,17};
+link10[] = {10,11};
+link11[] = {11,4};
+link12[] = {11,13};
+link13[] = {11,15};
+link14[] = {12,4};
+link15[] = {12,22};
+link16[] = {13,12};
+link17[] = {14,17};
+link18[] = {15,12};
+link19[] = {16,17};
+link20[] = {17,3};
+link21[] = {17,4};
+link22[] = {18,2};
+link23[] = {19,17};
+link24[] = {20,29};
+link25[] = {21,2};
+link26[] = {22,7};
+link27[] = {23,25};
+link28[] = {23,26};
+link29[] = {24,23};
+link30[] = {25,12};
+link31[] = {26,27};
+link32[] = {28,29};
+link33[] = {29,9};
+link34[] = {29,10};
+link35[] = {29,14};
+link36[] = {29,16};
+link37[] = {29,19};
+link38[] = {29,20};
+link39[] = {29,24};
+link40[] = {29,30};
+link41[] = {29,32};
+link42[] = {29,33};
+link43[] = {29,34};
+link44[] = {30,31};
+link45[] = {32,31};
+link46[] = {33,31};
+link47[] = {34,12};
+globals[] = {10.000000,1,0,1,16777215,640,480,1,246,6316128,1,-1215.485107,-218.901413,423.746704,-429.098969,832,712,1};
+window[] = {0,-1,-1,-1,-1,1040,208,1530,208,1,850};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "DangerIdentify";
+  class States
+  {
+    /*%FSM<STATE "Exit">*/
+    class Exit
+    {
+      name = "Exit";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Exit_1">*/
+    class Exit_1
+    {
+      name = "Exit_1";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Threat_Detection">*/
+    class Threat_Detection
+    {
+      name = "Threat_Detection";
+      init = /*%FSM<STATEINIT""">*/"//_this globalChat format[""side: (@T %1 %2)"",time,side _this];" \n
+       "//copytoclipboard str [""danger.FSM"",time,_this,_dangerCause,_queue];" \n
+       "" \n
+       "/*" \n
+       "comment ""0  DCEnemyDetected"";" \n
+       "comment ""1  DCFire"";" \n
+       "comment ""2  DCHit"";" \n
+       "comment ""3  DCEnemyNear"";" \n
+       "comment ""4  DCExplosion"";" \n
+       "comment ""5  DCDeadBodyGroup"";" \n
+       "comment ""6  DCDeadBody"";" \n
+       "comment ""7  DCScream"";" \n
+       "comment ""8  DCCanFire"";" \n
+       "comment ""9  DCBulletClose"";" \n
+       "*/" \n
+       "" \n
+       "" \n
+       "_Unit = _this select 0;" \n
+       "" \n
+       "_UseAI = _Unit getVariable ""NOAI"";" \n
+       "if (isNil (""_UseAI"")) then " \n
+       "{" \n
+       "	_UseAI = false;" \n
+       "};" \n
+       "" \n
+       "" \n
+       "" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Dead">*/
+        class Dead
+        {
+          priority = 1000.000000;
+          to="Exit";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!alive _Unit"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "_UseAI_NO">*/
+        class _UseAI_NO
+        {
+          priority = 900.000000;
+          to="Exit";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_UseAI"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "isPlayer">*/
+        class isPlayer
+        {
+          priority = 800.000000;
+          to="Exit";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"isPlayer _Unit"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "_">*/
+        class _
+        {
+          priority = 0.000000;
+          to="Threat_Decisions";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Stop_to_fire">*/
+    class Stop_to_fire
+    {
+      name = "Stop_to_fire";
+      init = /*%FSM<STATEINIT""">*/"_t = time;" \n
+       "_target = assignedTarget _Unit;" \n
+       "_Unit call VCOMAI_CombatMovement;" \n
+       "" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Dead">*/
+        class Dead
+        {
+          priority = 1000.000000;
+          to="Exit_1";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!alive _Unit"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Destroyed">*/
+        class Destroyed
+        {
+          priority = 1.000000;
+          to="Continue";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!(alive _target)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Timeout">*/
+        class Timeout
+        {
+          priority = 0.000000;
+          to="Continue";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"time > _t + 0.1"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Continue">*/
+    class Continue
+    {
+      name = "Continue";
+      init = /*%FSM<STATEINIT""">*/"_t = time;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Dead">*/
+        class Dead
+        {
+          priority = 1000.000000;
+          to="Exit_1";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!alive _Unit"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Wait">*/
+        class Wait
+        {
+          priority = 0.000000;
+          to="Threat_Decisions";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"time > _t + 0.1"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Combat_Mode">*/
+    class Combat_Mode
+    {
+      name = "Combat_Mode";
+      init = /*%FSM<STATEINIT""">*/"_Unit call VCOMAI_SetCombatStance;" \n
+       "_Unit call VCOMAI_MoveToCoverGroup;" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Dead">*/
+        class Dead
+        {
+          priority = 1000.000000;
+          to="Exit_1";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!alive _Unit"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "ContinueLoop">*/
+        class ContinueLoop
+        {
+          priority = 0.000000;
+          to="Threat_Decisions";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "InsideVehicle">*/
+    class InsideVehicle
+    {
+      name = "InsideVehicle";
+      init = /*%FSM<STATEINIT""">*/"_Unit call VCOMAI_VehicleHandleDanger;" \n
+       "" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Dead">*/
+        class Dead
+        {
+          priority = 1000.000000;
+          to="Exit_2";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!alive _Unit"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "_">*/
+        class _
+        {
+          priority = 0.000000;
+          to="Continue";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Exit_2">*/
+    class Exit_2
+    {
+      name = "Exit_2";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Threat_Decisions">*/
+    class Threat_Decisions
+    {
+      name = "Threat_Decisions";
+      init = /*%FSM<STATEINIT""">*/"_t = time;" \n
+       "" \n
+       "" \n
+       "_EnemySpotted = _Unit call VCOMAI_RecentEnemyDetected;" \n
+       "_CurrentStance = _Unit call VCOMAI_CurrentStance;" \n
+       "_ShotsFired = _Unit getVariable ""VCOMAI_ShotsFired"";" \n
+       "_CraterDetection = _Unit call VCOMAI_ExplosionDetection;" \n
+       "_DeadBodyDetection = _Unit call VCOMAI_DeadBodyDetection;" \n
+       "_VehicleCheck = (vehicle _Unit) isEqualTo _Unit;" \n
+       "" \n
+       "_UseAI = _Unit getVariable ""NOAI"";" \n
+       "if (isNil (""_UseAI"")) then " \n
+       "{" \n
+       "	_UseAI = false;" \n
+       "};"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Dead">*/
+        class Dead
+        {
+          priority = 1000.000000;
+          to="Exit_3";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!alive _Unit"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "_UseAI_NO">*/
+        class _UseAI_NO
+        {
+          priority = 900.000000;
+          to="Exit_3";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_UseAI"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "isPlayer">*/
+        class isPlayer
+        {
+          priority = 800.000000;
+          to="Exit_3";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"isPlayer _Unit"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "COMBAT">*/
+        class COMBAT
+        {
+          priority = 120.000000;
+          to="Stop_to_fire";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_CurrentStance isEqualTo ""COMBAT"""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "GARRISON_CLEAR">*/
+        class GARRISON_CLEAR
+        {
+          priority = 110.000000;
+          to="Continue";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_ClearingBuilding = _Unit getVariable ""VCOMAI_ActivelyClearing"";"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "ENEMY_SPOTTED">*/
+        class ENEMY_SPOTTED
+        {
+          priority = 100.000000;
+          to="Combat_Mode";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!(isNull _EnemySpotted) && !(_CurrentStance isEqualTo ""COMBAT"")"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "ENEMY_HEARD">*/
+        class ENEMY_HEARD
+        {
+          priority = 90.000000;
+          to="Combat_Mode";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_ShotsFired  && !(_CurrentStance isEqualTo ""COMBAT"")"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_Unit setVariable [""VCOMAI_ShotsFired"",false,true];"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "EXPLOSION_">*/
+        class EXPLOSION_
+        {
+          priority = 80.000000;
+          to="Combat_Mode";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(count _CraterDetection) > 0 &&  !(_CurrentStance isEqualTo ""COMBAT"")"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "COMBAT_AND_INVEH">*/
+        class COMBAT_AND_INVEH
+        {
+          priority = 70.000000;
+          to="InsideVehicle";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_CurrentStance isEqualTo ""COMBAT"" && !_VehicleCheck"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "DEAD_BODY_FOUND">*/
+        class DEAD_BODY_FOUND
+        {
+          priority = 70.000000;
+          to="Combat_Mode";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(_DeadBodyDetection distance _unit) < 50 &&  !(_CurrentStance isEqualTo ""COMBAT"")"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Wait">*/
+        class Wait
+        {
+          priority = 0.000000;
+          to="Threat_Decisions";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"time > _t + 1"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Exit_3">*/
+    class Exit_3
+    {
+      name = "Exit_3";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="Threat_Detection";
+  finalStates[] =
+  {
+    "Exit",
+    "Exit_1",
+    "Exit_2",
+    "Exit_3",
+  };
+};
+/*%FSM</COMPILE>*/
