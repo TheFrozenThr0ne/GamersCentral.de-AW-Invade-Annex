@@ -40,6 +40,7 @@ _null = [] execVM "scripts\misc\diary.sqf";										// diary tabs
 _null = [] execVM "scripts\icons.sqf";											// blufor map tracker Quicksilver
 _null = [] execVM "scripts\VAclient.sqf";										// Virtual Arsenal
 _null = [] execVM "scripts\misc\Intro.sqf";										// AW intro screen
+_null = [] execVM "scripts\voice_control\voiceControl.sqf";						// Voice Control
 if (PARAMS_HeliRope != 0) then {call compile preprocessFileLineNumbers "scripts\vehicle\fastrope\zlt_fastrope.sqf";};	
 if (PARAMS_HeliSling != 0) then {call compile preprocessFileLineNumbers "scripts\vehicle\sling\sling_config.sqf";};				// Heli Sling.
 call compileFinal preprocessFileLineNumbers "functions\taru.sqf";
@@ -154,7 +155,7 @@ _email = _infoSquad select 2;
 // replace line below with your Squad xml's email
 if (_email == "Support@GamersCentral.de") then {
 
-GlobalHint = format["<t align='center' size='2.2' color='#FF0000'>%1<br/></t><t size='1.4' color='#33CCFF'>%2</t><br/>has joined the server, To get involved in the GamersCentral community, Join our Steam Community Group GamersCentral or if youre from Germany then go to our Community Website at http://GamersCentral.de and get stuck in!</t><br/>",_squad,_name];
+GlobalHint = format["<t align='center' size='2.2' color='#FF0000'>%1<br/></t><t size='1.4' color='#33CCFF'>%2</t><br/>has joined the server, To get involved in the GamersCentral community, Join our Steam Community Group GamersCentral and Apply - oder sprichst du Deutsch, dann besuche unsere Community Webseite unter http://GamersCentral.de Registriere und Bewirb dich!</t><br/>",_squad,_name];
 
 hint parseText GlobalHint; publicVariable "GlobalHint";
 } else {};

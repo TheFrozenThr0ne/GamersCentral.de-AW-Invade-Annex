@@ -1,7 +1,7 @@
 //------------------------- On Load
 
 author = [Rarek, Quiksilver] Customized by GamersCentral;					// Visible when loading mission
-onLoadName = "Invade and Annex 2.82D";						// Visible when loading mission
+onLoadName = "Invade and Annex 2.83I";						// Visible when loading mission
 OnLoadMission = "- Welcome back to GamersCentral Invade and Annex  - Join us on TeamSpeak at TS3.GamersCentral.de                                 - Protected by SpyGlass Anti-Hack";
 loadScreen = "media\images\loading.jpg";				// Visible when loading mission
 overviewPicture = "media\images\loading.jpg";			// Visible when selecting mission	
@@ -60,6 +60,7 @@ corpseRemovalMaxTime = 120;								// Max time before removal
 #include "ATM_airdrop\dialog.hpp"						// Halo Jump
 #include "scripts\vehicle\TVS\Tvs.hpp"					// TV Guided Bomb - Buzzard CAS
 #include "dialogs.hpp"									// Intro
+#include "scripts\voice_control\voiceControl.cpp"		// Voice Control
 
 class CfgFunctions
 	{

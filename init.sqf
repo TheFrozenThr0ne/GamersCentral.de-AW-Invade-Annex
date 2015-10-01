@@ -44,7 +44,8 @@ if (isServer) then {[1000,-1,true,100,1000,1000]execvm "zbe_cache\main.sqf"};
 [] execVM "scripts\DOM_squad\init.sqf";
 0 = [] execVM "scripts\DOM_squad\group_manager.sqf";
 _null = [] execVM "scripts\units\tankCheck.sqf";
-	
+[] execVM "scripts\clean.sqf";	
+
 addMissionEventHandler ["HandleDisconnect", { 
     _unit  = _this select 0;
     _pos = getPosATL _unit;

@@ -15,6 +15,7 @@ private ["_opticsAllowed","_specialisedOptics","_optics","_basePos","_firstRun",
 #define OPTICS_MSG "Thermal optics such as TWS and Nightstalker are currently restricted."
 #define MG_MSG "Only Autoriflemen may use this weapon system. LMG removed."
 #define SOPT_MSG "SOS and LRPS are designated for Snipers and Spotters only. Optic removed."
+#define MRK_MSG "Only Marksman and Spotters may use this weapon system. Rifle removed."
 
 //===== UAV TERMINAL
 _uavOperator = ["B_soldier_UAV_F","B_support_AMort_F","B_officer_F"];
@@ -43,6 +44,10 @@ _specialisedOptics = ["optic_Nightstalker","optic_tws","optic_tws_mg"];
 _sniperTeam = ["B_sniper_F","B_spotter_F"];
 _sniperOpt = ["optic_SOS","optic_LRPS"];
 
+//===== MARKSMAN
+_marksman = ["B_soldier_M_F","B_spotter_F","B_recon_M_F"];
+_marksmanGun = ["srifle_DMR_02_ACO_F","srifle_DMR_02_ARCO_F","srifle_DMR_02_camo_AMS_LP_F","srifle_DMR_02_DMS_F","srifle_DMR_02_MRCO_F","srifle_DMR_02_sniper_AMS_LP_S_F","srifle_DMR_02_F","srifle_DMR_02_camo_F","srifle_DMR_02_sniper_F","srifle_DMR_02_SOS_F","srifle_DMR_03_ACO_F","srifle_DMR_03_AMS_F","srifle_DMR_03_ARCO_F","srifle_DMR_03_DMS_F","srifle_DMR_03_DMS_snds_F","srifle_DMR_03_MRCO_F","srifle_DMR_03_SOS_F","srifle_DMR_03_tan_AMS_LP_F","srifle_DMR_03_F","srifle_DMR_03_khaki_F","srifle_DMR_03_multicam_F","srifle_DMR_03_tan_F","srifle_DMR_03_woodland_F","srifle_DMR_04_ACO_F","srifle_DMR_04_ARCO_F","srifle_DMR_04_DMS_F","srifle_DMR_05_ACO_F","srifle_DMR_05_ARCO_F","srifle_DMR_05_DMS_F","srifle_DMR_05_DMS_snds_F","srifle_DMR_05_KHS_LP_F","srifle_DMR_05_MRCO_F","srifle_DMR_05_SOS_F","srifle_DMR_05_blk_F","srifle_DMR_05_hex_F","srifle_DMR_05_tan_f","srifle_DMR_06_camo_F","srifle_DMR_06_camo_khs_F",
+"srifle_DMR_06_olive_F"];
 
 
 
@@ -132,7 +137,19 @@ while {true} do {
 		};
 		sleep 1;
 	};
-
+	
+	//------------------------------------- Marksman
+		
+	if (restrict_Marksman) then {
+		if (({player hasWeapon _x} count _marksmanGun) > 0) then {
+			if (({player isKindOf _x} count _marksman) < 1) then {
+				player removeWeapon (primaryWeapon player);
+				titleText [MRK_MSG,"PLAIN",3];
+			};
+		};
+		sleep 1;
+	};
+	
 	//------------------------------------- Turret backpacks
 
 	if ((backpack player) in _backpackRestricted) then {
@@ -165,7 +182,6 @@ while {true} do {
 		};
 		sleep 1;
 	};
-
 
 	//===================================== SAFE ZONE MANAGER
 	

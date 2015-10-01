@@ -163,8 +163,8 @@ class Mission
 	randomSeed=12935265;
 	class Intel
 	{
-		briefingName="Co-60 AW Invade&Annex 2.82D [HaloJump] [21.2] GamersCentral.de";
-		overviewText="Edited by GamersCentral.de[GC]";
+		briefingName="Co-60 AW Invade&Annex 2.83I [HaloJump] [21.3] GamersCentral.de";
+		overviewText="Edited by GamersCentral.de - MaDmaX[GC]";
 		resistanceWest=0;
 		resistanceEast=1;
 		timeOfChanges=28800;
