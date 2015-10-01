@@ -14,6 +14,7 @@ Description:
 	Deprecated initialization file, still using until the below is correctly partitioned between server and client.
 ______________________________________________________*/
 
+["Initialize"] call BIS_fnc_dynamicGroups;
 
 //Execute scripts
 [] execVM "VCOM_Driving\init.sqf";
