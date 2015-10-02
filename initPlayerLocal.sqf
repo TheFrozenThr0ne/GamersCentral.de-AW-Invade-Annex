@@ -158,8 +158,3 @@ GlobalHint = format["<t align='center' size='2.2' color='#FF0000'>%1<br/></t><t 
 
 hint parseText GlobalHint; publicVariable "GlobalHint";
 } else {};
-
-[] spawn { 
-sleep 30;
-player sideChat "Check our latest changes at your (M)ap info - Change Log";
-};
