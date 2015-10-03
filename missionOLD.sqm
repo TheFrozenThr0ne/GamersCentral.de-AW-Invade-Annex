@@ -83,7 +83,8 @@ class Mission
 		"A3_Data_F_Curator_Virtual",
 		"A3_Modules_F_Intel",
 		"3DEN",
-		"A3_Characters_F_OPFOR"
+		"A3_Characters_F_OPFOR",
+		"blastcore_vep"
 	};
 	addOnsAuto[]=
 	{
@@ -113,6 +114,7 @@ class Mission
 		"A3_Structures_F_Mil_Helipads",
 		"A3_Structures_F_Ind_AirPort",
 		"A3_Soft_F_Gamma_HEMTT",
+		"blastcore_vep",
 		"A3_Soft_F_Quadbike",
 		"A3_Soft_F_MRAP_01",
 		"A3_Boat_F_Boat_Armed_01",
@@ -164,7 +166,7 @@ class Mission
 	randomSeed=12935265;
 	class Intel
 	{
-		briefingName="Co-60 AW Invade&Annex 2.83I [HaloJump] [21.6] GamersCentral.de";
+		briefingName="Co-60 AW Invade&Annex 2.83I [HaloJump] [21.7] GamersCentral.de";
 		overviewText="Edited by GamersCentral.de - MaDmaX[GC]";
 		resistanceWest=0;
 		resistanceEast=1;
@@ -13573,8 +13575,8 @@ class Mission
 		};
 		class Item204
 		{
-			position[]={18341.225,0.0011177883,18788.867};
-			name="paraDrop";
+			position[]={18511.951,0.022674527,19256.125};
+			name="spawn";
 			type="Empty";
 		};
 	};

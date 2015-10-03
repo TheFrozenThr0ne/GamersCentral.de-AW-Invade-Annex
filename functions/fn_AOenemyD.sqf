@@ -32,10 +32,10 @@ _x = 0;
 	AOost = "Nothing";
 	AOsued = "Nothing";
 	AOwest = "Nothing";
-	AOnord = [getMarkerPos currentAO select 0,(getMarkerPos currentAO select 1)-700 + (random 200)];
-	AOost = [(getMarkerPos currentAO select 0)+750 + (random 200),getMarkerPos currentAO select 1];
-	AOsued = [getMarkerPos currentAO select 0,(getMarkerPos currentAO select 1)+750 + (random 200)];
-	AOwest = [(getMarkerPos currentAO select 0)-700 + (random 200),getMarkerPos currentAO select 1];
+	AOnord = [getMarkerPos currentAO select 0,(getMarkerPos currentAO select 1)-800 + (random 200)];
+	AOost = [(getMarkerPos currentAO select 0)+850 + (random 200),getMarkerPos currentAO select 1];
+	AOsued = [getMarkerPos currentAO select 0,(getMarkerPos currentAO select 1)+850 + (random 200)];
+	AOwest = [(getMarkerPos currentAO select 0)-800 + (random 200),getMarkerPos currentAO select 1];
 	AOwestrand = [(getMarkerPos currentAO select 0)-500 + (random 200),getMarkerPos currentAO select 1];
 	_AOrandom = [AOnord, AOost, AOsued, AOwest, AOwestrand] call BIS_fnc_selectRandom;
 	
@@ -44,14 +44,16 @@ _x = 0;
 	
 for "_x" from 1 to 6 do {
 	_patrolGroup = createGroup east;
-	_randomPos = [[[getMarkerPos currentAO, (PARAMS_AOSize / 1.2)],[]],["water","out"]] call BIS_fnc_randomPos;
+	_randomPos = [AOnord, AOost, AOsued, AOwest] call BIS_fnc_selectRandom;
+	//_randomPos = [[[getMarkerPos currentAO, (PARAMS_AOSize / 1.2)],[]],["water","out"]] call BIS_fnc_randomPos;
 	_patrolGroup = [_randomPos, EAST, (configfile >> "CfgGroups" >> "East" >> "OPF_F" >> "Infantry" >> [INF_TYPE] call BIS_fnc_selectRandom)] call BIS_fnc_spawnGroup;	
-	
+	"O_Soldier_AA_F" createUnit [AOrandom, spawnGroup];
+	"O_Soldier_AA_F" createUnit [AOrandom, spawnGroup];
 	_wp = _patrolGroup addWaypoint [getMarkerPos currentAO, 0, 50];
 	[_patrolGroup, 2] setWaypointType "MOVE";
-	_patrolGroup setBehaviour "STEALTH";
+	_patrolGroup setBehaviour "COMBAT";
 	_patrolGroup setCombatMode "RED";
-	
+	_patrolGroup setWaypointSpeed "FULL";
 	_enemiesArray = _enemiesArray + [_patrolGroup];
 	
 	{
@@ -64,14 +66,15 @@ for "_x" from 1 to 6 do {
 	
 for "_x" from 1 to 6 do {
 	_overwatchGroup = createGroup east;
-	_randomPos = [getMarkerPos currentAO, 650, 50, 10] call BIS_fnc_findOverwatch;
+	_randomPos = [AOnord, AOost, AOsued, AOwest] call BIS_fnc_selectRandom;
+	//_randomPos = [getMarkerPos currentAO, 650, 50, 10] call BIS_fnc_findOverwatch;
 	_overwatchGroup = [_randomPos, East, (configfile >> "CfgGroups" >> "East" >> "OPF_F" >> "UInfantry" >> [INF_URBANTYPE] call BIS_fnc_selectRandom)] call BIS_fnc_spawnGroup;
 	
 	_wp = _overwatchGroup addWaypoint [getMarkerPos currentAO, 0, 50];
 	[_patrolGroup, 2] setWaypointType "MOVE";
-	_overwatchGroup setBehaviour "STEALTH";
+	_overwatchGroup setBehaviour "COMBAT";
 	_overwatchGroup setCombatMode "RED";
-	
+	_overwatchGroup setWaypointSpeed "FULL";
 	_enemiesArray = _enemiesArray + [_overwatchGroup];
 
 	{
@@ -84,7 +87,8 @@ for "_x" from 1 to 6 do {
 	
 for "_x" from 0 to 3 do {
 	_AOvehGroup = createGroup east;
-	_randomPos = [[[getMarkerPos currentAO, PARAMS_AOSize],[]],["water","out"]] call BIS_fnc_randomPos;
+	_randomPos = [AOnord, AOost, AOsued, AOwest] call BIS_fnc_selectRandom;
+	//_randomPos = [[[getMarkerPos currentAO, PARAMS_AOSize],[]],["water","out"]] call BIS_fnc_randomPos;
 	_AOveh = [VEH_TYPE] call BIS_fnc_selectRandom createVehicle _randomPos;
 	waitUntil{!isNull _AOveh};
 	if (random 1 >= 0.25) then {
@@ -103,9 +107,9 @@ for "_x" from 0 to 3 do {
 	
 	_wp = _AOvehGroup addWaypoint [getMarkerPos currentAO, 0, 50];
 	[_patrolGroup, 2] setWaypointType "MOVE";
-	_AOvehGroup setBehaviour "STEALTH";
+	_AOvehGroup setBehaviour "COMBAT";
 	_AOvehGroup setCombatMode "RED";
-	
+	_AOvehGroup setWaypointSpeed "FULL";
 	_enemiesArray = _enemiesArray + [_AOvehGroup,_AOveh];
 	sleep 0.1;
 	_enemiesArray = _enemiesArray + [_AOveh];
