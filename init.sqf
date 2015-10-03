@@ -15,7 +15,7 @@ Description:
 ______________________________________________________*/
 
 ["Initialize"] call BIS_fnc_dynamicGroups;
-
+ETG_Reinforcements = 0;
 // [] execVM "VCOMAI\init.sqf";
 
 //Execute scripts

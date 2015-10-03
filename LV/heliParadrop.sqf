@@ -56,7 +56,7 @@ if (!isServer)exitWith{};
 //sleep (300 + (random 600));
 
 _paradrop = [
-			"OPFOR Forces Para Drop incoming!",
+			"OPFOR Forces Para Drop incoming to AO!",
 			"The enemy managed to call in reinforcements! Form a perimeter around the objective area!"
 	];
 	

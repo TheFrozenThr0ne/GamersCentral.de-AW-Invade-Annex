@@ -182,8 +182,8 @@ while { count _targetArray > 0 } do {
 					sleep (300 + (random 600));
 					if ((random 1) > 0.60) then {
 						if (alive radioTower) then {
-							nul = [currentAO,2,true,true,2000,0,true,225,70,6,1,305,false,false,false,false,radioTower,true,0.2,nil,nil,nil,false] execVM "LV\heliParadrop.sqf";
-						};
+							//nul = [currentAO,2,true,true,2000,0,true,225,70,10,1,305,false,false,false,false,radioTower,true,0.2,nil,nil,nil,false] execVM "LV\heliParadrop.sqf";
+							nul = ['spawn','aoMarker',east,15,'empty',100,'O_Heli_Transport_04_covered_F','SmokeShell','empty'] execVM 'ETG_ReinforcementsScript.sqf';};
 					};
 				};
 			};
@@ -213,7 +213,7 @@ while { count _targetArray > 0 } do {
 	
 	if (PARAMS_AOReinforcementJet == 1) then {
 		[] spawn {
-			sleep (180 + (random 500));
+			sleep (120 + (random 500));
 			if (alive radioTower) then {
 				while {(alive radioTower)} do {
 					[] call QS_fnc_enemyCAS;
