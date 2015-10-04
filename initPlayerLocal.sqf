@@ -14,7 +14,7 @@ Description:
 ______________________________________________________*/
 
 enableSentences TRUE;
-enableRadio FALSE;
+enableRadio TRUE;
 enableSaving [FALSE,FALSE];
 player enableFatigue FALSE;
 
