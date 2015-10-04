@@ -323,7 +323,7 @@ R3F_LOG_CFG_can_transport_cargo = R3F_LOG_CFG_can_transport_cargo +
 	["B_G_Offroad_01_F", 50], ["B_APC_Tracked_01_CRV_F", 50],
 	["B_APC_Wheeled_01_cannon_F", 50], ["B_APC_Tracked_01_rcws_F", 50],
 	["I_APC_tracked_03_cannon_F", 50], ["B_MBT_01_TUSK_F", 50],
-	["O_MBT_02_cannon_F", 50],["O_Truck_03_transport_F", 500]
+	["O_MBT_02_cannon_F", 50],["O_Truck_03_transport_F", 500],["B_Truck_01_covered_F",1000]
 ];
 
 /**
@@ -336,6 +336,7 @@ R3F_LOG_CFG_can_transport_cargo = R3F_LOG_CFG_can_transport_cargo +
 R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 [
 	// e.g. : ["MyTransportableObjectClassName1", itsCost], ["MyTransportableObjectClassName2", itsCost]
+	["Land_Cargo10_sand_F", 50],["Land_Cargo40_sand_F", 500],["Land_Cargo20_sand_F", 250]
 ];
 
 /****** MOVABLE-BY-PLAYER OBJECTS / OBJETS DEPLACABLES PAR LE JOUEUR ******/

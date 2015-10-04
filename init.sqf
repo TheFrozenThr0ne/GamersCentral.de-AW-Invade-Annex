@@ -14,6 +14,13 @@ Description:
 	Deprecated initialization file, still using until the below is correctly partitioned between server and client.
 ______________________________________________________*/
 
+/*if (isServer) then {
+  externalConfigFolder = "\InvadeAnnex_settings";
+  [] execVM (externalConfigFolder + "\init.sqf");
+};*/
+
+_null = [] execVM "members\communityList.sqf";
+
 ["Initialize"] call BIS_fnc_dynamicGroups;
 ETG_Reinforcements = 0;
 // [] execVM "VCOMAI\init.sqf";
@@ -21,10 +28,7 @@ ETG_Reinforcements = 0;
 //Execute scripts
 [] execVM "VCOM_Driving\init.sqf";
 
-if (isServer) then {
-  externalConfigFolder = "\InvadeAnnex_settings";
-  [] execVM (externalConfigFolder + "\init.sqf");
-};
+
 
 execVM "JWC_CASFS\initCAS.sqf";
 

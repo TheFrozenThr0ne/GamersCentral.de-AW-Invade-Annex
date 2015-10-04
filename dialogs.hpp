@@ -282,7 +282,7 @@ class Addons_hints_Header: RscText
 class Addons_1: RscText
 {
 	idc = 1018;
-	text = "JSRS3.0 - J.S.R.S. is a Sound modification."; //--- ToDo: Localize;
+	text = "JSRS3: DragonFyre is a Sound modification."; //--- ToDo: Localize;
 	x = -0.57;
 	y = 0.70;
 	w = 0.4875;
@@ -302,7 +302,7 @@ class Addons_2: RscText
 class Addons_3: RscText
 {
 	idc = 1018;
-	text = "Community Base addons A3"; //--- ToDo: Localize;
+	text = "Community Base Addons A3"; //--- ToDo: Localize;
 	x = -0.50;
 	y = 0.80;
 	w = 0.4875;

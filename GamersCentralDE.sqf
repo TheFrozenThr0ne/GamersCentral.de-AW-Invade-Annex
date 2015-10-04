@@ -221,6 +221,28 @@ player createDiaryRecord ["MissionInfo",["Description GER", "
 //-------------------------------------------------- Change Log
 player createDiaryRecord ["changelog",
 [
+"21.8",
+"
+<br />- [ADDED] Little Bird Flares
+<br />- [ADDED] MHQ Class
+<br />- [FIXED] Logistic Container can be transported with MHQ Vehicle now
+<br />- [FIXED] Member Vehicle check Script
+<br />- [CHANGED] AO Opfor Paradrop
+<br />- [CHANGED] AO Jet Respawn Time
+<br />- [CHANGED] View Distance Settings Script
+<br />
+<br />
+<br />
+<br />  Contact us:
+<br />
+<br />- eMail: Support@GamersCentral.de
+<br />- TeamSpeak: TS3.GamersCentral.de
+<br />- WWW: GamersCentral.de
+<br />  Edited by GamersCentral.de - MaDmaX[GC]
+"]];
+
+player createDiaryRecord ["changelog",
+[
 "21.3",
 "
 <br />- [ADDED] Playable Field Close Air Support

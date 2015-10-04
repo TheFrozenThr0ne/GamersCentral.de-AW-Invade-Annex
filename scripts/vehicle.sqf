@@ -159,6 +159,15 @@ sleep 2;
 _unit = _type createVehicle _position;
 _unit setPosASL _position;
 _unit setDir _dir;
+
+if(_unit isKindOf "B_Heli_Light_01_armed_F") then {
+_unit addweapon "CMFlareLauncher"; 
+_unit addmagazine "168Rnd_CMFlare_Chaff_Magazine";
+};
+if(_unit isKindOf "B_Heli_Light_01_F") then {
+_unit addweapon "CMFlareLauncher"; 
+_unit addmagazine "168Rnd_CMFlare_Chaff_Magazine";
+};
 if (_haveinit) then {
 //_unit setVehicleInit format ["%1;", _unitinit];
 //processInitCommands;

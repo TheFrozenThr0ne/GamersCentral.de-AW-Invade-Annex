@@ -18,7 +18,14 @@ sleep 10;
 _veh vehicleChat "Re-arming ...";
 
 //---------- REPAIRING
-
+if(_veh isKindOf "B_Heli_Light_01_armed_F") then {
+_veh addweapon "CMFlareLauncher"; 
+_veh addmagazine "168Rnd_CMFlare_Chaff_Magazine";
+};
+if(_veh isKindOf "B_Heli_Light_01_F") then {
+_veh addweapon "CMFlareLauncher"; 
+_veh addmagazine "168Rnd_CMFlare_Chaff_Magazine";
+};
 sleep 10;
 
 _veh vehicleChat "Repairing ...";
