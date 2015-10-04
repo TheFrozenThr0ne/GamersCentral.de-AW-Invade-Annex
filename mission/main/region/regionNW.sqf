@@ -131,40 +131,6 @@ while { count _targetArray > 0 } do {
 	//------------------------------------------ Spawn enemies
 	
 	sleep 5;
-	/*if (isServer) then {
-		if (isNil "HeadlessVariable") then {
-			
-		
-		_chanceEnemy = random 10;
-	if (_chanceEnemy < PARAMS_EnemySpawn) then {
-	
-			_aoPos = getMarkerpos currentAO;
-			sleep 5;
-			
-			waituntil{DAC_NewZone == 0};
-			_DACvalues = ["Main_AO",[2,0,0],[14,4,50,5],[5,2,30,5],[4,1,20,5],[],[0,0,0,0]];
-			[_aoPos,PARAMS_AOSize,PARAMS_AOSize,0,0,_DACvalues] call DAC_fNewZone;
-			waituntil{DAC_NewZone == 0};
-			_enemiesArray = [currentAO] call QS_fnc_AOenemyB;
-	} else {
-		_enemiesArray = [currentAO] call QS_fnc_AOenemy;
-	};
-			
-			
-			if (PARAMS_AOReinforcementParaDrop == 1) then {
-				[] spawn {
-					sleep (300 + (random 600));
-					if ((random 1) > 0.60) then {
-						if (alive radioTower) then {
-							nul = [currentAO,2,true,true,2000,0,true,225,70,6,1,305,false,false,false,false,radioTower,true,0.2,nil,nil,nil,false] execVM "LV\heliParadrop.sqf";     
-						};
-					};
-				};
-			};
-			
-			
-		};
-	};*/
 	
 	if (isServer) then {
 		if (isNil "HeadlessVariable") then {
@@ -175,13 +141,6 @@ while { count _targetArray > 0 } do {
 			_enemiesArray = [currentAO] call QS_fnc_AOenemy;
 			//_enemiesArray = [currentAO] call QS_fnc_AOenemyB;
 			sleep 5;
-			
-			//waituntil{DAC_NewZone == 0};
-			//_DACvalues = ["Main_AO",[2,0,0],[14,4,50,5],[5,2,30,5],[4,1,20,5],[],[0,0,0,0]];
-			//[_aoPos,PARAMS_AOSize,PARAMS_AOSize,0,0,_DACvalues] call DAC_fNewZone;
-			//waituntil{DAC_NewZone == 0};
-			
-			
 			
 			if (PARAMS_AOReinforcementParaDrop == 1) then {
 				[] spawn {

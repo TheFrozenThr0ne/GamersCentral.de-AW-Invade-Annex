@@ -13667,7 +13667,7 @@ class Mission
 	};
 	class Sensors
 	{
-		items=23;
+		items=22;
 		class Item0
 		{
 			position[]={-256.8938,-0.092763841,658.35046};
@@ -14001,22 +14001,6 @@ class Mission
 		};
 		class Item20
 		{
-			position[]={8521.9277,104.53976,25139.875};
-			a=500;
-			b=500;
-			activationBy="LOGIC";
-			repeating=1;
-			interruptable=1;
-			age="UNKNOWN";
-			name="z1";
-			expCond="time > 2";
-			expActiv="fun = [""z1"",[1,0,0],[1,1,10,5],[],[],[],[0,0,0,0]] spawn DAC_Zone";
-			class Effects
-			{
-			};
-		};
-		class Item21
-		{
 			position[]={14750.397,17.91,16587.799};
 			a=900;
 			b=900;
@@ -14028,7 +14012,7 @@ class Mission
 			{
 			};
 		};
-		class Item22
+		class Item21
 		{
 			position[]={-32.086182,-0.30672365,4514.7896};
 			activationBy="ALPHA";

@@ -221,6 +221,23 @@ player createDiaryRecord ["MissionInfo",["Description GER", "
 //-------------------------------------------------- Change Log
 player createDiaryRecord ["changelog",
 [
+"21.9",
+"
+<br />- [ADDED] Sea Side Mission - Destroy Weapon Shipment
+<br />- [FIXED] sideChat Mission Messages
+<br />- [REMOVED] DAC Spawn
+<br />
+<br />
+<br />
+<br />  Contact us:
+<br />
+<br />- eMail: Support@GamersCentral.de
+<br />- TeamSpeak: TS3.GamersCentral.de
+<br />- WWW: GamersCentral.de
+<br />  Edited by GamersCentral.de - MaDmaX[GC]
+"]];
+player createDiaryRecord ["changelog",
+[
 "21.8",
 "
 <br />- [ADDED] Little Bird Flares

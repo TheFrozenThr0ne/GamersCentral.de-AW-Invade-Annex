@@ -65,11 +65,23 @@ while { count _targetArray > 0 } do {
 			_aoPos = getMarkerpos currentAO;
 			sleep 5;
 			
-			waituntil{DAC_NewZone == 0};
-			_DACvalues = ["Main_AO",[2,0,0],[14,4,50,5],[5,2,30,5],[4,1,20,5],[],[0,0,0,0]];
-			[_aoPos,PARAMS_AOSize,PARAMS_AOSize,0,0,_DACvalues] call DAC_fNewZone;
-			waituntil{DAC_NewZone == 0};
+			_enemiesArray = [currentAO] call QS_fnc_AOenemy;
+			//_enemiesArray = [currentAO] call QS_fnc_AOenemyB;
+			sleep 5;
 			
+			if (PARAMS_AOReinforcementParaDrop == 1) then {
+				[] spawn {
+					sleep (120 + (random 500));
+					if ((random 1) > 0.60) then {
+						if (alive radioTower) then {
+							//nul = [currentAO,2,true,true,2000,0,true,225,70,10,1,305,false,false,false,false,radioTower,true,0.2,nil,nil,nil,false] execVM "LV\heliParadrop.sqf";
+							nul = ['paraDrop','aoMarker',east,15,'empty',100,'O_Heli_Transport_04_covered_F','SmokeShell','empty'] execVM 'ETG_ReinforcementsScript.sqf';
+						};
+					};
+				};
+			};
+			
+	
 		};
 	};
 	

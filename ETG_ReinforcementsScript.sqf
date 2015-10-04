@@ -83,12 +83,7 @@ _paradrop = [
 if (isServer) then {	
 	if (ETG_Reinforcements != 1) then {
 		ETG_Reinforcements = 1;
-		if(random 1 >= 0.35) then {
-	hqSideChat = "Side objective assigned, stand-by for orders."; publicVariable "hqSideChat"; [WEST,"HQ"] sideChat hqSideChat;
-	} else {
-	hqSideChat = "Side objective assigned, stand-by for orders."; publicVariable "hqSideChat"; [WEST,"HQ"] sideChat hqSideChat;
-	};
-	hqSideChat = _paradrop call BIS_fnc_selectRandom; publicVariable "hqSideChat"; [WEST,"HQ"] sideChat hqSideChat;
+
 		
 		_Spawn = _this select 0;   					//spawn marker
 		_Drop = _this select 1;  			  		//drop marker
@@ -105,6 +100,8 @@ if (isServer) then {
 		_DropPoint = getMarkerPos _Drop;
 		_Delete = [0,0,0];
 		_ParachutersAmmount = 0;
+		
+		hqSideChat = _paradrop call BIS_fnc_selectRandom; publicVariable "hqSideChat"; [WEST,"HQ"] sideChat hqSideChat;
 		
 		//Sets the side/parachute units
 			switch (_Side) do {                                                       
