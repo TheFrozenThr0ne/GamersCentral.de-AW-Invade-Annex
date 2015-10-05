@@ -7,6 +7,7 @@ if (!(_veh isKindOf "air")) exitWith {
 	_veh vehicleChat "This pad is for aircraft service only, soldier!"; 
 };
 
+			
 _veh vehicleChat "Servicing aircraft, please wait ...";
 
 _veh setFuel 0;
@@ -16,16 +17,17 @@ _veh setFuel 0;
 sleep 10;
 
 _veh vehicleChat "Re-arming ...";
-
-//---------- REPAIRING
 if(_veh isKindOf "B_Heli_Light_01_armed_F") then {
-_veh addweapon "CMFlareLauncher"; 
 _veh addmagazine "168Rnd_CMFlare_Chaff_Magazine";
+_veh vehicleChat "Flares Added!";
 };
 if(_veh isKindOf "B_Heli_Light_01_F") then {
-_veh addweapon "CMFlareLauncher"; 
 _veh addmagazine "168Rnd_CMFlare_Chaff_Magazine";
+_veh vehicleChat "Flares Added!";
 };
+
+//---------- REPAIRING
+
 sleep 10;
 
 _veh vehicleChat "Repairing ...";

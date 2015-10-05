@@ -107,6 +107,13 @@ systemChat "SpyGlass Initialized";
 	"radioCircle" setMarkerPosLocal (markerPos "radioCircle");
 };
 
+"radarTower" addPublicVariableEventHandler
+{
+	"radarMarker" setMarkerPosLocal (markerPos "radarMarker");
+	"radarMarker" setMarkerTextLocal (markerText "radarMarker");
+	"radarCircle" setMarkerPosLocal (markerPos "radarCircle");
+};
+
 "sideMarker" addPublicVariableEventHandler
 {
 	"sideMarker" setMarkerPosLocal (markerPos "sideMarker");

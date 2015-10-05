@@ -20,6 +20,7 @@ class QS
 		class AOenemyO {};
 		class AOenemyD {};
 		class AOenemyCaches {};
+		class AOenemyRadar {};
 		class AOenemyS {};
 		class AOminefield {};
 		class casRespawn {};

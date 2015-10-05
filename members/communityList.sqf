@@ -317,7 +317,8 @@ masterUIDArray = [
   "76561198144709598", // xanderale54
   "76561198067424387", // Adis
   "76561197997958797", // MrBearMan
-  "76561198073407940" // LegitBlazer
+  "76561198073407940", // LegitBlazer
+  "76561197999385318" //Batman
 ];
 
 publicVariable "masterClassArray";

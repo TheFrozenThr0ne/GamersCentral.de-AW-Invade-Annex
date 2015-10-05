@@ -113,6 +113,7 @@ class Mission
 		"A3_Structures_F_Mil_Helipads",
 		"A3_Structures_F_Ind_AirPort",
 		"A3_Soft_F_Gamma_HEMTT",
+		"blastcore_vep",
 		"A3_Soft_F_Quadbike",
 		"A3_Soft_F_MRAP_01",
 		"A3_Boat_F_Boat_Armed_01",
@@ -164,7 +165,7 @@ class Mission
 	randomSeed=12935265;
 	class Intel
 	{
-		briefingName="Co-60 AW Invade&Annex 2.83I [HaloJump] [21.9] GamersCentral.de";
+		briefingName="Co-60 AW Invade&Annex 2.83I [HaloJump] [22.1] GamersCentral.de";
 		overviewText="Edited by GamersCentral.de - MaDmaX[GC]";
 		resistanceWest=0;
 		resistanceEast=1;
@@ -7205,7 +7206,7 @@ class Mission
 			vehicle="B_Heli_Light_01_F";
 			skill=0.60000002;
 			text="tHeli4";
-			init="0 = [this,30,FALSE,QS_fnc_vSetup02] spawn QS_fnc_vMonitor;this addweapon ""CMFlareLauncher"";this addmagazine ""168Rnd_CMFlare_Chaff_Magazine"";";
+			init="0 = [this,30,FALSE,QS_fnc_vSetup02] spawn QS_fnc_vMonitor;";
 			syncId=44;
 			synchronizations[]={0};
 		};
@@ -11493,7 +11494,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="aHeli4";
-			init="0 = [this,30,FALSE,QS_fnc_vSetup02] spawn QS_fnc_vMonitor;this addweapon ""CMFlareLauncher"";this addmagazine ""168Rnd_CMFlare_Chaff_Magazine"";";
+			init="0 = [this,30,FALSE,QS_fnc_vSetup02] spawn QS_fnc_vMonitor;";
 		};
 		class Item806
 		{
@@ -12106,7 +12107,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=205;
+		items=209;
 		class Item0
 		{
 			position[]={-15683.114,0.0011896361,-3827.8438};
@@ -13662,6 +13663,44 @@ class Mission
 		{
 			position[]={18341.225,0.0011177883,18788.867};
 			name="paraDrop";
+			type="Empty";
+		};
+		class Item205
+		{
+			position[]={-14233.704,0.24842092,332.65137};
+			name="paraDropMarker";
+			text="Enemy Helicopter";
+			type="c_air";
+			colorName="ColorEAST";
+			a=0.5;
+			b=0.5;
+		};
+		class Item206
+		{
+			position[]={-16464.496,0.056669757,-2333.106};
+			name="radarCircle";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorEAST";
+			fillName="Border";
+			a=225;
+			b=225;
+			drawBorder=1;
+		};
+		class Item207
+		{
+			position[]={-15664.052,-0.022810064,-2300.342};
+			name="radarMarker";
+			text="Radar";
+			type="loc_PowerWind";
+			colorName="ColorEAST";
+			a=0.5;
+			b=0.5;
+		};
+		class Item208
+		{
+			position[]={14498.688,0.20025364,14739.471};
+			name="paraDrop2";
 			type="Empty";
 		};
 	};

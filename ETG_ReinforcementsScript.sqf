@@ -134,7 +134,13 @@ if (isServer) then {
 					[_SpawnPoint, 180,_TransportVehicle, _ETG_ReinforcementsPilotGroup] call bis_fnc_spawnvehicle;
 					_ETG_Transport = nearestObjects [_SpawnPoint, ["air"], 50];
 					ETG_TransportVehicle = _ETG_Transport select 0;
-					
+		[] spawn {
+			while{not isnull ETG_TransportVehicle} do {"paraDropMarker" setmarkerpos getpos ETG_TransportVehicle; sleep 0.5;};
+			while{sleep 3;!alive ETG_TransportVehicle} do {
+			"paraDropMarker" setMarkerPos [-20000,-20000,-20000];
+			};
+		};
+		
 		//Moves the units into the transport vehicle
 			{_x  moveInCargo ETG_TransportVehicle;} forEach ParachutersName;
 			
@@ -227,11 +233,14 @@ if (isServer) then {
 		//Delete the parachute
 			sleep 10.0;
 			deleteVehicle ETG_Parachute;
+
+		
 		//Delete 
 			waituntil {ETG_TransportVehicle distance _Delete < 10000};
 			ETG_TransportVehicle deleteVehicleCrew driver ETG_TransportVehicle;
 			deleteVehicle ETG_TransportVehicle;
-
+			
 		ETG_Reinforcements = 0;
 	code } else {};
+	
 };
