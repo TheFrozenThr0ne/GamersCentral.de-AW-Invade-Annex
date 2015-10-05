@@ -1076,7 +1076,7 @@ class Mission
 					skill=0.60000002;
 					text="curatorEditable";
 					syncId=0;
-					synchronizations[]={27,28,29,36,37,35,53,59,58,56,57,40,44,39,43,42,55,52,38,50,49,48,54,34,51,61,60,41,30,45,46,47,31,33,32,62,63,1,64,65,66,14,3,5,6,9,10,11,4,2,7,12,13,8,69,68,70,15,16,17,71,19,20,21,22,23,24,25,26};
+					synchronizations[]={27,28,29,36,37,35,53,59,58,56,57,40,44,39,43,42,55,52,38,50,49,48,54,34,51,61,60,41,30,45,46,47,31,33,32,62,63,1,64,65,66,14,3,5,6,9,10,11,4,2,7,12,13,8,69,68,70,15,16,17,71,19,20,21,22,23,24,25,26,73,72,74,75};
 				};
 			};
 		};
@@ -3279,7 +3279,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=862;
+		items=867;
 		class Item0
 		{
 			position[]={11584.9,23.361359,11913.601};
@@ -7015,7 +7015,7 @@ class Mission
 		};
 		class Item402
 		{
-			position[]={15330.722,0.015527301,15776.73};
+			position[]={15332.757,0.098572083,15778.125};
 			azimut=170;
 			id=532;
 			side="EMPTY";
@@ -7621,7 +7621,7 @@ class Mission
 		};
 		class Item452
 		{
-			position[]={15405.463,0.0004645217,15826.801};
+			position[]={15405.463,0,15828.76};
 			azimut=170;
 			id=582;
 			side="EMPTY";
@@ -11329,7 +11329,7 @@ class Mission
 			vehicle="FlagPole_F";
 			skill=0.60000002;
 			text="BTC_base_flag_west";
-			init="this setFlagTexture ""media\images\GCFlag.jpg"";this allowDamage false;this setVariable [""R3F_LOG_disabled"", true];this addAction[""<t color='#ff9900'>HALO Jump</t>"", ""ATM_airdrop\atm_airdrop.sqf""];this addAction[""<t color='#EB4E00'>Move to Logistics and Rewards</t> (BASE)"", ""scripts\teleport\setPosMHQSpawn.sqf""];this addAction[""<t color='#00CCCC'>Move to Transport Helicopters/Armor</t> (BASE)"", ""scripts\teleport\setPosTransportPilotSpawn.sqf""];this addAction[""<t color='#B000EB'>Move to Planes and Attack Helis</t>"", ""scripts\teleport\setPosJets.sqf""];this addAction[""<t color='#1F00EB'>Move to Harbor</t> (SOUTH)"", ""scripts\teleport\setPosHarbor.sqf""];";
+			init="this setFlagTexture ""media\images\GCFlag.jpg"";this allowDamage false;this setVariable [""R3F_LOG_disabled"", true];this addAction[""<t color='#ff9900'>HALO Jump</t>"", ""ATM_airdrop\atm_airdrop.sqf""];this addAction[""<t color='#EB4E00'>Move to Logistics and Rewards</t> (BASE)"", ""scripts\teleport\setPosMHQSpawn.sqf""];this addAction[""<t color='#00CCCC'>Move to Transport Helicopters/Armor</t> (BASE)"", ""scripts\teleport\setPosTransportPilotSpawn.sqf""];this addAction[""<t color='#B000EB'>Move to Planes and Attack Helis</t>"", ""scripts\teleport\setPosJets.sqf""];this addAction[""<t color='#1F00EB'>Move to Harbor</t> (SOUTH)"", ""scripts\teleport\setPosHarbor.sqf""];this addAction[""<t color='#1F00EB'>Move to Harbor</t> (EAST)"", ""scripts\teleport\setPosHarborEast.sqf""];";
 		};
 		class Item791
 		{
@@ -12104,10 +12104,71 @@ class Mission
 			vehicle="Land_Pod_Heli_Transport_04_bench_F";
 			skill=0.60000002;
 		};
+		class Item862
+		{
+			position[]={17839.836,2.0591161,18148.824};
+			azimut=-33.5424;
+			id=992;
+			side="EMPTY";
+			vehicle="FlagPole_F";
+			skill=0.60000002;
+			init="this allowDamage false;this enableSimulation false;this setVariable [""R3F_LOG_disabled"", true];this addAction[""<t color='#B000EB'>Move to Base</t>"", ""scripts\teleport\setPosSpawn.sqf""];this addAction[""<t color='#1F00EB'>Move to Harbor</t> (SOUTH)"", ""scripts\teleport\setPosHarbor.sqf""];";
+		};
+		class Item863
+		{
+			position[]={17780.609,-0.014347279,18204.338};
+			azimut=311.5303;
+			id=993;
+			side="EMPTY";
+			vehicle="B_Boat_Armed_01_minigun_F";
+			leader=1;
+			lock="UNLOCKED";
+			skill=0.60000002;
+			syncId=72;
+			synchronizations[]={0};
+		};
+		class Item864
+		{
+			position[]={17768.5,0.0031308008,18214.094};
+			azimut=310.57526;
+			id=994;
+			side="EMPTY";
+			vehicle="B_SDV_01_F";
+			leader=1;
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init="0 = [this,30,FALSE,QS_fnc_vSetup02] spawn QS_fnc_vMonitor;";
+			syncId=73;
+			synchronizations[]={0};
+		};
+		class Item865
+		{
+			position[]={17804.439,0.0044607851,18185.637};
+			azimut=312.26801;
+			id=995;
+			side="EMPTY";
+			vehicle="C_Boat_Civil_01_rescue_F";
+			skill=0.60000002;
+			syncId=74;
+			synchronizations[]={0};
+		};
+		class Item866
+		{
+			position[]={17793.355,-0.0059739221,18193.705};
+			azimut=311.5303;
+			id=996;
+			side="EMPTY";
+			vehicle="B_Boat_Armed_01_minigun_F";
+			leader=1;
+			lock="UNLOCKED";
+			skill=0.60000002;
+			syncId=75;
+			synchronizations[]={0};
+		};
 	};
 	class Markers
 	{
-		items=209;
+		items=210;
 		class Item0
 		{
 			position[]={-15683.114,0.0011896361,-3827.8438};
@@ -13702,6 +13763,13 @@ class Mission
 			position[]={14498.688,0.20025364,14739.471};
 			name="paraDrop2";
 			type="Empty";
+		};
+		class Item209
+		{
+			position[]={17841.809,2.0665722,18150.439};
+			name="harborEast";
+			type="Empty";
+			angle=-204.32401;
 		};
 	};
 	class Sensors

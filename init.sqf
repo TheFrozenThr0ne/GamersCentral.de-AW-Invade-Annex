@@ -19,6 +19,8 @@ ______________________________________________________*/
   [] execVM (externalConfigFolder + "\init.sqf");
 };*/
 
+// [player] execVM "welcome.sqf";
+
 _null = [] execVM "members\communityList.sqf";
 
 ["Initialize"] call BIS_fnc_dynamicGroups;

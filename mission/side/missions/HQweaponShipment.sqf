@@ -150,8 +150,8 @@ private ["_flatPos","_accepted","_position","_randomDir","_x","_briefing","_enem
 	//[_smuggleGroupSideobj, getMarkerPos "sideMarker", 400] call BIS_fnc_taskPatrol;
 	//[_smuggleGroup, getMarkerPos "sideMarker", 400] call BIS_fnc_taskPatrol;
 	
-	sideMarkerText = "Destroy Smuggled Weapons"; publicVariable "sideMarkerText";
-	"sideMarker" setMarkerText "Side Mission: Destroy Smuggled Weapons";
+	sideMarkerText = "Destroy Smuggled Weapons Boat"; publicVariable "sideMarkerText";
+	"sideMarker" setMarkerText "Side Mission Sea: Destroy Smuggled Weapons Boat";
 	publicVariable "sideMarker";
 	publicVariable "sideObj";
 			

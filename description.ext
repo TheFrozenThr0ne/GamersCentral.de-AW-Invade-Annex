@@ -799,6 +799,18 @@ class vts_weaponresting_sound
 	};
 	
 };
+class CfgMusic
+{
+  	tracks[]=
+  	{
+      		intro
+  	};
+  	class intro
+  	{
+      		name = "intro";
+      		sound[] = {\intro\intro.ogg, db+0, 1.0};
+  	};
+};
 
 /*
 Authors: 
