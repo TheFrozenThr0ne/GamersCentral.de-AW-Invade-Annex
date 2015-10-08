@@ -79,24 +79,28 @@ _paradrop = [
 			"OPFOR Forces Para Drop incoming!",
 			"The enemy managed to call in reinforcements! Form a perimeter around the objective area!"
 	];
+_paradropzone = [
+			"OPFOR Forces Para Drop has reached its drop Zone!",
+			"The enemy managed to call in reinforcements! Enemy Dropping Hostiles!"
+	];
 	
 if (isServer) then {	
 	if (ETG_Reinforcements != 1) then {
 		ETG_Reinforcements = 1;
 
 		
-		_Spawn = _this select 0;   					//spawn marker
-		_Drop = _this select 1;  			  		//drop marker
-		_Side = _this select 2;    					//Bluefor etc
-		_ParachuterNumber = _this select 3;			//Ammount of parachuters
-		_Cargo = _this select 4; 					//Cargo of the helicopter/plane
-		_RandomDropArea = _this select 5; 			//100m
-		_TransportVehicle = _this select 6;			//plane/helicopter
-		_ETG_CargoSmoke = _this select 7; 			//smoke shell classname
-		_ETG_Vehicle = _this select 8; 				//empty or not
+		//_Spawn = _this select 0;   					//spawn marker
+		_Drop = _this select 0;  			  		//drop marker
+		_Side = _this select 1;    					//Bluefor etc
+		_ParachuterNumber = _this select 2;			//Ammount of parachuters
+		_Cargo = _this select 3; 					//Cargo of the helicopter/plane
+		_RandomDropArea = _this select 4; 			//100m
+		_TransportVehicle = _this select 5;			//plane/helicopter
+		_ETG_CargoSmoke = _this select 6; 			//smoke shell classname
+		_ETG_Vehicle = _this select 7; 				//empty or not
 		
-
-		_SpawnPoint = getMarkerPos _Spawn;
+		_locs= ["paraDrop","paraDrop2","paraDrop3","paraDrop4","paraDrop5","paraDrop6","paraDrop7"] call BIS_fnc_selectRandom;
+		_SpawnPoint = getMarkerPos _locs;
 		_DropPoint = getMarkerPos _Drop;
 		_Delete = [0,0,0];
 		_ParachutersAmmount = 0;
@@ -130,7 +134,7 @@ if (isServer) then {
 			];
 			
 		//Spawn the Cargo and Transport vehicle	
-			if (_ETG_Vehicle == "empty") then [ {ETG_Cargo = _Cargo createVehicle _SpawnPoint;}, { [_SpawnPoint, 180,_Cargo, _ETG_HeliCrew] call bis_fnc_spawnvehicle; _ETG_Cargo = nearestObjects [_SpawnPoint, ["landvehicle"], 50]; ETG_Cargo = _ETG_Cargo select 0; } ];
+			if (_ETG_Vehicle == "empty") then [ {ETG_Cargo = _Cargo createVehicle (getMarkerPos  _locs);}, { [_SpawnPoint, 180,_Cargo, _ETG_HeliCrew] call bis_fnc_spawnvehicle; _ETG_Cargo = nearestObjects [_SpawnPoint, ["landvehicle"], 50]; ETG_Cargo = _ETG_Cargo select 0; } ];
 					[_SpawnPoint, 180,_TransportVehicle, _ETG_ReinforcementsPilotGroup] call bis_fnc_spawnvehicle;
 					_ETG_Transport = nearestObjects [_SpawnPoint, ["air"], 50];
 					ETG_TransportVehicle = _ETG_Transport select 0;
@@ -205,6 +209,7 @@ if (isServer) then {
 		
 		//waits until the distance to the droppoint is > 800
 			waitUntil {ETG_TransportVehicle distance _DropPoint < 800};	
+			hqSideChat = _paradropzone call BIS_fnc_selectRandom; publicVariable "hqSideChat"; [WEST,"HQ"] sideChat hqSideChat;
 			_ETG_ReinforcementsPilotGroup setCurrentWaypoint [_ETG_ReinforcementsPilotGroup, 1];
 			deleteWaypoint [_ETG_ReinforcementsPilotGroup, 0];
 			_ETG_ReinforcementsPilotGroup setCurrentWaypoint [_ETG_ReinforcementsPilotGroup, 1];

@@ -19,6 +19,9 @@ ______________________________________________________*/
   [] execVM (externalConfigFolder + "\init.sqf");
 };*/
 
+_IntroMusic            = true; // Welcome Intro Song
+if (_IntroMusic) then { playMusic "intro";};
+
 // [player] execVM "welcome.sqf";
 
 _null = [] execVM "members\communityList.sqf";

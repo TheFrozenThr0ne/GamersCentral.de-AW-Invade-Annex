@@ -51,7 +51,7 @@ corpseRemovalMaxTime = 120;								// Max time before removal
 #include "JWC_CASFS\casDefine.hpp"
 #include "JWC_CASFS\casMenu.hpp"	
 #include "VAS\menu.hpp" 						// VAS
-//#include "scripts\taw_vd\dialog.hpp" 					// TAW View Distance
+#include "scripts\taw_vd\dialog.hpp" 					// TAW View Distance
 #include "scripts\vehicle\crew\common.hpp"  			// vehicle crew hud
 #include "scripts\=BTC=_revive\=BTC=_respawn.h"			// BTC medic revive system
 #include "R3F_LOG\desc_include.h"						// Logistics
@@ -61,14 +61,12 @@ corpseRemovalMaxTime = 120;								// Max time before removal
 #include "scripts\vehicle\TVS\Tvs.hpp"					// TV Guided Bomb - Buzzard CAS
 #include "dialogs.hpp"									// Intro
 #include "scripts\voice_control\voiceControl.cpp"		// Voice Control
-#include "CHVD\dialog.hpp"
 
 class CfgFunctions
 	{
-		#include "CHVD\CfgFunctions.hpp"
 		#include "functions\cfgfunctions.hpp"			// Integrated I&A functions
 		#include "VAS\cfgfunctions.hpp"			// VAS
-		//#include "scripts\taw_vd\CfgFunctions.hpp"		// View distance
+		#include "scripts\taw_vd\CfgFunctions.hpp"		// View distance
 	    class FETT {									// Curator synch http://forums.bistudio.com/showthread.php?176691-Making-placed-units-be-editable-for-every-Zeus
 	        class curator {
 	            class eventHandlers {postInit = 1;};
