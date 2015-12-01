@@ -271,7 +271,7 @@ class Params
 				title = "Enemy Left Threshold";
 				values[] = {1,2,3,4,5,6,7,8,9,10};
 				texts[] = {"1","2","3","4","5","6","7","8","9","10"};
-				default = 7;
+				default = 6;
 			};
 			
 		class RadioTowerMineFieldChance {
@@ -306,14 +306,14 @@ class Params
 				title = "Secondary AO Diameter";
 				values[] = {200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500};
 				texts[] = {"200m","300m","400m","500m","600m","700m","800m","900m","1,000m","1,100m","1,200m","1,300m","1,400m","1,500m"};
-				default = 300;
+				default = 400;
 			};
 			
 		class AOSize {
 				title = "Main AO Diameter";
 				values[] = {200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500};
 				texts[] = {"200m","300m","400m","500m","600m","700m","800m","900m","1,000m","1,100m","1,200m","1,300m","1,400m","1,500m"};
-				default = 1000;
+				default = 800;
 			};
 		
 		class TowerRadioTower {
@@ -369,21 +369,21 @@ class Params
 				title = "% Chance Of Air Vehicles Patrolling AO";
 				values[] = {0,1,2,3,4,5,6,7,8,9,10};
 				texts[] = {0,10,20,30,40,50,60,70,80,90,100};
-				default = 4; // default 7
+				default = 3; // default 7
 		};
 		
 		class EnemiesInBuildingsSecondary {
 			title = "AO NUMBER OF ENEMIES IN BUILDINGS";
 			values[] = {0,5,10,15,20,25,30,35,40,45,50};
 			texts[] = {"DISABLED","5","10","15","20","25","30","35","40","45","50"};
-			default = 10;
+			default = 8;
 		};
 		
 		class GroupPatrol {
 				title = "Groups Patrolling AO";
 				values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
 				texts[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
-				default = 10; // default 11... remember, more AI = less FPS
+				default = 8; // default 11... remember, more AI = less FPS
 			};
 	
 		class SniperTeamsPatrol {
@@ -404,7 +404,7 @@ class Params
 				title = "Overwatch teams in the AO";
 				values[] = {0,1,2,3,4,5,6,7};
 				texts[] = {1,2,3,4,5,6,7,8};
-				default = 4; // default 6
+				default = 2; // default 6
 			};	
 
 		class VEHPatrol {
@@ -432,7 +432,7 @@ class Params
 			title = "AO NUMBER OF ENEMIES IN BUILDINGS";
 			values[] = {0,5,10,15,20,25,30,35,40,45,50};
 			texts[] = {"DISABLED","5","10","15","20","25","30","35","40","45","50"};
-			default = 20;
+			default = 14;
 		};
 			
 		class EasterEggs {

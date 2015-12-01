@@ -82,7 +82,7 @@ class Mission
 		"A3_Air_F_Beta_Heli_Attack_02",
 		"A3_Data_F_Curator_Virtual",
 		"A3_Modules_F_Intel",
-		"A3_Characters_F_OPFOR",
+		"A3_Characters_F_OPFOR"
 	};
 	addOnsAuto[]=
 	{
@@ -12140,8 +12140,8 @@ class Mission
 			type="Empty";
 			colorName="ColorEAST";
 			fillName="FDiagonal";
-			a=1000;
-			b=1000;
+			a=800;
+			b=800;
 		};
 		class Item2
 		{
@@ -13433,8 +13433,8 @@ class Mission
 			type="Empty";
 			colorName="ColorRed";
 			fillName="BDiagonal";
-			a=1000;
-			b=1000;
+			a=800;
+			b=800;
 		};
 		class Item172
 		{
