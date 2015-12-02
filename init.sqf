@@ -48,7 +48,7 @@ INS_REV_CFG_reserved_slot_units = ["bis_curatorUnit_1","bis_curatorUnit_2","bis_
 // if (isServer) then {OnPlayerConnected "[_uid,_name] execVM ""members\checkslot.sqf""";};
 
 // DAC_Basic_Value = 0;execVM "DAC\DAC_Config_Creator.sqf";
-call compile preprocessFile "scripts\=BTC=_revive\=BTC=_revive_init.sqf";		// revive
+//call compile preprocessFile "scripts\=BTC=_revive\=BTC=_revive_init.sqf";		// revive
 call compile preprocessFile "=BTC=_TK_punishment\=BTC=_tk_init.sqf"; 
 
 execVM "R3F_LOG\init.sqf";

@@ -128,6 +128,68 @@ systemChat "SpyGlass Initialized";
 	"priorityMarker" setMarkerTextLocal format["Priority Target: %1",priorityTargetText];
 };
 
+//initPlayerLocal.sqf
+
+//small sleep to make sure any init loadouts have been applied
+//OR apply any default loadouts before this point
+sleep 1;
+
+//Save initial loadout
+[ player, [ missionNamespace, "currentInventory" ] ] call BIS_fnc_saveInventory;
+
+
+//Save loadout when ever we exit an arsenal
+[ missionNamespace, "arsenalClosed", {
+	[ player, [ missionNamespace, "currentInventory" ] ] call BIS_fnc_saveInventory;
+}] call BIS_fnc_addScriptedEventHandler;
+
+
+//When we revive
+[ missionNamespace, "reviveRevived", {
+	_nul = _this spawn {
+		_unit = _this select 0;
+		_revivor = _this select 1;
+
+		//if forced respawn or we bleed out
+		if ( isNull _revivor ) then {
+			//wait until player is actually respawned into alive state
+			sleep playerRespawnTime;
+			//Load last saved inventory
+			[ player, [ missionNamespace, "currentInventory" ] ] call BIS_fnc_loadInventory;
+		};
+	};
+} ] call BIS_fnc_addScriptedEventHandler;
+
+
+player addEventHandler [ "Killed", {
+	//Save players loadout for if he is revived
+	[ player, [ missionNamespace, "reviveInventory" ] ] call BIS_fnc_saveInventory;
+}];
+
+
+player addEventHandler [ "Respawn", {
+	if ( player getVariable [ "BIS_revive_incapacitated", false ] ) then {
+		//Set correct loadout on incapacitated unit laying on floor in injured state
+		//This is also the new unit if he is revived
+		[ player, [ missionNamespace, "reviveInventory" ] ] call BIS_fnc_loadInventory;
+	};
+	//Did we respawn from the menu
+	if ( missionNamespace getVariable [ "menuRespawn", false ] ) then {
+		[ player, [ missionNamespace, "currentInventory" ] ] call BIS_fnc_loadInventory;
+		missionNamespace setVariable [ "menuRespawn", false ];
+	};
+}];
+
+//If the respawn menu button is active
+if ( !isNumber( missionConfigFile >> "respawnButton" ) || { getNumber( missionConfigFile >> "respawnButton" ) > 0 } ) then {
+	_respawnMenu = [] spawn {
+		waitUntil { !isNull ( uiNamespace getVariable [ "RscDisplayMPInterrupt", displayNull ] ) };
+		uiNamespace getVariable "RscDisplayMPInterrupt" displayCtrl 1010 ctrlAddEventHandler [ "ButtonClick", {
+			missionNamespace setVariable [ "menuRespawn", true ];
+		}];
+	};
+};
+
 tawvd_disablenone = false;
 
 //======================= Add players to Zeus

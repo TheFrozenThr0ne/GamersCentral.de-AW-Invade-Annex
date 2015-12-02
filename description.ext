@@ -34,9 +34,10 @@ showUAVFeed = 1;										// Enables/Disables the UAV Feed. Zeus-related.
 
 //------------------------- Respawn
 
+respawnTemplates[] = {"Revive", "MenuPosition"/*, "MenuInventory"*/};
 Respawn = 3;											// 0 = none. 1 = bird. 2 = instant where died. 3 = base or respawn_west marker. 4 = respawn with team, or bird. 5 = into AI or bird.
-RespawnDelay = 4;										// Delay prior to respawn, ensure longer than BTC revive delay.
-RespawnDialog = 0;										// default = 1. show respawn timer and scoreboard when killed.
+RespawnDelay = 15;										// Delay prior to respawn, ensure longer than BTC revive delay.
+RespawnDialog = 1;										// default = 1. show respawn timer and scoreboard when killed.
 
 //------------------------- Garbage collector
 							
@@ -176,7 +177,14 @@ class faction {
 
 class Params 
 	{
-		
+		class RespawnDelay {
+				title = $STR_A3_EndGame_RespawnDelay;
+				values[] = {15, 30, 45, 60};
+				texts[] = {$STR_A3_EndGame_RespawnDelay_15, $STR_A3_EndGame_RespawnDelay_30, $STR_A3_EndGame_RespawnDelay_45, $STR_A3_EndGame_RespawnDelay_60};
+				default = 30;
+				file = "params\setRespawnDelay.sqf";
+		};
+	
 		class HeadlessClient {
 				title = "Headless Client";
 				values[] = {1,0};
