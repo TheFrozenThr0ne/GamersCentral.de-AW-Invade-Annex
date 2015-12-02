@@ -1,6 +1,6 @@
 /*
 @file: QS_fnc_AOenemy.sqf
-Author:
+Author: 
 
 	Quiksilver (credits: Ahoyworld.co.uk. Rarek et al for AW_fnc_spawnUnits.)
 	
