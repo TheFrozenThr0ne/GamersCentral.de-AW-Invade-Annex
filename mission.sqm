@@ -82,7 +82,8 @@ class Mission
 		"A3_Air_F_Beta_Heli_Attack_02",
 		"A3_Data_F_Curator_Virtual",
 		"A3_Modules_F_Intel",
-		"A3_Characters_F_OPFOR"
+		"A3_Characters_F_OPFOR",
+		"blastcore_vep"
 	};
 	addOnsAuto[]=
 	{

@@ -14,12 +14,12 @@ Description:
 	Deprecated initialization file, still using until the below is correctly partitioned between server and client.
 ______________________________________________________*/
 
-if (isServer) then {
+/*if (isServer) then {
   externalConfigFolder = "\InvadeAnnex_settings";
   [] execVM (externalConfigFolder + "\init.sqf");
-};
+};*/
 
-//_null = [] execVM "members\communityList.sqf";
+_null = [] execVM "members\communityList.sqf";
 
 _IntroMusic            = true; // Welcome Intro Song
 if (_IntroMusic) then { playMusic "intro";};
