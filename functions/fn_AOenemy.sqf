@@ -115,12 +115,6 @@ for "_x" from 1 to PARAMS_GroupPatrol do {
 		_waypoint setWaypointSpeed "NORMAL";
 
 		_waypoint = _patrolGroup addWaypoint [getMarkerPos currentAO, 750];
-		_waypoint setWaypointType "SAD";
-
-		_waypoint = _patrolGroup addWaypoint [getMarkerPos currentAO, 750];
-		_waypoint setWaypointType "SAD";
-
-		_waypoint = _patrolGroup addWaypoint [getMarkerPos currentAO, 750];
 		_waypoint setWaypointType "CYCLE";
 
 		_patrolGroup setCurrentWaypoint [_patrolGroup, 0];
@@ -212,11 +206,6 @@ for "_x" from 1 to PARAMS_Overwatch do {
 		_waypoint setWaypointType "SAD";
 		_waypoint setWaypointSpeed "NORMAL";
 
-		_waypoint = _overwatchGroup addWaypoint [getMarkerPos currentAO, 750];
-		_waypoint setWaypointType "SAD";
-
-		_waypoint = _overwatchGroup addWaypoint [getMarkerPos currentAO, 750];
-		_waypoint setWaypointType "SAD";
 
 		_waypoint = _overwatchGroup addWaypoint [getMarkerPos currentAO, 750];
 		_waypoint setWaypointType "CYCLE";
@@ -271,12 +260,6 @@ for "_x" from 0 to 1 do {
 		_waypoint = _AOmrapGroup addWaypoint [getMarkerPos currentAO, 750];
 		_waypoint setWaypointType "SAD";
 		_waypoint setWaypointSpeed "NORMAL";
-
-		_waypoint = _AOmrapGroup addWaypoint [getMarkerPos currentAO, 750];
-		_waypoint setWaypointType "SAD";
-
-		_waypoint = _AOmrapGroup addWaypoint [getMarkerPos currentAO, 750];
-		_waypoint setWaypointType "SAD";
 
 		_waypoint = _AOmrapGroup addWaypoint [getMarkerPos currentAO, 750];
 		_waypoint setWaypointType "CYCLE";
@@ -335,12 +318,6 @@ for "_x" from 0 to (3 + (random 2)) do {
 		_waypoint = _AOvehGroup addWaypoint [getMarkerPos currentAO, 750];
 		_waypoint setWaypointType "SAD";
 		_waypoint setWaypointSpeed "NORMAL";
-
-		_waypoint = _AOvehGroup addWaypoint [getMarkerPos currentAO, 750];
-		_waypoint setWaypointType "SAD";
-
-		_waypoint = _AOvehGroup addWaypoint [getMarkerPos currentAO, 750];
-		_waypoint setWaypointType "SAD";
 
 		_waypoint = _AOvehGroup addWaypoint [getMarkerPos currentAO, 750];
 		_waypoint setWaypointType "CYCLE";
