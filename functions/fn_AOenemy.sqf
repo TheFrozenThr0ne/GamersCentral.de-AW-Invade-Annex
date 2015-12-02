@@ -1,6 +1,6 @@
 /*
 @file: QS_fnc_AOenemy.sqf
-Author: 
+Author:
 
 	Quiksilver (credits: Ahoyworld.co.uk. Rarek et al for AW_fnc_spawnUnits.)
 	
@@ -46,36 +46,11 @@ for "_x" from 1 to PARAMS_AAPatrol do {
 		((units _aaGroup) select 2) moveInCommander _aa;
 	[_aaGroup, getMarkerPos currentAO, 500] call BIS_fnc_taskPatrol;
 	_aa lock 3;
+	_aaGroup setVariable ["VCOM_Unit_AIWarnDistance",200,false];
+	_aaGroup setVariable ["NOPATHING",1,false];
 	
+	_wp = _aaGroup addWaypoint [getMarkerPos currentAO, 0, 750];
 
-		_startpos = getMarkerPos currentAO;
-		_waypoint = _aaGroup addWaypoint [_startpos, PARAMS_AOSize];
-		_waypoint setWaypointType "MOVE";
-		_waypoint setWaypointCompletionRadius 300;
-
-		_waypoint = _aaGroup addWaypoint [getMarkerPos currentAO, 750];
-		_waypoint setWaypointType "MOVE";
-		_waypoint setWaypointSpeed "NORMAL";
-
-		_waypoint setWaypointBehaviour "AWARE";
-		_waypoint setWaypointCombatMode "YELLOW";
-		_waypoint setWaypointCompletionRadius 30;
-
-		_waypoint = _aaGroup addWaypoint [getMarkerPos currentAO, 750];
-		_waypoint setWaypointType "SAD";
-		_waypoint setWaypointSpeed "NORMAL";
-
-		_waypoint = _aaGroup addWaypoint [getMarkerPos currentAO, 750];
-		_waypoint setWaypointType "SAD";
-
-		_waypoint = _aaGroup addWaypoint [getMarkerPos currentAO, 750];
-		_waypoint setWaypointType "SAD";
-
-		_waypoint = _aaGroup addWaypoint [getMarkerPos currentAO, 750];
-		_waypoint setWaypointType "CYCLE";
-
-		_aaGroup setCurrentWaypoint [_aaGroup, 0];
-	
 	_enemiesArray = _enemiesArray + [_aaGroup];
 	sleep 0.1;
 	_enemiesArray = _enemiesArray + [_aa];
@@ -97,27 +72,7 @@ for "_x" from 1 to PARAMS_GroupPatrol do {
 	_patrolGroup setVariable ["VCOM_Unit_AIWarnDistance",200,false];
 	_patrolGroup setVariable ["NOPATHING",1,false];	
 	
-		_startpos = getMarkerPos currentAO;
-		_waypoint = _patrolGroup addWaypoint [_startpos, PARAMS_AOSize];
-		_waypoint setWaypointType "MOVE";
-		_waypoint setWaypointCompletionRadius 300;
-
-		_waypoint = _patrolGroup addWaypoint [getMarkerPos currentAO, 750];
-		_waypoint setWaypointType "MOVE";
-		_waypoint setWaypointSpeed "NORMAL";
-
-		_waypoint setWaypointBehaviour "AWARE";
-		_waypoint setWaypointCombatMode "YELLOW";
-		_waypoint setWaypointCompletionRadius 30;
-
-		_waypoint = _patrolGroup addWaypoint [getMarkerPos currentAO, 750];
-		_waypoint setWaypointType "SAD";
-		_waypoint setWaypointSpeed "NORMAL";
-
-		_waypoint = _patrolGroup addWaypoint [getMarkerPos currentAO, 750];
-		_waypoint setWaypointType "CYCLE";
-
-		_patrolGroup setCurrentWaypoint [_patrolGroup, 0];
+	_wp = _patrolGroup addWaypoint [getMarkerPos currentAO, 0, 750];
 	
 	_enemiesArray = _enemiesArray + [_patrolGroup];
 	
@@ -189,28 +144,7 @@ for "_x" from 1 to PARAMS_Overwatch do {
 	_overwatchGroup setVariable ["VCOM_Unit_AIWarnDistance",200,false];
 	_overwatchGroup setVariable ["NOPATHING",1,false];	
 	
-		_startpos = getMarkerPos currentAO;
-		_waypoint = _overwatchGroup addWaypoint [_startpos, PARAMS_AOSize];
-		_waypoint setWaypointType "MOVE";
-		_waypoint setWaypointCompletionRadius 300;
-
-		_waypoint = _overwatchGroup addWaypoint [getMarkerPos currentAO, 750];
-		_waypoint setWaypointType "MOVE";
-		_waypoint setWaypointSpeed "NORMAL";
-
-		_waypoint setWaypointBehaviour "AWARE";
-		_waypoint setWaypointCombatMode "YELLOW";
-		_waypoint setWaypointCompletionRadius 30;
-
-		_waypoint = _overwatchGroup addWaypoint [getMarkerPos currentAO, 750];
-		_waypoint setWaypointType "SAD";
-		_waypoint setWaypointSpeed "NORMAL";
-
-
-		_waypoint = _overwatchGroup addWaypoint [getMarkerPos currentAO, 750];
-		_waypoint setWaypointType "CYCLE";
-
-		_overwatchGroup setCurrentWaypoint [_overwatchGroup, 0];
+	_wp = _overwatchGroup addWaypoint [getMarkerPos currentAO, 0, 750];
 	
 	_enemiesArray = _enemiesArray + [_overwatchGroup];
 
@@ -244,27 +178,7 @@ for "_x" from 0 to 1 do {
 	_AOmrapGroup setVariable ["VCOM_Unit_AIWarnDistance",200,false];
 	_AOmrapGroup setVariable ["NOPATHING",1,false];	
 	
-		_startpos = getMarkerPos currentAO;
-		_waypoint = _AOmrapGroup addWaypoint [_startpos, PARAMS_AOSize];
-		_waypoint setWaypointType "MOVE";
-		_waypoint setWaypointCompletionRadius 300;
-
-		_waypoint = _AOmrapGroup addWaypoint [getMarkerPos currentAO, 750];
-		_waypoint setWaypointType "MOVE";
-		_waypoint setWaypointSpeed "NORMAL";
-
-		_waypoint setWaypointBehaviour "AWARE";
-		_waypoint setWaypointCombatMode "YELLOW";
-		_waypoint setWaypointCompletionRadius 30;
-
-		_waypoint = _AOmrapGroup addWaypoint [getMarkerPos currentAO, 750];
-		_waypoint setWaypointType "SAD";
-		_waypoint setWaypointSpeed "NORMAL";
-
-		_waypoint = _AOmrapGroup addWaypoint [getMarkerPos currentAO, 750];
-		_waypoint setWaypointType "CYCLE";
-
-		_AOmrapGroup setCurrentWaypoint [_AOmrapGroup, 0];
+	_wp = _AOmrapGroup addWaypoint [getMarkerPos currentAO, 0, 750];
 	
 	_enemiesArray = _enemiesArray + [_AOmrapGroup];
 	sleep 0.1;
@@ -302,27 +216,7 @@ for "_x" from 0 to (3 + (random 2)) do {
 	_AOvehGroup setVariable ["VCOM_Unit_AIWarnDistance",200,false];
 	_AOvehGroup setVariable ["NOPATHING",1,false];	
 	
-		_startpos = getMarkerPos currentAO;
-		_waypoint = _AOvehGroup addWaypoint [_startpos, PARAMS_AOSize];
-		_waypoint setWaypointType "MOVE";
-		_waypoint setWaypointCompletionRadius 300;
-
-		_waypoint = _AOvehGroup addWaypoint [getMarkerPos currentAO, 750];
-		_waypoint setWaypointType "MOVE";
-		_waypoint setWaypointSpeed "NORMAL";
-
-		_waypoint setWaypointBehaviour "AWARE";
-		_waypoint setWaypointCombatMode "YELLOW";
-		_waypoint setWaypointCompletionRadius 30;
-
-		_waypoint = _AOvehGroup addWaypoint [getMarkerPos currentAO, 750];
-		_waypoint setWaypointType "SAD";
-		_waypoint setWaypointSpeed "NORMAL";
-
-		_waypoint = _AOvehGroup addWaypoint [getMarkerPos currentAO, 750];
-		_waypoint setWaypointType "CYCLE";
-
-		_AOvehGroup setCurrentWaypoint [_AOvehGroup, 0];
+	_wp = _AOvehGroup addWaypoint [getMarkerPos currentAO, 0, 750];
 	
 	_enemiesArray = _enemiesArray + [_AOvehGroup,_AOveh];
 	sleep 0.1;
