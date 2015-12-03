@@ -83,7 +83,7 @@ class Mission
 		"A3_Data_F_Curator_Virtual",
 		"A3_Modules_F_Intel",
 		"A3_Characters_F_OPFOR",
-		"A3_Modules_F_Multiplayer"
+		"A3_Modules_F_Multiplayer",
 	};
 	addOnsAuto[]=
 	{
@@ -1230,7 +1230,7 @@ class Mission
 					rank="MAJOR";
 					skill=0.60000002;
 					text="Quartermaster";
-					init="removeAllWeapons this; this allowDamage false;this enablesimulation false;this addAction [""Open Virtual Arsenal"", {[""Open"",true] spawn BIS_fnc_arsenal}];this addAction [""View Distance Settings"",TAWVD_fnc_openTAWVD,[],-98,false,false,"""",''];";
+					init="removeAllWeapons this; this allowDamage false;this enablesimulation false;this addAction [""Open Virtual Arsenal"", {[""Open"",true] spawn BIS_fnc_arsenal}];this addAction [""View Distance Settings"",TAWVD_fnc_openTAWVD,[],-98,false,false,"""",''];this addAction[""<t color='#00E3FC'>Give Respawn Tent Bag (Members Only)</t>"", ""members\getRespawnTent.sqf""];";
 				};
 			};
 		};
@@ -3127,7 +3127,7 @@ class Mission
 					rank="MAJOR";
 					skill=0.60000002;
 					text="Quartermaster_5";
-					init="removeAllWeapons this; this allowDamage false;this enablesimulation false;this addAction [""Open Virtual Arsenal"", {[""Open"",true] spawn BIS_fnc_arsenal}];this addAction [""View Distance Settings"",TAWVD_fnc_openTAWVD,[],-98,false,false,"""",''];";
+					init="removeAllWeapons this; this allowDamage false;this enablesimulation false;this addAction [""Open Virtual Arsenal"", {[""Open"",true] spawn BIS_fnc_arsenal}];this addAction [""View Distance Settings"",TAWVD_fnc_openTAWVD,[],-98,false,false,"""",''];this addAction[""<t color='#00E3FC'>Give Respawn Tent Bag (Members Only)</t>"", ""members\getRespawnTent.sqf""];";
 				};
 			};
 		};
