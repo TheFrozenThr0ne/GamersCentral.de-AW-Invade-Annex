@@ -32,6 +32,8 @@ if !(hasInterface or isServer) then {
 
 };
 
+["Initialize"] call BIS_fnc_dynamicGroups;
+
 if (PARAMS_AO == 1) then { _null = [] execVM "mission\main\missionControl.sqf"; };						// Main AO
 if (PARAMS_SideObjectives == 1) then { _null = [] execVM "mission\side\missionControl.sqf";};			// Side objectives		
 _null = [] execVM "mission\others\missionControl.sqf"; 													// Secondary Infantry Only Objective 

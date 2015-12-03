@@ -4,8 +4,5 @@ _corpse = _this select 1;
 if (local _unit) then {
 	_corpse removeAction squad_mgmt_action;
 	
-	squad_mgmt_action = player addAction [
-		("<t color='#04cc6b'>" + "Squad Management" + "</t>"), 
-		Compile preprocessFileLineNumbers "scripts\DOM_squad\open_dialog.sqf", [], -80, false
-	];
+	squad_mgmt_action = player addaction ["<t color='#CCCC00'>Group Management</t>","disableserialization; ([] call BIS_fnc_displayMission) createDisplay 'RscDisplayDynamicGroups'",nil,1,false,true,"",""];
 };

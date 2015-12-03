@@ -31,6 +31,8 @@ for [ {_i = 0}, {_i < count(paramsArray)}, {_i = _i + 1} ] do {
 
 //------------------- client executions
 
+["InitializePlayer", [player]] call BIS_fnc_dynamicGroups; 
+
 _null = [] execVM "scripts\vehicle\crew\crew.sqf"; 								// vehicle HUD
 _null = [] execVM 'scripts\group_manager.sqf';									// group manager
 _null = [] execVM "scripts\restrictions.sqf"; 									// gear restrictions and safezone
@@ -67,8 +69,8 @@ systemChat "Initialize SpyGlass";
 [] call SPY_fnc_initSpy;
 systemChat "SpyGlass Initialized";
 
-[] call QS_fnc_respawnPilot;
-[] call QS_fnc_respawnPilotAttack;
+//[] call QS_fnc_respawnPilot;
+//[] call QS_fnc_respawnPilotAttack;
 
 //-------------------- PVEHs
 
@@ -181,22 +183,10 @@ player addEventHandler [ "Respawn", {
 	//Did we respawn from the menu
 	if ( missionNamespace getVariable [ "menuRespawn", false ] ) then {
 		
-		// Compile scripts
-		getLoadout = compile preprocessFileLineNumbers 'get_loadout.sqf';
-
-
-		loadout = [player,["repetitive"]] call getLoadout;
-		
-		[] call QS_fnc_respawnPilot;
-		[] call QS_fnc_respawnPilotAttack;
-		
 		missionNamespace setVariable [ "menuRespawn", false ];
-		
 	};
 }];
 
-[] call QS_fnc_respawnPilot;
-[] call QS_fnc_respawnPilotAttack;
 		
 //If the respawn menu button is active
 if ( !isNumber( missionConfigFile >> "respawnButton" ) || { getNumber( missionConfigFile >> "respawnButton" ) > 0 } ) then {
