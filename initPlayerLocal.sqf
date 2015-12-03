@@ -133,6 +133,11 @@ systemChat "SpyGlass Initialized";
 //small sleep to make sure any init loadouts have been applied
 //OR apply any default loadouts before this point
 sleep 1;
+[missionnamespace, "arsenalClosed",
+{
+	// Save inventory for loading after respawn
+	[player, [missionnamespace, "VirtualInventory"]] call BIS_fnc_saveInventory;
+}] call BIS_fnc_addScriptedEventHandler;
 
 //Save initial loadout
 [ player, [ missionNamespace, "currentInventory" ] ] call BIS_fnc_saveInventory;
@@ -184,7 +189,7 @@ player addEventHandler [ "Respawn", {
 		
 		[] call QS_fnc_respawnPilot;
 		[] call QS_fnc_respawnPilotAttack;
-			
+		
 		missionNamespace setVariable [ "menuRespawn", false ];
 		
 	};

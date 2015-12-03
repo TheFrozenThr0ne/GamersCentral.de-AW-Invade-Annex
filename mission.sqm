@@ -163,7 +163,7 @@ class Mission
 	randomSeed=12935265;
 	class Intel
 	{
-		briefingName="Co-60 AW Invade&Annex 2.83I [HaloJump] [22.5] GamersCentral.de";
+		briefingName="Co-60 AW Invade&Annex 2.83I [HaloJump] [22.6] GamersCentral.de";
 		overviewText="Edited by GamersCentral.de - MaDmaX[GC]";
 		resistanceWest=0;
 		resistanceEast=1;
@@ -1228,7 +1228,7 @@ class Mission
 					rank="MAJOR";
 					skill=0.60000002;
 					text="Quartermaster";
-					init="removeAllWeapons this; this allowDamage false;this addAction [""<t color='#ff1111'>VAS</t>"",""VAS\open.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];this enablesimulation false; this addAction [""Quick Gear Save"",QS_fnc_saveInventory,[],7,true,true,'((vehicle player) == player) && ((player distance _target) < 5)']; 0 = [this] execVM ""scripts\VAserver.sqf"";this addAction [""View Distance Settings"",TAWVD_fnc_openTAWVD,[],-98,false,false,"""",''];this addAction[""<t color='#00E3FC'>Give Respawn Tent Bag (Members Only)</t>"", ""members\getRespawnTent.sqf""];";
+					init="removeAllWeapons this; this allowDamage false;this enablesimulation false;this addAction [""Open Virtual Arsenal"", {[""Open"",true] spawn BIS_fnc_arsenal}];this addAction [""View Distance Settings"",TAWVD_fnc_openTAWVD,[],-98,false,false,"""",''];";
 				};
 			};
 		};
@@ -2822,7 +2822,7 @@ class Mission
 				class Item0
 				{
 					position[]={15134.965,17.91,17248.24};
-					azimut=136.88612;
+					azimut=136.886;
 					special="NONE";
 					id=116;
 					side="WEST";
@@ -2831,7 +2831,7 @@ class Mission
 					rank="MAJOR";
 					skill=0.60000002;
 					text="Quartermaster_1";
-					init="removeAllWeapons this; this allowDamage false;this addAction [""<t color='#ff1111'>VAS</t>"",""VAS\open.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];this enablesimulation false; this addAction [""Quick Gear Save"",QS_fnc_saveInventory,[],7,true,true,'((vehicle player) == player) && ((player distance _target) < 5)']; 0 = [this] execVM ""scripts\VAserver.sqf"";this addAction [""View Distance Settings"",TAWVD_fnc_openTAWVD,[],-98,false,false,"""",''];";
+					init="removeAllWeapons this; this allowDamage false;this enablesimulation false;this addAction [""Open Virtual Arsenal"", {[""Open"",true] spawn BIS_fnc_arsenal}];this addAction [""View Distance Settings"",TAWVD_fnc_openTAWVD,[],-98,false,false,"""",''];";
 				};
 			};
 		};
@@ -2844,7 +2844,7 @@ class Mission
 				class Item0
 				{
 					position[]={14316.816,19.009182,16318.884};
-					azimut=181.44101;
+					azimut=181.44099;
 					special="NONE";
 					id=117;
 					side="WEST";
@@ -2853,7 +2853,7 @@ class Mission
 					rank="MAJOR";
 					skill=0.60000002;
 					text="Quartermaster_2";
-					init="removeAllWeapons this; this allowDamage false;this addAction [""<t color='#ff1111'>VAS</t>"",""VAS\open.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];this enablesimulation false; this addAction [""Quick Gear Save"",QS_fnc_saveInventory,[],7,true,true,'((vehicle player) == player) && ((player distance _target) < 5)']; 0 = [this] execVM ""scripts\VAserver.sqf"";this addAction [""View Distance Settings"",TAWVD_fnc_openTAWVD,[],-98,false,false,"""",''];";
+					init="removeAllWeapons this; this allowDamage false;this enablesimulation false;this addAction [""Open Virtual Arsenal"", {[""Open"",true] spawn BIS_fnc_arsenal}];this addAction [""View Distance Settings"",TAWVD_fnc_openTAWVD,[],-98,false,false,"""",''];";
 				};
 			};
 		};
@@ -3116,7 +3116,7 @@ class Mission
 				class Item0
 				{
 					position[]={14931.468,17.91,16922.67};
-					azimut=436.16507;
+					azimut=436.16501;
 					special="NONE";
 					id=126;
 					side="WEST";
@@ -3125,7 +3125,7 @@ class Mission
 					rank="MAJOR";
 					skill=0.60000002;
 					text="Quartermaster_5";
-					init="removeAllWeapons this; this allowDamage false;this addAction [""<t color='#ff1111'>VAS</t>"",""VAS\open.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];this enablesimulation false; this addAction [""Quick Gear Save"",QS_fnc_saveInventory,[],7,true,true,'((vehicle player) == player) && ((player distance _target) < 5)']; 0 = [this] execVM ""scripts\VAserver.sqf"";this addAction [""View Distance Settings"",TAWVD_fnc_openTAWVD,[],-98,false,false,"""",''];";
+					init="removeAllWeapons this; this allowDamage false;this enablesimulation false;this addAction [""Open Virtual Arsenal"", {[""Open"",true] spawn BIS_fnc_arsenal}];this addAction [""View Distance Settings"",TAWVD_fnc_openTAWVD,[],-98,false,false,"""",''];";
 				};
 			};
 		};

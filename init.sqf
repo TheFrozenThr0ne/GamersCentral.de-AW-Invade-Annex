@@ -41,9 +41,9 @@ execVM "JWC_CASFS\initCAS.sqf";
 
 // Admin reserved slot
 // You can reserve admin slot	
-INS_REV_CFG_reserved_slot = true;
-INS_REV_CFG_reserved_slot_units = ["bis_curatorUnit_1","bis_curatorUnit_2","bis_curatorUnit_3"];
-[] execVM "scripts\reserved_slot\reserved_slot.sqf";
+//INS_REV_CFG_reserved_slot = true;
+//INS_REV_CFG_reserved_slot_units = ["bis_curatorUnit_1","bis_curatorUnit_2","bis_curatorUnit_3"];
+//[] execVM "scripts\reserved_slot\reserved_slot.sqf";
 
 // if (isServer) then {OnPlayerConnected "[_uid,_name] execVM ""members\checkslot.sqf""";};
 
@@ -61,48 +61,6 @@ if (isServer) then {[1000,-1,true,100,1000,1000]execvm "zbe_cache\main.sqf"};
 0 = [] execVM "scripts\DOM_squad\group_manager.sqf";
 _null = [] execVM "scripts\units\tankCheck.sqf";
 [] execVM "scripts\clean.sqf";	
-
-// Compile scripts
-getLoadout = compile preprocessFileLineNumbers 'get_loadout.sqf';
-setLoadout = compile preprocessFileLineNumbers 'set_loadout.sqf';
-               
-			   
-			                                    
-// Save loadout every 2 seconds
-[] spawn {
-    while{true} do {
-        if(alive player) then {
-            respawnLoadout = [player] call getLoadout;
-        };
-    sleep 2;  
-    };
-};
-
-
-
-// Load saved loadout on respawn
-player addEventHandler ["Respawn", {
-        [player, respawnLoadout] spawn setLoadout;
-    }
-];  
-
-
-// Added load and save actions to all ammo boxes
-{
-	if(_x isKindOf "ReammoBox" || _x isKindOf "ReammoBox_F") then {
-	    _x addAction ["<t color='#ff1111'>Save loadout</t>", { savedLoadout = [player] call getLoadout; }];
-	    _x addAction ["<t color='#00cc00'>Load loadout</t>", { [player, savedLoadout] spawn setLoadout; }];   
-	};
-} forEach vehicles;
-
-{
-	if(_x isKindOf "B_Respawn_TentA_F" || _x isKindOf "B_Respawn_TentA_F") then {
-	    _x addAction ["<t color='#ff1111'>VAS</t>","scripts\VAS\open.sqf",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];
-		_x addAction ["Quick Gear Save",QS_fnc_saveInventory,[],7,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];
-		_x addAction ["View Distance Settings",TAWVD_fnc_openTAWVD,[],-98,false,false,"",''];
-	};
-} forEach vehicles;
-
 
 addMissionEventHandler ["HandleDisconnect", { 
     _unit  = _this select 0;
@@ -130,3 +88,11 @@ waitUntil {!isNull player};
 //Change the 2 arrays below for your heli names, eg ["aHeli1", "aHeli2"], ["tHeli1", "tHeli2"]
 //Helicopter Names MUST BE IN "QUOTES!"
 [player, ["aHeli1", "aHeli2", "aHeli3", "aHeli4", "aHeli5", "aHeli6"], ["tHeli1", "tHeli2", "tHeli3", "tHeli4", "tHeli5", "tHeli6", "tHeli7"]] execVM "scripts\supportMenu\supportMenuInit.sqf";
+
+[] spawn {
+	// No fatigue
+	while {true} do {
+player enableStamina false;
+		uiSleep 6;
+	};
+}; 
