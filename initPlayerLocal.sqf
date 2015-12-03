@@ -181,11 +181,18 @@ player addEventHandler [ "Respawn", {
 
 
 		loadout = [player,["repetitive"]] call getLoadout;
+		
+		[] call QS_fnc_respawnPilot;
+		[] call QS_fnc_respawnPilotAttack;
+			
 		missionNamespace setVariable [ "menuRespawn", false ];
 		
 	};
 }];
 
+[] call QS_fnc_respawnPilot;
+[] call QS_fnc_respawnPilotAttack;
+		
 //If the respawn menu button is active
 if ( !isNumber( missionConfigFile >> "respawnButton" ) || { getNumber( missionConfigFile >> "respawnButton" ) > 0 } ) then {
 	_respawnMenu = [] spawn {
