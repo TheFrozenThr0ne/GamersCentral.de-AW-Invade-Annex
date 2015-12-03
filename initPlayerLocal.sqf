@@ -175,8 +175,14 @@ player addEventHandler [ "Respawn", {
 	};
 	//Did we respawn from the menu
 	if ( missionNamespace getVariable [ "menuRespawn", false ] ) then {
-		[ player, [ missionNamespace, "currentInventory" ] ] call BIS_fnc_loadInventory;
+		
+		// Compile scripts
+		getLoadout = compile preprocessFileLineNumbers 'get_loadout.sqf';
+
+
+		loadout = [player,["repetitive"]] call getLoadout;
 		missionNamespace setVariable [ "menuRespawn", false ];
+		
 	};
 }];
 

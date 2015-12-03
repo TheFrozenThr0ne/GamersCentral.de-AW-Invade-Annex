@@ -70,6 +70,7 @@ if (_t in _podsAction) then {
 
 };
 
+
 //===== strider nato skin
 
 if (_t in _strider) then {
@@ -113,7 +114,7 @@ if (_t in _mhq) then {
 	_u addAction ["<t color='#ff1111'>VAS</t>","scripts\VAS\open.sqf",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];
 	_u addAction ["Quick Gear Save",QS_fnc_saveInventory,[],7,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];
 	_u addAction ["View Distance Settings",TAWVD_fnc_openTAWVD,[],-98,false,false,"",''];
-	null = [_u, west] execVM "CHHQ.sqf";
+	//null = [_u, west] execVM "CHHQ.sqf";
 };
 
 if (_t in _pawnee) then {

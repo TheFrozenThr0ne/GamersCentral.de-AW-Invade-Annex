@@ -36,7 +36,7 @@ showUAVFeed = 1;										// Enables/Disables the UAV Feed. Zeus-related.
 
 respawnTemplates[] = {"Revive", "MenuPosition"/*, "MenuInventory"*/};
 Respawn = 3;											// 0 = none. 1 = bird. 2 = instant where died. 3 = base or respawn_west marker. 4 = respawn with team, or bird. 5 = into AI or bird.
-RespawnDelay = 30;										// Delay prior to respawn, ensure longer than BTC revive delay.
+RespawnDelay = 10;										// Delay prior to respawn, ensure longer than BTC revive delay.
 RespawnDialog = 1;										// default = 1. show respawn timer and scoreboard when killed.
 reviveForceRespawnDelay = 15;
 reviveBleedOutDelay = 300;

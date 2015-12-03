@@ -62,6 +62,48 @@ if (isServer) then {[1000,-1,true,100,1000,1000]execvm "zbe_cache\main.sqf"};
 _null = [] execVM "scripts\units\tankCheck.sqf";
 [] execVM "scripts\clean.sqf";	
 
+// Compile scripts
+getLoadout = compile preprocessFileLineNumbers 'get_loadout.sqf';
+setLoadout = compile preprocessFileLineNumbers 'set_loadout.sqf';
+               
+			   
+			                                    
+// Save loadout every 2 seconds
+[] spawn {
+    while{true} do {
+        if(alive player) then {
+            respawnLoadout = [player] call getLoadout;
+        };
+    sleep 2;  
+    };
+};
+
+
+
+// Load saved loadout on respawn
+player addEventHandler ["Respawn", {
+        [player, respawnLoadout] spawn setLoadout;
+    }
+];  
+
+
+// Added load and save actions to all ammo boxes
+{
+	if(_x isKindOf "ReammoBox" || _x isKindOf "ReammoBox_F") then {
+	    _x addAction ["<t color='#ff1111'>Save loadout</t>", { savedLoadout = [player] call getLoadout; }];
+	    _x addAction ["<t color='#00cc00'>Load loadout</t>", { [player, savedLoadout] spawn setLoadout; }];   
+	};
+} forEach vehicles;
+
+{
+	if(_x isKindOf "B_Respawn_TentA_F" || _x isKindOf "B_Respawn_TentA_F") then {
+	    _x addAction ["<t color='#ff1111'>VAS</t>","scripts\VAS\open.sqf",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];
+		_x addAction ["Quick Gear Save",QS_fnc_saveInventory,[],7,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];
+		_x addAction ["View Distance Settings",TAWVD_fnc_openTAWVD,[],-98,false,false,"",''];
+	};
+} forEach vehicles;
+
+
 addMissionEventHandler ["HandleDisconnect", { 
     _unit  = _this select 0;
     _pos = getPosATL _unit;
