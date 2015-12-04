@@ -16,6 +16,7 @@ private ["_opticsAllowed","_specialisedOptics","_optics","_basePos","_firstRun",
 #define MG_MSG "Only Autoriflemen may use this weapon system. LMG removed."
 #define SOPT_MSG "SOS and LRPS are designated for Snipers and Spotters only. Optic removed."
 #define MRK_MSG "Only Marksman and Spotters may use this weapon system. Rifle removed."
+#define MORTAR_MESSAGE	"No point you putting that up, soldier; we're fresh out of ammo for those things."
 
 //===== UAV TERMINAL
 _uavOperator = ["B_soldier_UAV_F","B_officer_F"];
@@ -30,7 +31,7 @@ _sniperSpecialised = ["srifle_GM6_F","srifle_GM6_LRPS_F","srifle_GM6_SOS_F","sri
 _opticsAllowed = ["B_Soldier_SL_F","B_sniper_F"];
 _specialisedOptics = ["optic_Nightstalker","optic_tws","optic_tws_mg"];
 //===== BACKPACKS
-_backpackRestricted = ["O_Mortar_01_support_F","I_Mortar_01_support_F","O_Mortar_01_weapon_F","I_Mortar_01_weapon_F","O_UAV_01_backpack_F","I_UAV_01_backpack_F","O_HMG_01_support_F","I_HMG_01_support_F","O_HMG_01_support_high_F","I_HMG_01_support_high_F","O_HMG_01_weapon_F","I_HMG_01_weapon_F","O_HMG_01_A_weapon_F","I_HMG_01_A_weapon_F","O_GMG_01_weapon_F","I_GMG_01_weapon_F","O_GMG_01_A_weapon_F","I_GMG_01_A_weapon_F","O_HMG_01_high_weapon_F","I_HMG_01_high_weapon_F","O_HMG_01_A_high_weapon_F","I_HMG_01_A_high_weapon_F","O_GMG_01_high_weapon_F","I_GMG_01_high_weapon_F","O_GMG_01_A_high_weapon_F","I_GMG_01_A_high_weapon_F","I_AT_01_weapon_F","O_AT_01_weapon_F","I_AA_01_weapon_F","O_AA_01_weapon_F"];
+_backpackRestricted = ["I_Mortar_01_support_F","I_Mortar_01_weapon_F","O_UAV_01_backpack_F","I_UAV_01_backpack_F","O_HMG_01_support_F","I_HMG_01_support_F","O_HMG_01_support_high_F","I_HMG_01_support_high_F","O_HMG_01_weapon_F","I_HMG_01_weapon_F","O_HMG_01_A_weapon_F","I_HMG_01_A_weapon_F","O_GMG_01_weapon_F","I_GMG_01_weapon_F","O_GMG_01_A_weapon_F","I_GMG_01_A_weapon_F","O_HMG_01_high_weapon_F","I_HMG_01_high_weapon_F","O_HMG_01_A_high_weapon_F","I_HMG_01_A_high_weapon_F","O_GMG_01_high_weapon_F","I_GMG_01_high_weapon_F","O_GMG_01_A_high_weapon_F","I_GMG_01_A_high_weapon_F","I_AT_01_weapon_F","O_AT_01_weapon_F","I_AA_01_weapon_F","O_AA_01_weapon_F"];
 //===== LMG
 _autoRiflemen = ["B_soldier_AR_F","B_officer_F"];
 _autoSpecialised = ["MMG_02_black_F","MMG_02_camo_F","MMG_02_sand_F","MMG_02_black_RCO_BI_F","MMG_02_sand_RCO_LP_F","MMG_01_base_F","MMG_01_hex_F","MMG_01_hex_ARCO_LP_F","MMG_01_tan_F"];
@@ -48,8 +49,22 @@ _basePos = getMarkerPos "respawn_west";
 _szmkr = getMarkerPos "safezone_marker";
 #define SZ_RADIUS 300
 
+_basePoss = getMarkerPos "respawn";
+	if ((player distance _basePoss) <= 500) then {
+		player addEventHandler ["WeaponAssembled",{
+if ((_this select 1) isKindOf "StaticWeapon") then
+{
+deleteVehicle (_this select 1);
+hintC "You are discharging your weapon at base without approval.  Cease your actions Immediately!";
+}
+}];
+	} else {
+
+	};
+	
 _EHFIRED = {
 	deleteVehicle (_this select 6);
+		
 	hintC "You are discharging your weapon at base without approval.  Cease your actions Immediately!";
     hintC_EH = findDisplay 57 displayAddEventHandler ["unload", {
         0 = _this spawn {
@@ -194,7 +209,7 @@ while {true} do {
 	
 	//----- Sleep 
 	
-	_basePos = getMarkerPos "respawn_west";
+	_basePos = getMarkerPos "respawn";
 	if ((player distance _basePos) <= 500) then {
 		sleep 1;
 	} else {

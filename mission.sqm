@@ -165,7 +165,7 @@ class Mission
 	randomSeed=12935265;
 	class Intel
 	{
-		briefingName="Co-60 AW Invade&Annex 2.83I [HaloJump] [22.8] GamersCentral.de";
+		briefingName="Co-60 AW Invade&Annex 2.83I [HaloJump] [22.9] GamersCentral.de";
 		overviewText="Edited by GamersCentral.de - MaDmaX[GC]";
 		resistanceWest=0;
 		resistanceEast=1;
@@ -12355,7 +12355,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=215;
+		items=216;
 		class Item0
 		{
 			position[]={-15683.114,0.0011896361,-3827.8438};
@@ -13990,6 +13990,12 @@ class Mission
 			colorName="ColorWEST";
 			a=0.5;
 			b=0.5;
+		};
+		class Item215
+		{
+			position[]={14626.311,17.91,16767.828};
+			name="respawn";
+			type="Empty";
 		};
 	};
 	class Sensors
