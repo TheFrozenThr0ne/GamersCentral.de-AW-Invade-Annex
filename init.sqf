@@ -26,8 +26,6 @@ if (_IntroMusic) then { playMusic "intro";};
 
 // [player] execVM "welcome.sqf";
 
-
-
 ["Initialize"] call BIS_fnc_dynamicGroups;
 
 
@@ -37,7 +35,7 @@ ETG_Reinforcements = 0;
 //Execute scripts
 [] execVM "VCOM_Driving\init.sqf";
 
-
+CHHQ_showMarkers = true; // Set 'true' if you want real time map markers for all HQs on your side. (Default: true)
 
 execVM "JWC_CASFS\initCAS.sqf";
 
@@ -65,6 +63,13 @@ player addEventHandler ["Respawn", {
 }
 ];
 
+squad_mgmt_action = player addaction ["<t color='#CCCC00'>Group Management</t>","disableserialization; ([] call BIS_fnc_displayMission) createDisplay 'RscDisplayDynamicGroups'",nil,1,false,true,"",""];
+
+player addEventHandler ["Respawn", {
+squad_mgmt_action = player addaction ["<t color='#CCCC00'>Group Management</t>","disableserialization; ([] call BIS_fnc_displayMission) createDisplay 'RscDisplayDynamicGroups'",nil,1,false,true,"",""];
+}
+];
+
 // Admin reserved slot
 // You can reserve admin slot	
 //INS_REV_CFG_reserved_slot = true;
@@ -83,8 +88,8 @@ if (isServer) then {[1000,-1,true,100,1000,1000]execvm "zbe_cache\main.sqf"};
 //execFSM "core\fsm\ZBE_HCCache.fsm";
 
 [] execVM "scripts\DOM_repair\init.sqf";
-[] execVM "scripts\DOM_squad\init.sqf";
-0 = [] execVM "scripts\DOM_squad\group_manager.sqf";
+//[] execVM "scripts\DOM_squad\init.sqf";
+//0 = [] execVM "scripts\DOM_squad\group_manager.sqf";
 _null = [] execVM "scripts\units\tankCheck.sqf";
 [] execVM "scripts\clean.sqf";	
 

@@ -1,1 +1,1 @@
-player setPos (getMarkerPos "respawn_west");
+player setPos (getMarkerPos "respawn");

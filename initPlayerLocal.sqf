@@ -135,11 +135,6 @@ systemChat "SpyGlass Initialized";
 //small sleep to make sure any init loadouts have been applied
 //OR apply any default loadouts before this point
 sleep 1;
-[missionnamespace, "arsenalClosed",
-{
-	// Save inventory for loading after respawn
-	[player, [missionnamespace, "VirtualInventory"]] call BIS_fnc_saveInventory;
-}] call BIS_fnc_addScriptedEventHandler;
 
 //Save initial loadout
 [ player, [ missionNamespace, "currentInventory" ] ] call BIS_fnc_saveInventory;
@@ -182,12 +177,11 @@ player addEventHandler [ "Respawn", {
 	};
 	//Did we respawn from the menu
 	if ( missionNamespace getVariable [ "menuRespawn", false ] ) then {
-		[ player, [ missionNamespace, "reviveInventory" ] ] call BIS_fnc_loadInventory;
+		[ player, [ missionNamespace, "currentInventory" ] ] call BIS_fnc_loadInventory;
 		missionNamespace setVariable [ "menuRespawn", false ];
 	};
 }];
 
-		
 //If the respawn menu button is active
 if ( !isNumber( missionConfigFile >> "respawnButton" ) || { getNumber( missionConfigFile >> "respawnButton" ) > 0 } ) then {
 	_respawnMenu = [] spawn {
