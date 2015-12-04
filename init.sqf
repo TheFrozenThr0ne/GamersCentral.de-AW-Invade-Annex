@@ -41,6 +41,30 @@ ETG_Reinforcements = 0;
 
 execVM "JWC_CASFS\initCAS.sqf";
 
+waitUntil { !isNull player }; // Wait for player to initialize
+
+// Compile scripts
+getLoadout = compile preprocessFileLineNumbers 'get_loadout.sqf';
+setLoadout = compile preprocessFileLineNumbers 'set_loadout.sqf';
+
+// Lets wait 10 seconds, hopefully all crates will spawn by then
+sleep 10;
+
+// Save default loadout
+loadout = [player] call getLoadout;
+
+// Add save/load loadout actions to all ammo boxes
+{
+_x addAction ["<t color='#ff1111'>Save loadout</t>", "get_loadout.sqf"];
+_x addAction ["<t color='#00cc00'>Load loadout</t>", "set_loadout.sqf"];
+} forEach nearestObjects [getpos player,["ReammoBox","ReammoBox_F","B_Soldier_VR_F"],15000];
+
+// Load saved loadout on respawn
+player addEventHandler ["Respawn", {
+[player,loadout] spawn setLoadout;
+}
+];
+
 // Admin reserved slot
 // You can reserve admin slot	
 //INS_REV_CFG_reserved_slot = true;

@@ -83,7 +83,7 @@ class Mission
 		"A3_Data_F_Curator_Virtual",
 		"A3_Modules_F_Intel",
 		"A3_Characters_F_OPFOR",
-		"A3_Modules_F_Multiplayer",
+		"A3_Modules_F_Multiplayer"
 	};
 	addOnsAuto[]=
 	{
@@ -165,7 +165,7 @@ class Mission
 	randomSeed=12935265;
 	class Intel
 	{
-		briefingName="Co-60 AW Invade&Annex 2.83I [HaloJump] [22.7] GamersCentral.de";
+		briefingName="Co-60 AW Invade&Annex 2.83I [HaloJump] [22.8] GamersCentral.de";
 		overviewText="Edited by GamersCentral.de - MaDmaX[GC]";
 		resistanceWest=0;
 		resistanceEast=1;
@@ -1230,7 +1230,7 @@ class Mission
 					rank="MAJOR";
 					skill=0.60000002;
 					text="Quartermaster";
-					init="removeAllWeapons this; this allowDamage false;this enablesimulation false;this addAction [""Open Virtual Arsenal"", {[""Open"",true] spawn BIS_fnc_arsenal}];this addAction [""View Distance Settings"",TAWVD_fnc_openTAWVD,[],-98,false,false,"""",''];this addAction[""<t color='#00E3FC'>Give Respawn Tent Bag (Members Only)</t>"", ""members\getRespawnTent.sqf""];";
+					init="removeAllWeapons this; this allowDamage false;this enablesimulation false;this addAction [""<t color='#ff1111'>Save loadout</t>"", ""get_loadout.sqf""];  this addAction [""<t color='#00cc00'>Load loadout</t>"", ""set_loadout.sqf""];this addAction [""<t color='#ff1111'>VAS</t>"",""VAS\open.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];this addAction [""Open Virtual Arsenal"", {[""Open"",true] spawn BIS_fnc_arsenal}];this addAction [""View Distance Settings"",TAWVD_fnc_openTAWVD,[],-98,false,false,"""",''];this addAction[""<t color='#00E3FC'>Give Respawn Tent Bag (Members Only)</t>"", ""members\getRespawnTent.sqf""];";
 				};
 			};
 		};
@@ -2833,7 +2833,7 @@ class Mission
 					rank="MAJOR";
 					skill=0.60000002;
 					text="Quartermaster_1";
-					init="removeAllWeapons this; this allowDamage false;this enablesimulation false;this addAction [""Open Virtual Arsenal"", {[""Open"",true] spawn BIS_fnc_arsenal}];this addAction [""View Distance Settings"",TAWVD_fnc_openTAWVD,[],-98,false,false,"""",''];";
+					init="removeAllWeapons this; this allowDamage false;this enablesimulation false;this addAction [""<t color='#ff1111'>Save loadout</t>"", ""get_loadout.sqf""];  this addAction [""<t color='#00cc00'>Load loadout</t>"", ""set_loadout.sqf""];this addAction [""<t color='#ff1111'>VAS</t>"",""VAS\open.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];this addAction [""Open Virtual Arsenal"", {[""Open"",true] spawn BIS_fnc_arsenal}];this addAction [""View Distance Settings"",TAWVD_fnc_openTAWVD,[],-98,false,false,"""",''];this addAction[""<t color='#00E3FC'>Give Respawn Tent Bag (Members Only)</t>"", ""members\getRespawnTent.sqf""];";
 				};
 			};
 		};
@@ -2855,7 +2855,7 @@ class Mission
 					rank="MAJOR";
 					skill=0.60000002;
 					text="Quartermaster_2";
-					init="removeAllWeapons this; this allowDamage false;this enablesimulation false;this addAction [""Open Virtual Arsenal"", {[""Open"",true] spawn BIS_fnc_arsenal}];this addAction [""View Distance Settings"",TAWVD_fnc_openTAWVD,[],-98,false,false,"""",''];";
+					init="removeAllWeapons this; this allowDamage false;this enablesimulation false;this addAction [""<t color='#ff1111'>Save loadout</t>"", ""get_loadout.sqf""];  this addAction [""<t color='#00cc00'>Load loadout</t>"", ""set_loadout.sqf""];this addAction [""<t color='#ff1111'>VAS</t>"",""VAS\open.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];this addAction [""Open Virtual Arsenal"", {[""Open"",true] spawn BIS_fnc_arsenal}];this addAction [""View Distance Settings"",TAWVD_fnc_openTAWVD,[],-98,false,false,"""",''];this addAction[""<t color='#00E3FC'>Give Respawn Tent Bag (Members Only)</t>"", ""members\getRespawnTent.sqf""];";
 				};
 			};
 		};
@@ -3239,7 +3239,8 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={14630.503,17.91,16762.188};
+					position[]={14630.115,17.91,16762.496};
+					azimut=137.85756;
 					class args
 					{
 						items=4;
@@ -3286,6 +3287,7 @@ class Mission
 				class Item0
 				{
 					position[]={15132.885,17.91,17246.896};
+					azimut=135.91112;
 					class args
 					{
 						items=4;

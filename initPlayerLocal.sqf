@@ -168,10 +168,10 @@ sleep 1;
 } ] call BIS_fnc_addScriptedEventHandler;
 
 
-/*player addEventHandler [ "Killed", {
+player addEventHandler [ "Killed", {
 	//Save players loadout for if he is revived
 	[ player, [ missionNamespace, "reviveInventory" ] ] call BIS_fnc_saveInventory;
-}];*/
+}];
 
 
 player addEventHandler [ "Respawn", {
@@ -182,7 +182,7 @@ player addEventHandler [ "Respawn", {
 	};
 	//Did we respawn from the menu
 	if ( missionNamespace getVariable [ "menuRespawn", false ] ) then {
-		
+		[ player, [ missionNamespace, "reviveInventory" ] ] call BIS_fnc_loadInventory;
 		missionNamespace setVariable [ "menuRespawn", false ];
 	};
 }];
