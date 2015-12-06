@@ -817,7 +817,7 @@ class CfgMusic
   	class intro
   	{
       		name = "intro";
-      		sound[] = {\intro\intro.ogg, db+0, 2.0};
+      		sound[] = {\intro\intro.ogg, db+5, 1.0};
   	};
 };
 
