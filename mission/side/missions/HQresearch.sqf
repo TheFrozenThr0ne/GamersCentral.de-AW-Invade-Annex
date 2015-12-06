@@ -33,7 +33,7 @@ _c4Message = ["Hard drive secured. The charge has been set! 15 seconds until det
 			_flatPos = _position isFlatEmpty [10,1,0.2,sizeOf "Land_Research_HQ_F",0,false];
 		};
 
-		if ((_flatPos distance (getMarkerPos "respawn_west")) > 1700 && (_flatPos distance (getMarkerPos currentAO)) > 500) then
+		if ((_flatPos distance (getMarkerPos "respawn")) > 1700 && (_flatPos distance (getMarkerPos currentAO)) > 500) then
 		{
 			_accepted = true;
 		};

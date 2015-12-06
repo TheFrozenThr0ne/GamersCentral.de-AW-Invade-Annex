@@ -155,6 +155,16 @@ class Rule_10: RscText
 	h = 0.08;
 	SizeEx = 0.03700;
 };
+class Rule_11: RscText
+{
+	idc = 1011;
+	text = "11. Do not Spam Zeus with Ping or you can be slayed."; //--- ToDo: Localize;
+	x = 1;
+	y = 0.98;
+	w = 0.525;
+	h = 0.08;
+	SizeEx = 0.03700;
+};
 class AW_Intro_and_TS_picture: RscPicture
 {
 	idc = 1200;

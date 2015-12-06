@@ -29,7 +29,7 @@ private ["_flatPos","_accepted","_position","_flatPos1","_flatPos2","_flatPos3",
 			_flatPos = _position isFlatEmpty [5, 0, 0.2, 5, 0, false];
 		};
 
-		if ((_flatPos distance (getMarkerPos "respawn_west")) > 2000 && (_flatPos distance (getMarkerPos currentAO)) > 800) then
+		if ((_flatPos distance (getMarkerPos "respawn")) > 2000 && (_flatPos distance (getMarkerPos currentAO)) > 800) then
 		{
 			_accepted = true;
 		};

@@ -34,14 +34,14 @@ for [ {_i = 0}, {_i < count(paramsArray)}, {_i = _i + 1} ] do {
 ["InitializePlayer", [player]] call BIS_fnc_dynamicGroups; 
 
 _null = [] execVM "scripts\vehicle\crew\crew.sqf"; 								// vehicle HUD
-_null = [] execVM 'scripts\group_manager.sqf';									// group manager
+//_null = [] execVM 'scripts\group_manager.sqf';									// group manager
 _null = [] execVM "scripts\restrictions.sqf"; 									// gear restrictions and safezone
 _null = [] execVM "scripts\pilotCheck1.sqf"; 									// pilots only
 _null = [] execVM "scripts\jump.sqf";											// jump action
 _null = [] execVM "scripts\misc\diary.sqf";										// diary tabs	
 _null = [] execVM "scripts\icons.sqf";											// blufor map tracker Quicksilver
 _null = [] execVM "scripts\VAclient.sqf";										// Virtual Arsenal
-_null = [] execVM "scripts\misc\Intro.sqf";										// AW intro screen
+//_null = [] execVM "scripts\misc\Intro.sqf";										// AW intro screen
 _null = [] execVM "scripts\voice_control\voiceControl.sqf";						// Voice Control
 if (PARAMS_HeliRope != 0) then {call compile preprocessFileLineNumbers "scripts\vehicle\fastrope\zlt_fastrope.sqf";};	
 if (PARAMS_HeliSling != 0) then {call compile preprocessFileLineNumbers "scripts\vehicle\sling\sling_config.sqf";};				// Heli Sling.

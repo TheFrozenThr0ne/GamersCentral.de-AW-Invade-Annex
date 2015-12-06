@@ -43,6 +43,9 @@ CHHQ_fnc_deploy = {
 	
 	_veh setVariable ["CHHQ_inProgress", true, true];
 	
+	_respawnMarker = createMarker ["respawn_west", _veh];
+	_respawnMarker setMarkerShape "ICON";
+	
 	[[_veh], "CHHQ_fnc_removeAction", _side] call BIS_fnc_MP;
 	_nearestPlayers = [];
 	{
@@ -102,8 +105,8 @@ CHHQ_fnc_deploy = {
 	[[_veh, 2],"lock",true] call BIS_fnc_MP;
 		
 	_veh enableSimulationGlobal true;
-	_veh allowDamage true;
-	{_x allowDamage true} forEach _objArray;	
+	_veh allowDamage false;
+	{_x allowDamage false} forEach _objArray;	
 	{_x setPos ((getPosASL _x) findEmptyPosition [0, 25, "CAManBase"]); _x allowDamage true; _x enableSimulationGlobal true} forEach _nearestPlayers;
 	
 	sleep 3;
@@ -140,6 +143,9 @@ CHHQ_fnc_undeploy = {
 	} forEach (playableUnits + switchableUnits);
 	[["CHHQ_deployBlackout"],"BIS_fnc_blackOut",_nearestPlayers,false,true] call BIS_fnc_MP;
 	[["UNDEPLOYING HQ"],"BIS_fnc_dynamicText",_nearestPlayers] call BIS_fnc_MP;
+	
+	deleteMarker "respawn_west";
+	
 	sleep 3;
 	{_x allowDamage false; _x enableSimulationGlobal false} forEach _nearestPlayers;	
 	
@@ -150,6 +156,7 @@ CHHQ_fnc_undeploy = {
 	[[_veh, false],"lock",true] call BIS_fnc_MP;	
 	[[_veh, true],"lockCargo",true] call BIS_fnc_MP;
 	[[_veh, [0,false]],"lockCargo",true] call BIS_fnc_MP;
+	_veh allowDamage false;
 	
 	_cargo = createVehicle [_cargoType, [0,0,0], [], 0, "CAN_COLLIDE"];		
 	_cargo attachTo [_veh, _cargoOffset]; 
@@ -166,8 +173,8 @@ CHHQ_fnc_undeploy = {
 	
 	sleep 3;	
 	_veh enableSimulationGlobal true;
-	_veh allowDamage true;
-	{_x setPos ((getPosASL _x) findEmptyPosition [0, 25, "CAManBase"]); _x allowDamage true; _x enableSimulationGlobal true} forEach _nearestPlayers;
+	_veh allowDamage false;
+	{_x setPos ((getPosASL _x) findEmptyPosition [0, 25, "CAManBase"]); _x allowDamage false; _x enableSimulationGlobal true} forEach _nearestPlayers;
 	[["CHHQ_deployBlackout"],"BIS_fnc_blackIn",_nearestPlayers,false,true] call BIS_fnc_MP;
 	[[_veh,["Deploy HQ", "_this spawn CHHQ_fnc_deploy", [_side, _cargoInfo, _composition], 0, false, true, "", "[_target, _this] call CHHQ_fnc_actionConditions"]], "CHHQ_fnc_addAction", _side] call BIS_fnc_MP;
 	
@@ -646,7 +653,7 @@ CHHQ_fnc_updateTeleportActions = {
 	_actionIDarray = [];
 	{
 		_vehString = "CHHQ_HQarray select " + str _forEachIndex;
-		_actionText = if (count CHHQ_HQarray > 1) then {format ["Move to HQ-%1", _x getVariable ["CHHQ_index", -1]]} else {"Move to HQ"};
+		_actionText = if (count CHHQ_HQarray > 1) then {format ["Move to Mobile HQ-%1", _x getVariable ["CHHQ_index", -1]]} else {"Move to Mobile HQ"};
 		_id = _obj addAction [_actionText, "_this spawn CHHQ_fnc_teleportToHQ", [_x], 6, true, true, "", format ["[_target, _this, %1] call CHHQ_fnc_teleportActionConditions", _vehString]];
 		_actionIDarray pushBack _id;
 	} forEach CHHQ_HQarray;
@@ -682,6 +689,7 @@ switch (toLower typeOf _obj) do {
 		_composition = [["Land_PowerGenerator_F",[-2.99756,2.07959,0.0971174],180.556],["CamoNet_BLUFOR_big_F",[0.013916,-0.0551758,0.0971174],337.248],["Land_ToiletBox_F",[3.71655,3.98242,0.097096],181.571],["MapBoard_altis_F",[4.04272,1.50049,0.0449162],359.984],["Land_CampingTable_F",[-3.40649,-1.95361,0.0971169],252.548],["Land_CampingChair_V1_F",[-4.34302,-1.66504,0.100242],253.27],["Land_Cargo20_grey_F",[4.11963,-0.677246,0.0971179],271.612,{_this animate ["Door_1_rot",1]; _this animate ["Door_2_rot",1]}]];
 		_cargoInfo = ["Land_Cargo20_grey_F",[0.045,-2.31,1.15],270,{_this setVariable ['bis_disabled_Door_1',1]; _this setVariable ['bis_disabled_Door_2',1]}];
 		[_obj, _side, _cargoInfo, _composition] call CHHQ_fnc_startingSetup;
+		_obj allowDamage false;
 	};
 	case (toLower "O_Truck_02_transport_F"): {
 		_composition = [["CamoNet_OPFOR_big_F",[0.0947266,-0.0610352,0.0315285],345.578],["Land_PowerGenerator_F",[-2.4873,2.33643,0.0315285],182.122],["Land_WaterTank_F",[3.85596,0.42627,0.0315242],4.92499],["Land_CampingTable_F",[-2.77075,-1.10254,0.031528],276.314],["Land_CampingChair_V1_F",[-3.8562,-0.631348,0.0346532],288.003],["Land_Cargo10_sand_F",[3.70703,-2.79932,0.0315285],274.286]];	

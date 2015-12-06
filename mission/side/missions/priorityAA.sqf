@@ -29,7 +29,7 @@ private ["_basepos","_loopVar","_dir","_PTdir","_pos","_barrier","_unitsArray","
 
 //-------------------- 1. FIND POSITION FOR OBJECTIVE
 
-	_basepos = getMarkerPos "respawn_west";
+	_basepos = getMarkerPos "respawn";
 	_flatPos = [0,0,0];
 	_accepted = false;
 	while {!_accepted} do {

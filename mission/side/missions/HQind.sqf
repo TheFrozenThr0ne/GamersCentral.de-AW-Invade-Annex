@@ -31,7 +31,7 @@ _c4Message = ["Weapons transfer secured. The charge has been set! 15 seconds unt
 			_flatPos = _position isFlatEmpty [10,1,0.2,sizeOf "Land_Cargo_House_V2_F",0,false];
 		};
 
-		if ((_flatPos distance (getMarkerPos "respawn_west")) > 1700 && (_flatPos distance (getMarkerPos currentAO)) > 500) then {
+		if ((_flatPos distance (getMarkerPos "respawn")) > 1700 && (_flatPos distance (getMarkerPos currentAO)) > 500) then {
 			_accepted = true;
 		};
 	};

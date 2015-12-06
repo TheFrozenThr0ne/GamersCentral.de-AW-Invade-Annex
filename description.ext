@@ -57,7 +57,7 @@ corpseRemovalMaxTime = 120;								// Max time before removal
 #include "VAS\menu.hpp" 						// VAS
 #include "scripts\taw_vd\dialog.hpp" 					// TAW View Distance
 #include "scripts\vehicle\crew\common.hpp"  			// vehicle crew hud
-#include "scripts\=BTC=_revive\=BTC=_respawn.h"			// BTC medic revive system
+//#include "scripts\=BTC=_revive\=BTC=_respawn.h"			// BTC medic revive system
 #include "R3F_LOG\desc_include.h"						// Logistics
 #include "mission\side\downloadData.hpp"				// Side Mission
 #include "scripts\DOM_squad\SquadManagement.hpp"		// Squad Management
@@ -669,7 +669,7 @@ class CfgNotifications
 	{
 		title = "FILE DATA SAVED";
 		description = "%1";
-		iconPicture = "media\images\notificons\laptop.paa";
+		iconPicture = "media\images\notificons\sub_objective_completed.paa";
 		color[] = {0.38, 0.81, 0.16, 1};
 		priority = 6;
 	};
@@ -817,7 +817,7 @@ class CfgMusic
   	class intro
   	{
       		name = "intro";
-      		sound[] = {\intro\intro.ogg, db+0, 1.0};
+      		sound[] = {\intro\intro.ogg, db+0, 2.0};
   	};
 };
 

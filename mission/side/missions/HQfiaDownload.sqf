@@ -31,7 +31,7 @@ _c4Message = ["Supply crate secured. The charge has been set! 15 seconds until d
 			_flatPos = _position isFlatEmpty [10,1,0.2,sizeOf "Land_Dome_Small_F",0,false];
 		};
 
-		if ((_flatPos distance (getMarkerPos "respawn_west")) > 1700 && (_flatPos distance (getMarkerPos currentAO)) > 500) then {
+		if ((_flatPos distance (getMarkerPos "respawn")) > 1700 && (_flatPos distance (getMarkerPos currentAO)) > 500) then {
 			_accepted = true;
 		};
 	};
@@ -80,7 +80,7 @@ _c4Message = ["Supply crate secured. The charge has been set! 15 seconds until d
 	
 	_briefing = "<t align='center'><t size='2.2'>New Side Mission</t><br/><t size='1.5' color='#00B2EE'>Download Enemy File Data</t><br/>____________________<br/>OPFOR are training an insurgency on Altis.<br/><br/>We've marked the position on your map; head over there, sanitize the area and secure their files on the computer.</t>";
 	GlobalHint = _briefing; hint parseText GlobalHint; publicVariable "GlobalHint";
-	showNotification = ["NewSideMission", "Download Enemy File Data"]; publicVariable "showNotification";
+	showNotification = ["NewSideMissionFileData", "Download Enemy File Data"]; publicVariable "showNotification";
 	sideMarkerText = "Download Enemy File Data"; publicVariable "sideMarkerText";
 	
 //-------------------- [ CORE LOOPS ] ------------------------ [ CORE LOOPS ]
@@ -100,7 +100,7 @@ while { sideMissionUp } do {
 		
 		sideMissionUp = false; publicVariable "sideMissionUp";
 		
-		showNotification = ["NewSideMission", "Well done, we got the Files."]; publicVariable "showNotification";
+		showNotification = ["NewSideMissionFileDataComplete", "Well done, we got the Files."]; publicVariable "showNotification";
 		hqSideChat = "Objective complete!"; publicVariable "hqSideChat"; [WEST,"HQ"] sideChat hqSideChat;
 		[] spawn QS_fnc_SMhintSUCCESS;
 		{ _x setMarkerPos [-10000,-10000,-10000]; } forEach ["sideMarker", "sideCircle"]; publicVariable "sideMarker";

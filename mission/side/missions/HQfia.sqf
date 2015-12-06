@@ -32,7 +32,7 @@ _c4Message = ["Supply crate secured. The charge has been set! 15 seconds until d
 			_flatPos = _position isFlatEmpty [10,1,0.2,sizeOf "Land_Dome_Small_F",0,false];
 		};
 
-		if ((_flatPos distance (getMarkerPos "respawn_west")) > 1700 && (_flatPos distance (getMarkerPos currentAO)) > 500) then {
+		if ((_flatPos distance (getMarkerPos "respawn")) > 1700 && (_flatPos distance (getMarkerPos currentAO)) > 500) then {
 			_accepted = true;
 		};
 	};

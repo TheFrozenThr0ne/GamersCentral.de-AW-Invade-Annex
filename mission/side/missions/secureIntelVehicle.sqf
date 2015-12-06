@@ -46,7 +46,7 @@ private ["_x","_targetTrigger","_aGroup","_bGroup","_cGroup","_objUnit1","_objUn
 			_flatPos = _position isFlatEmpty [10,1,0.2,sizeOf "Land_Dome_Small_F",0,false];
 		};
 				
-		if ((_flatPos distance (getMarkerPos "respawn_west")) > 1000 && (_flatPos distance (getMarkerPos currentAO)) > 1000) then
+		if ((_flatPos distance (getMarkerPos "respawn")) > 1000 && (_flatPos distance (getMarkerPos currentAO)) > 1000) then
 		{
 			_accepted = true;
 		};
