@@ -3,7 +3,7 @@
 JWC_MaxD = 800;                                // Max distance in meters allowed between requester and target
 JWC_lock = true;                               // If true CAS can only be called in by the unit the addAction is tied to.
 JWC_num  = 20;                                 // Set number of CAS calls available for per unit
-JWC_napalmExpire = 500;                       // Time in seconds the napalm fire will live
+JWC_napalmExpire = 120;                       // Time in seconds the napalm fire will live
 JWC_disallowedMunition = ["CBU"];              // Add names of disallowed munition: "JDAM", "CBU" or "NAPALM"
 JWC_restrictedZones = [nobomb2];       // Add triggers as objects which defines disallowed CAS zones, like bases in TDM etc. leave empty [] if there is no restrictions.
 JWC_CASarray = ["CAS1","CAS2"];         // Add CAS init names to this array. 
