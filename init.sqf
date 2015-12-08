@@ -134,5 +134,5 @@ waitUntil {alive player};
 if (playerSide == west) then {
 _handle=createdialog "AW_INTRO";
 sleep 5;
-"Information" hintC ["HALO Jump not available? Use the MHQ Vehicle, deploy it near red Objectives to set a Teleport Point","Everyone can Revive by holding space","Lift script broken after update use Ctrl + B for Sling Load vehicles/objects","Join a Squad - be a Team Player by pressing U key or open Squad Management","You can deploy Bipod with C ArmA Version and or Shift + H Mission Version"];
+"Information" hintC ["HALO Jump not available? Use the MHQ Vehicle, deploy it near red Objectives to set a Teleport Point","Everyone can Revive by holding space","Lift script broken after update use Ctrl + B to hook or Sling Load vehicles/objects","Join a Squad - be a Team Player by pressing U key or open Squad Management","You can deploy Bipod with C ArmA Version and or Shift + H Mission Version"];
 };
