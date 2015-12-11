@@ -345,7 +345,7 @@ class Params
 				title = "Groups Patrolling AO";
 				values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
 				texts[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
-				default = 4; // default 11... remember, more AI = less FPS
+				default = 5; // default 11... remember, more AI = less FPS
 			};
 		
 		class SniperTeamsPatrolSecondary {
@@ -387,7 +387,7 @@ class Params
 			title = "AO NUMBER OF ENEMIES IN BUILDINGS";
 			values[] = {0,5,10,15,20,25,30,35,40,45,50};
 			texts[] = {"DISABLED","5","10","15","20","25","30","35","40","45","50"};
-			default = 0;
+			default = 8;
 		};
 		
 		class GroupPatrol {
