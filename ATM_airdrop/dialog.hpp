@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////
 //                =ATM= Airdrop       	 				    //
 //         		 =ATM=Pokertour        		       		    //
-//				version : 6.0							        //
-//				date : 12/02/2014						   //
+//				version : 6.5						        //
+//				date : 28/12/2015						   //
 //                   visit us : atmarma.fr                 //
 /////////////////////////////////////////////////////////
 
@@ -27,45 +27,45 @@ class ATM_AD_RscShortcutButton {
 	textureNoShortcut = "#(argb,8,8,3)color(0,0,0,0)";
 	periodFocus = 1.2;
 	periodOver = 0.8;
-	
+
 	class HitZone {
 		left = 0.0;
 		top = 0.0;
 		right = 0.0;
 		bottom = 0.0;
 	};
-	
+
 	class ShortcutPos {
 		left = 0;
-		top = "(			(		(		((safezoneW / safezoneH) min 1.2) / 1.2) / 20) - 		(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)) / 2";
-		w = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1) * (3/4)";
-		h = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+		top = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 20) - (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)) / 2";
+		w = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1) * (3/4)";
+		h = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	};
-	
+
 	class TextPos {
-		left = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1) * (3/4)";
-		top = "(			(		(		((safezoneW / safezoneH) min 1.2) / 1.2) / 20) - 		(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)) / 2";
+		left = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1) * (3/4)";
+		top = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 20) - (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)) / 2";
 		right = 0.005;
 		bottom = 0.0;
 	};
 	period = 0.4;
 	font = "PuristaMedium";
-	size = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
-	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	size = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	text = "";
 	soundEnter[] = {"\A3\ui_f\data\sound\onover", 0.09, 1};
 	soundPush[] = {"\A3\ui_f\data\sound\new1", 0.0, 0};
 	soundClick[] = {"\A3\ui_f\data\sound\onclick", 0.07, 1};
 	soundEscape[] = {"\A3\ui_f\data\sound\onescape", 0.09, 1};
 	action = "";
-	
+
 	class Attributes {
 		font = "PuristaMedium";
 		color = "#E5E5E5";
 		align = "left";
 		shadow = "true";
 	};
-	
+
 	class AttributesImage {
 		font = "PuristaMedium";
 		color = "#E5E5E5";
@@ -83,7 +83,7 @@ class ATM_AD_RscText {
 	shadow = 1;
 	colorShadow[] = {0, 0, 0, 0.5};
 	font = "PuristaMedium";
-	SizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	text = "";
 	colorText[] = {1, 1, 1, 1.0};
 	colorBackground[] = {0, 0, 0, 0};
@@ -93,7 +93,7 @@ class ATM_AD_RscText {
 class ATM_AD_RscTitle : ATM_AD_RscText {
 	style = 0;
 	shadow = 0;
-	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	colorText[] = {0.95, 0.95, 0.95, 1};
 };
 
@@ -124,32 +124,32 @@ class ATM_AD_RscButtonMenu : ATM_AD_RscShortcutButton {
 	period = 1.2;
 	periodFocus = 1.2;
 	periodOver = 1.2;
-	size = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
-	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
-	
+	size = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+
 	class TextPos {
-		left = "0.25 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
-		top = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) - 		(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)) / 2";
+		left = "0.25 * (((safezoneW / safezoneH) min 1.2) / 40)";
+		top = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) - (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)) / 2";
 		right = 0.005;
 		bottom = 0.0;
 	};
-	
+
 	class Attributes {
 		font = "PuristaLight";
 		color = "#E5E5E5";
 		align = "left";
 		shadow = "false";
 	};
-	
+
 	class ShortcutPos {
-		left = "(6.25 * 			(			((safezoneW / safezoneH) min 1.2) / 40)) - 0.0225 - 0.005";
+		left = "(6.25 * (((safezoneW / safezoneH) min 1.2) / 40)) - 0.0225 - 0.005";
 		top = 0.005;
 		w = 0.0225;
 		h = 0.03;
 	};
 };
 
-class ATM_AD_RscXSliderH 
+class ATM_AD_RscXSliderH
 {
 	style = 1024;
 	type = 43;
@@ -173,7 +173,7 @@ class ATM_AD_RscXSliderH
 	thumb = "\A3\ui_f\data\gui\cfg\slider\thumb_ca.paa";
 };
 
-class ATM_AD_activeText 
+class ATM_AD_activeText
 {
 	idc = -1;
 	type = 11;
@@ -218,7 +218,7 @@ class ATM_AD_Keys
 		soundExpand[] = {"\ca\ui\data\sound\new1", 0.09, 1};
 		soundCollapse[] = {"\ca\ui\data\sound\new1", 0.09, 1};
 		maxHistoryDelay = 1.0;
-	
+
 		class ComboScrollBar {
 			color[] = {1, 1, 1, 0.6};
 			colorActive[] = {1, 1, 1, 1};
@@ -230,13 +230,13 @@ class ATM_AD_Keys
 		};
 	};
 
-class ATM_AD_ALTITUDE_SELECT 
+class ATM_AD_ALTITUDE_SELECT
 {
 	idd = 2900;
 	name= "Altitudeselect";
 	movingEnable = true;
 	enableSimulation = true;
-	
+
 	class controlsBackground {
 		class ATM_RscTitleBackground:ATM_AD_RscText {
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
@@ -246,7 +246,7 @@ class ATM_AD_ALTITUDE_SELECT
 			w = 0.52;
 			h = (1 / 25);
 		};
-		
+
 		class MainBackground : ATM_AD_RscText {
 			colorBackground[] = {0, 0, 0, 0.7};
 			idc = -1;
@@ -255,40 +255,40 @@ class ATM_AD_ALTITUDE_SELECT
 			w = 0.52;
 			h = 0.4 - (12 / 67);
 		};
-		
+
 		class Altitude : ATM_AD_RscText
 		{
 			idc = -1;
 			text = "$STR_ATM_Alt";
-			
+
 			x = 0.32; y = 0.258;
 			w = 0.275; h = 0.04;
 		};
-		
+
 		class Keys : ATM_AD_RscText
 		{
 			idc = -1;
 			text = "$STR_ATM_Keys";
-			
+
 			x = 0.32; y = 0.358;
 			w = 0.275; h = 0.04;
 		};
 
 	};
-	
-	class controls 
+
+	class controls
 	{
 		class atmTitle : ATM_AD_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = -1;
 			text = "$STR_ATM_Main";
-			x = 0.38;
+			x = 0.3;
 			y = 0.2;
 			w = 0.8;
 			h = (1 / 25);
 		};
-		
-		class Alt_slider : ATM_AD_RscXSliderH 
+
+		class Alt_slider : ATM_AD_RscXSliderH
 		{
 			idc = 2901;
 			text = "";
@@ -296,25 +296,25 @@ class ATM_AD_ALTITUDE_SELECT
 			tooltip = "$STR_ATM_hover";
 			x = 0.42;
 			y = 0.30 - (1 / 25);
-			
-			w = "9 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
-			h = "1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+
+			w = "9 * (((safezoneW / safezoneH) min 1.2) / 40)";
+			h = "1 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 		};
-		
+
 		class ALT_value : ATM_AD_RscText
 		{
 			idc = 2902;
 			text = "";
-			
+
 			x = 0.70; y = 0.258;
 			w = 0.275; h = 0.04;
 		};
-		
+
 		class KEY_value : ATM_AD_RscText
 		{
 			idc = 2904;
 			text = "";
-			
+
 			x = 0.70; y = 0.258;
 			w = 0.275; h = 0.04;
 		};
@@ -323,13 +323,13 @@ class ATM_AD_ALTITUDE_SELECT
 			idc = 2903;
 			rowHeight = 0.03;
 			wholeHeight = 6.5 * 0.03;
-			x = 0.505 * safezoneW + safezoneX;
+			x = 0.55 * safezoneW + safezoneX;
 			y = 0.425 * safezoneH + safezoneY;
 			w = 0.0459375 * safezoneW;
 			h = 0.018 * safezoneH;
 			onLBSelChanged = "[] call pkChangeKey;";
 		};
-		
+
 		class ATM_AD_ButtonClose : ATM_AD_RscButtonMenu {
 			idc = -1;
 			//shortcuts[] = {0x00050000 + 2};

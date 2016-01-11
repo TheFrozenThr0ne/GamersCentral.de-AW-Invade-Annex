@@ -14,6 +14,7 @@ Description:
 	
 ______________________________________________________*/
 
+
 //------------------------------------------------ Handle parameters
 
 for [ {_i = 0}, {_i < count(paramsArray)}, {_i = _i + 1} ] do {
@@ -32,6 +33,11 @@ if !(hasInterface or isServer) then {
 
 };
 
+masterClassArray = ["B_MBT_01_mlrs_F","O_Plane_CAS_02_F","O_Heli_Attack_02_black_F"]; //whitelist vehicles
+allowed = call compile preprocessFileLineNumbers "\InvadeAnnex_settings\memberIds.txt"; //whitelist
+publicVariable "masterClassArray";
+publicVariable "allowed";
+
 ["Initialize"] call BIS_fnc_dynamicGroups;
 
 if (PARAMS_AO == 1) then { _null = [] execVM "mission\main\missionControl.sqf"; };						// Main AO
@@ -41,6 +47,7 @@ _null = [] execVM "scripts\eos\OpenMe.sqf";																// EOS (urban mission
 _null = [] execVM "scripts\misc\airbaseDefense.sqf";													// Airbase air defense
 _null = [] execVM "scripts\misc\cleanup.sqf";															// cleanup
 _null = [] execVM "scripts\misc\islandConfig.sqf";														// prep the island for mission
+_null = [] execVM "scripts\misc\zeusupdater.sqf";														// zeus unit updater loop
 if (PARAMS_EasterEggs == 1) then {_null = [] execVM "scripts\easterEggs.sqf";};							// Spawn easter eggs around the island
 [] execVM "scripts\real_weather.sqf";
 adminCurators = allCurators;

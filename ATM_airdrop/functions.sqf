@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////
 //                =ATM= Airdrop       	 				    //
 //         		 =ATM=Pokertour        		       		    //
-//				version : 6.0							        //
-//				date : 12/02/2014						   //
+//				version : 6.5						        //
+//				date : 28/12/2015						   //
 //                   visit us : atmarma.fr                 //
 /////////////////////////////////////////////////////////
 
@@ -206,6 +206,7 @@ dokeyDown={
     player setvariable["key",true];
     player setvariable ["cutaway",false];
     Cut_Rope = (findDisplay 46) displayRemoveEventHandler ["KeyDown", Cut_Rope];
+    IsCutRope = true;
    };
     _r=true;
       };

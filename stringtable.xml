@@ -152,8 +152,8 @@
 			<French>Choisir votre altitude et une touche</French>
 		<Key>
 		<Key ID="STR_ATM_hover">
-			<Original>Your select Altitude</Original>
-			<French>Votre Altitude choisi</French>
+			<Original>Select your altitude and your key</Original>
+			<French>Selectionner votre altitude et votre touche</French>
 		</Key>
 		<Key ID="STR_ATM_hinton">
 			<Original>Select Altitude and Designate LZ for HALO Jump on the map</Original>
@@ -172,7 +172,6 @@
 			<French>Fermer</French>
 		</Key>
 	</Package>
-</Project>
 <Project name="Virtual Ammobox System">
   <Package name="Main">
     <Key ID="STR_VAS_Main_Weapons">

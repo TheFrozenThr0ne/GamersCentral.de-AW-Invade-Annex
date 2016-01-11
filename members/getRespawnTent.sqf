@@ -7,7 +7,7 @@ _uid = getPlayerUID _player;
 _nameCheck = false;
 
 
-if (_uid in masterUIDArray) then {
+if (_uid in allowed) then {
 _nameCheck = true;
 };
 
@@ -17,5 +17,5 @@ player addBackpack "B_Respawn_TentA_F";
 
 titleText ["You are a Member, Respawn Tent added.","PLAIN DOWN"]; titleFadeOut 8;
 } else {
-titleText ["You are not a Member, Sorry. Please apply and join our Community. GamersCentral on Steam.","PLAIN DOWN"]; titleFadeOut 8;
+titleText ["You are not a Member, Sorry. Please join our Community - GamersCentral on Steam.","PLAIN DOWN"]; titleFadeOut 8;
 };

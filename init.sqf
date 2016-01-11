@@ -19,29 +19,13 @@ ______________________________________________________*/
   [] execVM (externalConfigFolder + "\init.sqf");
 };*/
 
-// Werthles Headless Script Parameters v2.3
-// 1. Repeating - true/Once - false,
-// 2. Time between repeats (seconds),
-// 3. Debug available for all - true/Just available for admin/host - false,
-// 4. Advanced balancing - true/Simple balancing - false,
-// 5. Delay before executing (seconds),
-// 6. Additional syncing time between groups transferred to try to reduce bad unit transfer caused by desyncs (seconds)
-// 7. Display an initial setup report after the first cycle, showing the number of units moved to HCs,
-// 8. Addition phrases to look for when checking whether to ignore.
-// Unit names, group names, unit's current transport vehicle, modules synced to units and unit class names will all be checked for these phrases
-// Format:
-// ["UnitName","GroupCallsignName","SupportProviderModule1","TypeOfUnit"]
-// E.g. ["BLUE1","AlphaSquad","B_Heli_Transport_01_camo_F"] (including ""s)
-// Specifying "B_Heli" would stop all units with that class type from transferring to HCs
-// However, if you specify "BLUE1", "NAVYBLUE10" will also be ignored
-
-//[true,30,false,true,30,3,true,[]] execVM "WerthlesHeadless.sqf";
-
 null = [] execVM "auxslingloading.sqf";
 
-_null = [] execVM "members\communityList.sqf";
+[player] execVM "scripts\simpleEP.sqf";
 
-_IntroMusic            = true; // Welcome Intro Song
+//_null = [] execVM "members\communityList.sqf";
+
+_IntroMusic            = false; // Welcome Intro Song
 if (_IntroMusic) then { playMusic "intro";};
 
 // [player] execVM "welcome.sqf";
@@ -90,15 +74,6 @@ squad_mgmt_action = player addaction ["<t color='#CCCC00'>Group Management</t>",
 }
 ];
 
-// Admin reserved slot
-// You can reserve admin slot	
-//INS_REV_CFG_reserved_slot = true;
-//INS_REV_CFG_reserved_slot_units = ["bis_curatorUnit_1","bis_curatorUnit_2","bis_curatorUnit_3"];
-//[] execVM "scripts\reserved_slot\reserved_slot.sqf";
-
-// if (isServer) then {OnPlayerConnected "[_uid,_name] execVM ""members\checkslot.sqf""";};
-
-// DAC_Basic_Value = 0;execVM "DAC\DAC_Config_Creator.sqf";
 //call compile preprocessFile "scripts\=BTC=_revive\=BTC=_revive_init.sqf";		// revive
 call compile preprocessFile "=BTC=_TK_punishment\=BTC=_tk_init.sqf"; 
 
@@ -108,23 +83,8 @@ if (isServer) then {[1000,-1,true,100,1000,1000]execvm "zbe_cache\main.sqf"};
 //execFSM "core\fsm\ZBE_HCCache.fsm";
 
 [] execVM "scripts\DOM_repair\init.sqf";
-//[] execVM "scripts\DOM_squad\init.sqf";
-//0 = [] execVM "scripts\DOM_squad\group_manager.sqf";
 _null = [] execVM "scripts\units\tankCheck.sqf";
 [] execVM "scripts\clean.sqf";	
-
-addMissionEventHandler ["HandleDisconnect", { 
-    _unit  = _this select 0;
-    _pos = getPosATL _unit;
-    
-    _wholder = nearestObjects [_pos, ["weaponHolderSimulated", "weaponHolder"], 2];
-    
-    {
-        deleteVehicle _x;
-    }forEach _wholder + [_unit];
-    
-    false
-}];  
 
 
 taskmasterLoaded = false;
@@ -151,6 +111,6 @@ player enableStamina false;
 waitUntil {alive player};
 if (playerSide == west) then {
 _handle=createdialog "AW_INTRO";
-sleep 5;
-"Information" hintC ["HALO Jump not available? Use the MHQ Vehicle, deploy it near red Objectives to set a Teleport Point","Everyone can Revive by holding space","Lift script broken after update use Ctrl + B to hook or Sling Load vehicles/objects","Join a Squad - be a Team Player by pressing U key or open Squad Management","You can deploy Bipod with C ArmA Version and or Shift + H Mission Version"];
+//sleep 5;
+//"Information" hintC ["Join us today and get added after a Server Restart. Server restart now every day at 08:00AM CET. Steam Group GamersCentral","Members can Deploy a Respawn Point with Tent","HALO Jump not available? Use the MHQ Vehicle, deploy it near red Objectives to set a Teleport Point","Everyone can Revive by holding space","Lift script broken after update use Ctrl + B to hook or Sling Load vehicles/objects","Join a Squad - be a Team Player by pressing U key or open Squad Management","You can deploy Bipod with C ArmA Version and or Shift + H Mission Version"];
 };

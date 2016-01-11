@@ -1,17 +1,16 @@
-_u = _this select 0;
-_p = ["<t color='#ffff33'>Put on ear plugs</t>",{
-	_s = _this select 0;
+sepa = ["Put on ear plugs</t>",{
+	_u = _this select 1;
 	_i = _this select 2;
-	if (soundVolume != 1) then {
-		1 fadeSound 1;
-		_s setUserActionText [_i,"<t color='#ffff33'>Put on ear plugs</t>"];
+	if (soundVolume == 1) then {
+		1 fadeSound 0.5;
+		_u setUserActionText [_i,"Take off ear plugs"]
 	} else {
-		1 fadeSound 0.4;
-		_s setUserActionText [_i,"<t color='#ffff33'>Take off ear plugs</t>"];
+		1 fadeSound 1;
+		_u setUserActionText [_i,"Put on ear plugs"]
 	}
 },[],-90,false,true,"","_target == vehicle player"];
-_u addAction _p;
-_u addEventHandler ["Respawn",{
+player addAction sepa;
+player addEventHandler ["Respawn",{
 	1 fadeSound 1;
-	(_this select 0) addAction _p;
+	player addAction sepa;
 }];

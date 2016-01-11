@@ -33,6 +33,7 @@ _targets = _targets - [_target2];
 _target3 = _targets call BIS_fnc_selectRandom;
 
 _targetArray = [_target1,_target2,_target3];
+["FOB_SW","FOB_SW_Hmv","FOB_SW_Hmv_1","FOB_SW_LZ","FOB_SW_Repair","FOB_SW_Medic","FOB_SW_Fuel","FOB_SW_Ammo","FOB_SW_APC","FOB_SW_Supp"] execVM "mission\Fob\FOB_Main.sqf";
 
 //----------------------------------------------- AO MAIN SEQUENCE
 
@@ -216,7 +217,6 @@ while { count _targetArray > 0 } do {
 	
 	deleteVehicle _dt;
 	[_enemiesArray] spawn QS_fnc_AOdelete;
-	["Main_AO"] call DAC_fDeleteZone;
 	{ deleteVehicle _x } forEach [tower4,tower5,tower6];
 	if (_chance < PARAMS_RadioTowerMineFieldChance) then {[_unitsArray] spawn QS_fnc_AOdelete;};
 

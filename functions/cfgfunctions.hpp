@@ -79,3 +79,16 @@ class QS
 		class serverMapTP {};
 	};
 };
+
+class AW
+{
+	tag = "AW";
+	class functions
+	{
+		file = "functions";
+		class globalHint {};
+		class globalNotification {};
+		class globalSideChat {};
+		class fobReward {};
+	};
+};
