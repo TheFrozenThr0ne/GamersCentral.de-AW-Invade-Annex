@@ -26,6 +26,8 @@ for [ {_i = 0}, {_i < count(paramsArray)}, {_i = _i + 1} ] do {
 	];
 };
 
+[] spawn compileFinal preprocessFileLineNumbers "manage_time.sqf";
+
 //-------------------------------------------------- Server scripts
 if !(hasInterface or isServer) then {
   HeadlessVariable = true;
@@ -33,12 +35,12 @@ if !(hasInterface or isServer) then {
 
 };
 
+["Initialize"] call BIS_fnc_dynamicGroups;
+
 masterClassArray = ["B_MBT_01_mlrs_F","O_Plane_CAS_02_F","O_Heli_Attack_02_black_F"]; //whitelist vehicles
 allowed = call compile preprocessFileLineNumbers "\InvadeAnnex_settings\memberIds.txt"; //whitelist
 publicVariable "masterClassArray";
 publicVariable "allowed";
-
-["Initialize"] call BIS_fnc_dynamicGroups;
 
 if (PARAMS_AO == 1) then { _null = [] execVM "mission\main\missionControl.sqf"; };						// Main AO
 if (PARAMS_SideObjectives == 1) then { _null = [] execVM "mission\side\missionControl.sqf";};			// Side objectives		

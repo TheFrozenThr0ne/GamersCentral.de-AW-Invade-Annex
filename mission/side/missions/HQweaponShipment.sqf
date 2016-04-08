@@ -190,6 +190,25 @@ while { sideMissionUp } do {
 		{ _x setMarkerPos [-10000,-10000,-10000]; } forEach ["sideMarker", "sideCircle"];
 		publicVariable "sideMarker";
 		
+		sleep 4;
+	
+		// Get the current credits of my_factory
+		_creditsSmall = my_factory_small getVariable "R3F_LOG_CF_credits";
+		_creditsMedium = my_factory_medium getVariable "R3F_LOG_CF_credits";
+		_creditsBig = my_factory_big getVariable "R3F_LOG_CF_credits";
+	
+		// Add 15 000 to the value
+		_creditsSmall = _creditsSmall + 120000;
+		_creditsMedium = _creditsMedium + 120000;
+		_creditsBig = _creditsBig + 120000;
+	
+		// Set the new credits
+		my_factory_small setVariable ["R3F_LOG_CF_credits", _creditsSmall, true];
+		my_factory_medium setVariable ["R3F_LOG_CF_credits", _creditsMedium, true];
+		my_factory_big setVariable ["R3F_LOG_CF_credits", _creditsBig, true];
+	
+		showNotification = ["GetCredits", "120000 Credits added to Factory"]; publicVariable "showNotification";
+		
 		//--------------------- SECONDARY EXPLOSIONS, create a function for this?
 		
 		sleep 10 + (random 10);

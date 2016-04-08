@@ -2,7 +2,7 @@
 
 author = [Rarek, Quiksilver] Customized by GamersCentral;					// Visible when loading mission
 onLoadName = "Invade and Annex 2.85C";						// Visible when loading mission
-OnLoadMission = "- Welcome back to GamersCentral Invade and Annex  - Join us on TeamSpeak at TS3.GamersCentral.de                                 - Protected by SpyGlass Anti-Hack";
+OnLoadMission = "- Welcome back to GamersCentral Invade and Annex                                 - Join us on TeamSpeak at TS3.GamersCentral.de                                 - Protected by SpyGlass Anti-Hack";
 loadScreen = "media\images\loading.jpg";				// Visible when loading mission
 overviewPicture = "media\images\loading.jpg";			// Visible when selecting mission	
 
@@ -34,13 +34,13 @@ showUAVFeed = 1;										// Enables/Disables the UAV Feed. Zeus-related.
 
 //------------------------- Respawn
 
-respawnTemplates[] = {"Revive", "MenuPosition"/*, "MenuInventory"*/};
+respawnTemplates[] = {/*"Revive", "MenuPosition", "MenuInventory"*/};
 Respawn = 3;											// 0 = none. 1 = bird. 2 = instant where died. 3 = base or respawn_west marker. 4 = respawn with team, or bird. 5 = into AI or bird.
-RespawnDelay = 10;										// Delay prior to respawn, ensure longer than BTC revive delay.
+RespawnDelay = 3;									// Delay prior to respawn, ensure longer than BTC revive delay.
 RespawnDialog = 1;										// default = 1. show respawn timer and scoreboard when killed.
 reviveForceRespawnDelay = 15;
 reviveBleedOutDelay = 300;
-respawnOnStart = 1
+respawnOnStart = 0
 
 //------------------------- Garbage collector
 							
@@ -57,7 +57,7 @@ corpseRemovalMaxTime = 120;								// Max time before removal
 #include "VAS\menu.hpp" 						// VAS
 #include "scripts\taw_vd\dialog.hpp" 					// TAW View Distance
 #include "scripts\vehicle\crew\common.hpp"  			// vehicle crew hud
-//#include "scripts\=BTC=_revive\=BTC=_respawn.h"			// BTC medic revive system
+#include "scripts\=BTC=_revive\=BTC=_respawn.h"			// BTC medic revive system
 #include "R3F_LOG\desc_include.h"						// Logistics
 #include "mission\side\downloadData.hpp"				// Side Mission
 #include "ATM_airdrop\dialog.hpp"						// Halo Jump
@@ -234,6 +234,13 @@ class Params
 				values[] = {0,1};
 				texts[] = {$STR_DISABLED,$STR_ENABLED};
 				default = 1;
+			};
+			
+		class DayDuration {
+				title = "Day duration (hours)";
+				values[] = { 10, 20, 30, 40, 50, 60};
+				texts[] = { "10", "20", "30", "40", "50", "60" };
+				default = 10;
 			};
 			
 		class AO {
@@ -573,6 +580,15 @@ class CfgNotifications
 		duration = 5; 			// How many seconds will the notification be displayed
 		priority = 0; 			// Priority; higher number = more important; tasks in queue are selected by priority
 		difficulty[] = {}; 		// Required difficulty settings. All listed difficulties has to be enabled
+	};
+	
+	class GetCredits
+	{
+		title = "NEW FACTORY CREDITS";
+		description = "%1";
+		iconPicture = "media\images\notificons\sub_objective_completed.paa";
+		color[] = {1,1,1,1};
+		priority = 8;
 	};
 	
 	class NewMainSecondary

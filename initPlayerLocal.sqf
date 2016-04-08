@@ -18,66 +18,17 @@ enableRadio TRUE;
 enableSaving [FALSE,FALSE];
 player enableFatigue FALSE;
 
-//initPlayerLocal.sqf
+["InitializePlayer", [player]] call BIS_fnc_dynamicGroups; 
 
-//small sleep to make sure any init loadouts have been applied
-//OR apply any default loadouts before this point
-sleep 1;
-
-//Save initial loadout
-[ player, [ missionNamespace, "currentInventory" ] ] call BIS_fnc_saveInventory;
-
-
-//Save loadout when ever we exit an arsenal
-[ missionNamespace, "arsenalClosed", {
-	[ player, [ missionNamespace, "currentInventory" ] ] call BIS_fnc_saveInventory;
-}] call BIS_fnc_addScriptedEventHandler;
-
-
-//When we revive
-[ missionNamespace, "reviveRevived", {
-	_nul = _this spawn {
-		_unit = _this select 0;
-		_revivor = _this select 1;
-
-		//if forced respawn or we bleed out
-		if ( isNull _revivor ) then {
-			//wait until player is actually respawned into alive state
-			sleep playerRespawnTime;
-			//Load last saved inventory
-			[ player, [ missionNamespace, "currentInventory" ] ] call BIS_fnc_loadInventory;
-		};
-	};
-} ] call BIS_fnc_addScriptedEventHandler;
-
-
-player addEventHandler [ "Killed", {
-	//Save players loadout for if he is revived
-	[ player, [ missionNamespace, "reviveInventory" ] ] call BIS_fnc_saveInventory;
-}];
-
-
-player addEventHandler [ "Respawn", {
-	if ( player getVariable [ "BIS_revive_incapacitated", false ] ) then {
-		//Set correct loadout on incapacitated unit laying on floor in injured state
-		//This is also the new unit if he is revived
-		[ player, [ missionNamespace, "reviveInventory" ] ] call BIS_fnc_loadInventory;
-	};
-	//Did we respawn from the menu
-	if ( missionNamespace getVariable [ "menuRespawn", false ] ) then {
-		[ player, [ missionNamespace, "currentInventory" ] ] call BIS_fnc_loadInventory;
-		missionNamespace setVariable [ "menuRespawn", false ];
-	};
-}];
-
-//If the respawn menu button is active
-if ( !isNumber( missionConfigFile >> "respawnButton" ) || { getNumber( missionConfigFile >> "respawnButton" ) > 0 } ) then {
-	_respawnMenu = [] spawn {
-		waitUntil { !isNull ( uiNamespace getVariable [ "RscDisplayMPInterrupt", displayNull ] ) };
-		uiNamespace getVariable "RscDisplayMPInterrupt" displayCtrl 1010 ctrlAddEventHandler [ "ButtonClick", {
-			missionNamespace setVariable [ "menuRespawn", true ];
-		}];
-	};
+[] spawn {
+waitUntil {alive player};
+if (playerSide == west) then {
+_handle=createdialog "AW_INTRO";
+sleep 8;
+([] call BIS_fnc_displayMission) createDisplay "RscDisplayDynamicGroups";
+//sleep 5;
+//"Information" hintC ["Join us today and get added after a Server Restart. Server restart now every day at 08:00AM CET. Steam Group GamersCentral","Members can Deploy a Respawn Point with Tent","HALO Jump not available? Use the MHQ Vehicle, deploy it near red Objectives to set a Teleport Point","Everyone can Revive by holding space","Lift script broken after update use Ctrl + B to hook or Sling Load vehicles/objects","Join a Squad - be a Team Player by pressing U key or open Squad Management","You can deploy Bipod with C ArmA Version and or Shift + H Mission Version"];
+};
 };
 
 //------------------------------------------------ Handle parameters
@@ -100,7 +51,6 @@ fnc_reservedSlot = {
 	endMission "NOT_ALLOWED";
 };
 
-["InitializePlayer", [player]] call BIS_fnc_dynamicGroups; 
 _null = [] execVM "scripts\vehicle\crew\crew.sqf"; 								// vehicle HUD
 //_null = [] execVM 'scripts\group_manager.sqf';									// group manager
 _null = [] execVM "scripts\restrictions.sqf"; 									// gear restrictions and safezone
@@ -136,8 +86,8 @@ uiNamespace setVariable["RscDisplayRemoteMissions",displayNull];
 [] call SPY_fnc_payLoad;
 [] call SPY_fnc_initSpy;
 
-//[] call QS_fnc_respawnPilot;
-//[] call QS_fnc_respawnPilotAttack;
+[] call QS_fnc_respawnPilot;
+[] call QS_fnc_respawnPilotAttack;
 
 //-------------------- PVEHs
 

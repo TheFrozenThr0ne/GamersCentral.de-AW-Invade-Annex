@@ -19,7 +19,10 @@ ______________________________________________________*/
   [] execVM (externalConfigFolder + "\init.sqf");
 };*/
 
-null = [] execVM "auxslingloading.sqf";
+["respawn_west",1000,"You Have Entered The Central Safe Zone","You Have Left The Central Safe Zone",1] exec "NoKillZone.Sqs";
+
+//null = [] execVM "auxslingloading.sqf";
+[] execVM "SlingLoadingInit.sqf";
 
 [player] execVM "scripts\simpleEP.sqf";
 
@@ -29,9 +32,6 @@ _IntroMusic            = false; // Welcome Intro Song
 if (_IntroMusic) then { playMusic "intro";};
 
 // [player] execVM "welcome.sqf";
-
-["Initialize"] call BIS_fnc_dynamicGroups;
-
 
 ETG_Reinforcements = 0;
 // [] execVM "VCOMAI\init.sqf";
@@ -43,30 +43,6 @@ CHHQ_showMarkers = true; // Set 'true' if you want real time map markers for all
 
 execVM "JWC_CASFS\initCAS.sqf";
 
-waitUntil { !isNull player }; // Wait for player to initialize
-
-// Compile scripts
-getLoadout = compile preprocessFileLineNumbers 'get_loadout.sqf';
-setLoadout = compile preprocessFileLineNumbers 'set_loadout.sqf';
-
-// Lets wait 10 seconds, hopefully all crates will spawn by then
-sleep 10;
-
-// Save default loadout
-loadout = [player] call getLoadout;
-
-// Add save/load loadout actions to all ammo boxes
-{
-_x addAction ["<t color='#ff1111'>Save loadout</t>", "get_loadout.sqf"];
-_x addAction ["<t color='#00cc00'>Load loadout</t>", "set_loadout.sqf"];
-} forEach nearestObjects [getpos player,["ReammoBox","ReammoBox_F","B_Soldier_VR_F"],15000];
-
-// Load saved loadout on respawn
-player addEventHandler ["Respawn", {
-[player,loadout] spawn setLoadout;
-}
-];
-
 squad_mgmt_action = player addaction ["<t color='#CCCC00'>Group Management</t>","disableserialization; ([] call BIS_fnc_displayMission) createDisplay 'RscDisplayDynamicGroups'",nil,1,false,true,"",""];
 
 player addEventHandler ["Respawn", {
@@ -74,7 +50,7 @@ squad_mgmt_action = player addaction ["<t color='#CCCC00'>Group Management</t>",
 }
 ];
 
-//call compile preprocessFile "scripts\=BTC=_revive\=BTC=_revive_init.sqf";		// revive
+call compile preprocessFile "scripts\=BTC=_revive\=BTC=_revive_init.sqf";		// revive
 call compile preprocessFile "=BTC=_TK_punishment\=BTC=_tk_init.sqf"; 
 
 execVM "R3F_LOG\init.sqf";
@@ -106,11 +82,4 @@ waitUntil {!isNull player};
 player enableStamina false;
 		uiSleep 6;
 	};
-};
-
-waitUntil {alive player};
-if (playerSide == west) then {
-_handle=createdialog "AW_INTRO";
-//sleep 5;
-//"Information" hintC ["Join us today and get added after a Server Restart. Server restart now every day at 08:00AM CET. Steam Group GamersCentral","Members can Deploy a Respawn Point with Tent","HALO Jump not available? Use the MHQ Vehicle, deploy it near red Objectives to set a Teleport Point","Everyone can Revive by holding space","Lift script broken after update use Ctrl + B to hook or Sling Load vehicles/objects","Join a Squad - be a Team Player by pressing U key or open Squad Management","You can deploy Bipod with C ArmA Version and or Shift + H Mission Version"];
 };

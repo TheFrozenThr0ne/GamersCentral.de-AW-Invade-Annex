@@ -127,6 +127,15 @@ if (_count > 0) then {
 };
 _veh setVehicleAmmo 1;	// Reload turrets / drivers magazine
 
+if(_veh isKindOf "B_Heli_Light_01_armed_F") then {
+_veh addmagazine "168Rnd_CMFlare_Chaff_Magazine";
+_veh vehicleChat "Flares Added!";
+};
+if(_veh isKindOf "B_Heli_Light_01_F") then {
+_veh addmagazine "168Rnd_CMFlare_Chaff_Magazine";
+_veh vehicleChat "Flares Added!";
+};
+
 _veh vehicleChat format ["%1 successfully repaired and refuelled.", _vehType];
 
 _fuelVeh = ["B_APC_Tracked_01_CRV_F","B_Truck_01_fuel_F"];

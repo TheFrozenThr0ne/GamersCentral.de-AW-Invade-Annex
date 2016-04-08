@@ -24,19 +24,16 @@ _loopTimeout = 10 + (random 10);
 _missionList = [	
 	"destroyUrban",
 	"HQfiaDownload",
-	"HQweaponShipment",
+	//"HQweaponShipment",
 	"HQcoast",
 	"HQfia",
 	"HQfiaDownload",
 	"HQind",
 	"HQresearch",
-	"HQfiaDownload",
 	"priorityAA",	
 	"priorityARTY",
-	"HQfiaDownload",
 	"secureChopper",
 	"secureIntelUnit",
-	"HQfiaDownload",
 	"secureIntelVehicle",
 	"secureRadar"
 ];

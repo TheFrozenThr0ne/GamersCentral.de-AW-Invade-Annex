@@ -133,6 +133,25 @@ while { sideMissionUp } do {
 		[] call QS_fnc_SMhintSUCCESS;
 		{ _x setMarkerPos [-10000,-10000,-10000]; } forEach ["sideMarker", "sideCircle"]; publicVariable "sideMarker";
 	
+		sleep 4;
+	
+		// Get the current credits of my_factory
+		_creditsSmall = my_factory_small getVariable "R3F_LOG_CF_credits";
+		_creditsMedium = my_factory_medium getVariable "R3F_LOG_CF_credits";
+		_creditsBig = my_factory_big getVariable "R3F_LOG_CF_credits";
+	
+		// Add 15 000 to the value
+		_creditsSmall = _creditsSmall + 135000;
+		_creditsMedium = _creditsMedium + 135000;
+		_creditsBig = _creditsBig + 135000;
+	
+		// Set the new credits
+		my_factory_small setVariable ["R3F_LOG_CF_credits", _creditsSmall, true];
+		my_factory_medium setVariable ["R3F_LOG_CF_credits", _creditsMedium, true];
+		my_factory_big setVariable ["R3F_LOG_CF_credits", _creditsBig, true];
+	
+		showNotification = ["GetCredits", "135000 Credits added to Factory"]; publicVariable "showNotification";
+		
 		//--------------------- DELETE
 		sleep 120;
 		{ deleteVehicle _x } forEach [sideObj,tower1,tower2,tower3];

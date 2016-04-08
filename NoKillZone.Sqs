@@ -1,0 +1,151 @@
+; No Kill Zone - v1.16
+; (c)2016 By SuperChicken Productions - Atlanta GA., USA
+
+
+; usage = [MARKER,DISTANCE,TEXT-IN,TEXT-OUT,PROTECTION] exec "NoKillZone.Sqs"; - MARKER = a marker that is the CENTER of the zone - DISTANCE = how from out from the MARKER to 'protect' - TEXT-IN = text to show via HINT if inside zone - TEXT-OUT = text to show via HINT if outside zone - PROTECTION = if players vehicle is also protected
+; example:  ["CentralSZ",500,"You Have Entered The Central Safe Zone!","You Have Left The Central Safe Zone!",0] exec "NoKillZone.Sqs"; - this would protect any player and not his vehicle within 500m of the marker called 'CentralSZ'
+
+; run for every marker you have set
+; example, for epoch you have 3:
+; ["CentralSZ",500] exec "NoKillZone.Sqs";
+; ["WesternSZ",500] exec "NoKillZone.Sqs";
+; ["EasternSZ",500] exec "NoKillZone.Sqs";
+
+; Also could be:
+; #1 - ["CentralSZ",500,"You Have Entered The Central Safe Zone","You Have Left The Central Safe Zone"] exec "NoKillZone.Sqs";
+; #2 - ["CentralSZ",500,"You Have Entered The Central Safe Zone",""] exec "NoKillZone.Sqs";
+; #3 - ["CentralSZ",500,"","You Have Left The Central Safe Zone"] exec "NoKillZone.Sqs";
+; #4 - ["CentralSZ",500,"","You Have Left The Central Safe Zone"] exec "NoKillZone.Sqs"; - this would disable vechicle protection
+; #5 - ["CentralSZ",500,"","You Have Left The Central Safe Zone",0] exec "NoKillZone.Sqs"; - this would disable vechicle protection
+; #6 - ["CentralSZ",500,"","You Have Left The Central Safe Zone",1] exec "NoKillZone.Sqs"; - this would enable vechicle protection
+
+; TEXT-IN and TEXT-OUT are OPTIONAL - if not supplied, no hint will be shown for that section (in/out)
+; if you wished to use ONLY 'OUT' text and NO 'IN' text, you MUST include a empty quote for the 'IN' entry - see #3 above!  Missing quote(s) = fails to run!
+; text may also use the '\n\ command to allow for multiple lines of text in hint!
+
+; PROTECTION (vechicle protection) is also OPTIONAL.  if set to ZERO (0) or left out, it defaults to no protection.
+; to enable protection, use a ONE (1) as a paramenter - see #6 above
+
+
+
+; marker name and text ALL must be in quotes! 
+
+; marker name is the name you gave the marker in the editor - NOT 'text' field, rather the 'NAME' field
+
+
+
+; put script call into your server "INIT.Sqf" file to be run at startup and in the "OnPlayerRespawn.Sqf" file so that it may start again at respawn
+
+; for those that may not know, the INIT.Sqf and the "OnPlayerRespawn.Sqf" are where your 'Mission.SQM' reside!  Not there?  CREATE THEM!  ;)
+
+
+; this runs 100% on the client and NOT on the server!  ZERO performence hit on the server side and ZERO interference with most other scrips in use!
+
+
+; can be used in MP or SP!
+
+
+
+
+; ********************************************************************************
+
+; make sure script only runs on clients
+if (isDedicated) then {goto "ExitHere"};
+
+
+#StartLoop
+; set varis to be used by script
+_NKZver = "1.16"
+_getdistance = 0;
+_NKZflag=9;
+_vp="";
+
+; text in use flags
+_inflag = 9;
+_outflag = 9;
+
+; get params
+_NKZmarker = _this select 0;
+_NKZdistance = _this select 1;
+_NKZTextIn = _this select 2;
+_NKZTextOut = _this select 3;
+_NKZvech = _this select 4;
+
+
+; checks to ensure both parameters (#1 & #2) have been set
+if ((isNil "_NKZmarker") or(isNil "_NKZdistance")) then {goto "ParaError"};
+
+
+; checks to see if text exist, if not flag as such so no hint will show
+
+; checks for inside zone text
+if (isNil "_NKZTextIn") then {_inflag = 0};
+if (!isNil "_NKZTextIn") then {_inflag = 1};
+
+; checks for outside zone text
+if (isNil "_NKZTextOut") then {_outflag = 0};
+if (!isNil "_NKZTextOut") then {_outflag = 1};
+
+
+; check for vechile protection here - if missing, set to 'off'
+if (isNil "_NKZvech") then {_NKZvech = 0};
+if (_NKZvech == 0) then {_vp="Vehicle Protection Is:  *Off*"};
+if (_NKZvech == 1) then {_vp="Vehicle Protection Is:  *On*"};
+
+
+
+; startup notice
+systemchat format ["No Kill Zone Script v%2 Active For '%1'",_NKZmarker, _NKZver];
+systemchat format ["---  %1  ---",_vp];
+
+
+
+; start the checking here
+#LoopHere
+
+_objcoords = getMarkerPos _NKZmarker;
+_getdistance = player distance _objcoords;
+
+if (_getdistance <= _NKZdistance) then {goto "InsideTheZone"};
+if (_getdistance > _NKZdistance) then {goto "OutsideTheZone"};
+goto "LoopHere";
+
+
+; comes here if player is inside the set zone
+#InsideTheZone
+if (_NKZflag == 9) then {_NKZflag = 0};
+if (_NKZflag == 0) then {player allowdamage false};
+if ((_NKZflag == 0) && (_NKZvech == 1)) then {vehicle player allowdamage false};
+if ((_NKZflag == 0) && (_inflag == 1)) then {hint _NKZTextIn};
+_NKZflag = 1;
+goto "LoopHere";
+
+
+; comes here if player is outside the set zone
+#OutsideTheZone
+if (_NKZflag == 9) then {goto "LoopHere"};
+if (_NKZflag == 1) then {player allowdamage true};
+if ((_NKZflag == 1) && (_NKZvech == 1)) then {vehicle player allowdamage true};
+if ((_NKZflag == 1) && (_outflag == 1)) then {hint _NKZTextOut};
+_NKZflag = 0;
+goto "LoopHere";
+
+
+
+; comes here if the params are not set
+#ParaError
+hint format ["You Did Not Use Correct Parameters!\n\n\nMarker Name:  %1\n\nDistance:  %2\n\nPlease Correct And Try Again!\n",_NKZmarker, _NKZdistance];
+goto "ExitHere";
+
+
+
+; master exit point
+#ExitHere
+
+
+
+
+
+; ********************************************************************************
+
+

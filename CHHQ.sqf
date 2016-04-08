@@ -43,8 +43,8 @@ CHHQ_fnc_deploy = {
 	
 	_veh setVariable ["CHHQ_inProgress", true, true];
 	
-	_respawnMarker = createMarker ["respawn_west", _veh];
-	_respawnMarker setMarkerShape "ICON";
+	//_respawnMarker = createMarker ["respawn_west", _veh];
+	//_respawnMarker setMarkerShape "ICON";
 	
 	[[_veh], "CHHQ_fnc_removeAction", _side] call BIS_fnc_MP;
 	_nearestPlayers = [];

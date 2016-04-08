@@ -228,6 +228,25 @@ while { count _targetArray > 0 } do {
 	GlobalHint = _radioTowerDownText; hint parseText GlobalHint; publicVariable "GlobalHint";
 	showNotification = ["CompletedSub", "Enemy caches destroyed."]; publicVariable "showNotification";
 	
+	sleep 4;
+	
+	// Get the current credits of my_factory
+	_creditsSmall = my_factory_small getVariable "R3F_LOG_CF_credits";
+	_creditsMedium = my_factory_medium getVariable "R3F_LOG_CF_credits";
+	_creditsBig = my_factory_big getVariable "R3F_LOG_CF_credits";
+	
+	// Add 15 000 to the value
+	_creditsSmall = _creditsSmall + 65000;
+	_creditsMedium = _creditsMedium + 65000;
+	_creditsBig = _creditsBig + 65000;
+	
+	// Set the new credits
+	my_factory_small setVariable ["R3F_LOG_CF_credits", _creditsSmall, true];
+	my_factory_medium setVariable ["R3F_LOG_CF_credits", _creditsMedium, true];
+	my_factory_big setVariable ["R3F_LOG_CF_credits", _creditsBig, true];
+	
+	showNotification = ["GetCredits", "65000 Credits added to Factory"]; publicVariable "showNotification";
+	
 	//---------------------------------------------- WHEN ENEMIES KILLED
 
 	waitUntil {sleep 5; count list _dt < PARAMS_EnemyLeftThreshhold};
@@ -271,6 +290,25 @@ while { count _targetArray > 0 } do {
 	
 	_targetCompleteText = format ["<t align='center' size='2.2'>AO Complete</t><br/><t size='1.5' align='center' color='#00FF80'>%1</t><br/>____________________<br/><t align='left'>Fantastic job at %1, boys! Give us a moment here at HQ and we'll line up your next target.</t>",currentAO];
 	GlobalHint = _targetCompleteText; publicVariable "GlobalHint"; hint parseText GlobalHint;
+	
+	sleep 4;
+	
+	// Get the current credits of my_factory
+	_creditsSmall = my_factory_small getVariable "R3F_LOG_CF_credits";
+	_creditsMedium = my_factory_medium getVariable "R3F_LOG_CF_credits";
+	_creditsBig = my_factory_big getVariable "R3F_LOG_CF_credits";
+	
+	// Add 15 000 to the value
+	_creditsSmall = _creditsSmall + 65000;
+	_creditsMedium = _creditsMedium + 65000;
+	_creditsBig = _creditsBig + 65000;
+	
+	// Set the new credits
+	my_factory_small setVariable ["R3F_LOG_CF_credits", _creditsSmall, true];
+	my_factory_medium setVariable ["R3F_LOG_CF_credits", _creditsMedium, true];
+	my_factory_big setVariable ["R3F_LOG_CF_credits", _creditsBig, true];
+	
+	showNotification = ["GetCredits", "65000 Credits added to Factory"]; publicVariable "showNotification";
 	
 	if ((random 1) > 0.25) then {
 		if (PARAMS_CasFixedWingSupport != 0) then {
