@@ -76,22 +76,30 @@ private ["_object","_briefing","_smPos","_c4Message"];
 	
 	sleep 4;
 	
+	[] execVM "mission\ressources\SMCredits.sqf";
+	
+	/*
 	// Get the current credits of my_factory
 	_creditsSmall = my_factory_small getVariable "R3F_LOG_CF_credits";
 	_creditsMedium = my_factory_medium getVariable "R3F_LOG_CF_credits";
 	_creditsBig = my_factory_big getVariable "R3F_LOG_CF_credits";
 	
 	// Add 15 000 to the value
-	_creditsSmall = _creditsSmall + 100000;
-	_creditsMedium = _creditsMedium + 100000;
-	_creditsBig = _creditsBig + 100000;
+	_creditsSmall = _creditsSmall + PARAMS_SMCredits;
+	_creditsMedium = _creditsMedium + PARAMS_SMCredits;
+	_creditsBig = _creditsBig + PARAMS_SMCredits;
 	
 	// Set the new credits
 	my_factory_small setVariable ["R3F_LOG_CF_credits", _creditsSmall, true];
 	my_factory_medium setVariable ["R3F_LOG_CF_credits", _creditsMedium, true];
 	my_factory_big setVariable ["R3F_LOG_CF_credits", _creditsBig, true];
 	
-	showNotification = ["GetCredits", "100000 Credits added to Factory"]; publicVariable "showNotification";
+	getCreditsFactory = PARAMS_SMCredits;
+	
+	//showNotification = ["GetCredits", "80000 Credits added to Factory"]; publicVariable "showNotification";
+	
+	showNotification = ["GetCredits", getCreditsFactory]; publicVariable "showNotification";
+	*/
 	
 //--------------------- DELETE, DESPAWN, HIDE and RESET
 	

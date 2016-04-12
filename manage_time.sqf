@@ -1,6 +1,6 @@
 private [ "_accelerated_time" ];
 
-setTimeMultiplier 30;
+setTimeMultiplier PARAMS_DayTimeMultiplier;
 
 while { true } do {
 	if ( daytime > 20 || daytime < 4 ) then {
@@ -10,7 +10,7 @@ while { true } do {
 		};
 		setTimeMultiplier _accelerated_time;
 	} else {
-		setTimeMultiplier 30;
+		setTimeMultiplier PARAMS_DayTimeMultiplier;
 	};
 	sleep 10;
 };

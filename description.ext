@@ -236,11 +236,32 @@ class Params
 				default = 1;
 			};
 			
-		class DayDuration {
-				title = "Day duration (hours)";
-				values[] = { 10, 20, 30, 40, 50, 60};
-				texts[] = { "10", "20", "30", "40", "50", "60" };
-				default = 10;
+		class DayTimeMultiplier {
+				title = "Day Time Multiplier";
+				values[] = { 10, 20, 30, 35, 40, 50};
+				texts[] = { "10", "20", "30", "35", "40", "50" };
+				default = 35;
+			};
+		
+		class SMCredits {
+				title = "Credits Side Mission Reward";
+				values[] = {5500,110000,180000,200000,250000,280000};
+				texts[] = {"5500","110000","180000","200000","250000","280000"};
+				default = 110000;
+			};
+		
+		class RadioTowerCredits {
+				title = "Credits AO Radio Tower Reward";
+				values[] = {5500,80000,110000,180000,200000,250000,280000};
+				texts[] = {"5500","80000","110000","180000","200000","250000","280000"};
+				default = 80000;
+			};
+			
+		class AOCompleteCredits {
+				title = "Credits AO Complete Reward";
+				values[] = {5500,65000,80000,110000,180000,200000,250000,280000};
+				texts[] = {"5500","65000","80000","110000","180000","200000","250000","280000"};
+				default = 65000;
 			};
 			
 		class AO {
@@ -585,7 +606,7 @@ class CfgNotifications
 	class GetCredits
 	{
 		title = "NEW FACTORY CREDITS";
-		description = "%1";
+		description = "%1 Credits Added to Factory";
 		iconPicture = "media\images\notificons\sub_objective_completed.paa";
 		color[] = {1,1,1,1};
 		priority = 8;

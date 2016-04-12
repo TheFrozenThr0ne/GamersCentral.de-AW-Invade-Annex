@@ -221,22 +221,29 @@ while { count _targetArray > 0 } do {
 	
 	sleep 4;
 	
-	// Get the current credits of my_factory
+	[] execVM "mission\ressources\RadioTowerCredits.sqf";
+	
+	/*// Get the current credits of my_factory
 	_creditsSmall = my_factory_small getVariable "R3F_LOG_CF_credits";
 	_creditsMedium = my_factory_medium getVariable "R3F_LOG_CF_credits";
 	_creditsBig = my_factory_big getVariable "R3F_LOG_CF_credits";
 	
 	// Add 15 000 to the value
-	_creditsSmall = _creditsSmall + 5000;
-	_creditsMedium = _creditsMedium + 5000;
-	_creditsBig = _creditsBig + 5000;
+	_creditsSmall = _creditsSmall + PARAMS_RadioTowerCredits;
+	_creditsMedium = _creditsMedium + PARAMS_RadioTowerCredits;
+	_creditsBig = _creditsBig + PARAMS_RadioTowerCredits;
 	
 	// Set the new credits
 	my_factory_small setVariable ["R3F_LOG_CF_credits", _creditsSmall, true];
 	my_factory_medium setVariable ["R3F_LOG_CF_credits", _creditsMedium, true];
 	my_factory_big setVariable ["R3F_LOG_CF_credits", _creditsBig, true];
 	
-	showNotification = ["GetCredits", "5000 Credits added to Factory"]; publicVariable "showNotification";
+	getCreditsFactory = PARAMS_RadioTowerCredits;
+	
+	//showNotification = ["GetCredits", "80000 Credits added to Factory"]; publicVariable "showNotification";
+	
+	showNotification = ["GetCredits", getCreditsFactory]; publicVariable "showNotification";
+	*/
 	
 	//---------------------------------------------- WHEN ENEMIES KILLED
 
@@ -284,22 +291,30 @@ while { count _targetArray > 0 } do {
 	
 	sleep 4;
 	
+	[] execVM "mission\ressources\AOCompleteCredits.sqf";
+	
+	/*
 	// Get the current credits of my_factory
 	_creditsSmall = my_factory_small getVariable "R3F_LOG_CF_credits";
 	_creditsMedium = my_factory_medium getVariable "R3F_LOG_CF_credits";
 	_creditsBig = my_factory_big getVariable "R3F_LOG_CF_credits";
 	
 	// Add 15 000 to the value
-	_creditsSmall = _creditsSmall + 5000;
-	_creditsMedium = _creditsMedium + 5000;
-	_creditsBig = _creditsBig + 5000;
+	_creditsSmall = _creditsSmall + PARAMS_AOCompleteCredits;
+	_creditsMedium = _creditsMedium + PARAMS_AOCompleteCredits;
+	_creditsBig = _creditsBig + PARAMS_AOCompleteCredits;
 	
 	// Set the new credits
 	my_factory_small setVariable ["R3F_LOG_CF_credits", _creditsSmall, true];
 	my_factory_medium setVariable ["R3F_LOG_CF_credits", _creditsMedium, true];
 	my_factory_big setVariable ["R3F_LOG_CF_credits", _creditsBig, true];
 	
-	showNotification = ["GetCredits", "5000 Credits added to Factory"]; publicVariable "showNotification";
+	getCreditsFactory = PARAMS_AOCompleteCredits;
+	
+	//showNotification = ["GetCredits", "80000 Credits added to Factory"]; publicVariable "showNotification";
+	
+	showNotification = ["GetCredits", getCreditsFactory]; publicVariable "showNotification";
+	*/
 	
 	if ((random 1) > 0.25) then {
 		if (PARAMS_CasFixedWingSupport != 0) then {
