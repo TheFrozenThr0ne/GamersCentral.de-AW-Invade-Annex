@@ -13,33 +13,27 @@ The leader of all those Changes is MaDmaX. Please Respect he's work, great Ideas
 
 # # # FEATURES # # #
 
-Squad Managment + Options (hold T)
-
-Helmet Camera
-
-Transport Logistics - [R3F] Logistics
-
-* Teleport to far places - MaDmaX Script
-
-MHQ Vehicle
-
-Dynamic Weather
-
-Weapon Resting Bipod (Shift + H)
-
-Unit Caching
-
-Taru MOD Pod (fixed)
-
-HALO Jump (Only available when less than 2 Transport Vortex Pilots)
-
-* Restricted Community only Vehicles (Follow to do below to use this) - MaDmaX Script
-
+BIS Squad Managment (Default key U) 
+BTC Revive System 
+BIS Revive System 
+BIS Respawn System 
+Transport Logistics - [R3F] Logistics (With Credits that you get when you done Missions) 
+Credits Reward on every Mission 
+Teleport to far places (Like Outpost, Harbor etc) - MaDmaX Script 
+MHQ Vehicle 
+Dynamic Weather 
+Weapon Resting Bipod (Shift + H) (Default Game Bipod Key C) 
+Unit Caching 
+Taru MOD Pod (fixed) 
+HALO Jump (Only available when less than 2-3 Transport Vortex Pilots) 
+Restricted Community only Vehicles (Follow to do below to use this) - MaDmaX Script 
+PVP Function - (You will get a Flag Pole as Side Mission reward which allow you to Join the OPFOR Side to AO for 15 Minutes) - MaDmaX Script 
+Base No Damage Safe Zone 
+Time Multiplier x35 - MaDmaX Script 
+Custom Side Mission - MaDmaX Script 
+Cargo Factorys (Liftable) (Credits) 
+Ammo Boxes (Liftable)
 * PVP Function - (You will get a Flag Pole as Side Mission reward which allow you to Join the OPFOR Side to AO for 15 Minutes) - MaDmaX Script
-
-Base No Damage Safe Zone
-
-
 
 
 
@@ -53,74 +47,15 @@ PSD Pictures for Map can be Downloaded here: http://gamersupload.de/file/568/bil
 
 Create a Folder in Root Directory of your ArmA III Server - InvadeAnnex_settings
 
-Create 3 Files in the Folder InvadeAnnex_settings - communityList.sqf - init.sqf - VIPcommunityList.sqf
+Create 1 Files in the Folder InvadeAnnex_settings - memberIds.txt
+
+and put following in:
+
+["76561198022439479","YourID","FriendsID"];
 
 # Or remove
-if (isServer) then {
-
-  externalConfigFolder = "\InvadeAnnex_settings";
-  
-  [] execVM (externalConfigFolder + "\init.sqf");
-  
-};
-# in init.sqf in your Mission Folder in order to disable Community Vehicles
-
-
-# # #  TO DO:  # # 
-
-# # Copy below in to communityList.sqf #
-
-
-masterClassArray = ["B_MBT_01_mlrs_F","O_Plane_CAS_02_F"];
-
-masterUIDArray = [
-
-  "76561198001220177", // MaDmaX
-  
-  "76561198001220177" // MaDmaX
-  
-];
-
-publicVariable "masterClassArray";
-
-publicVariable "masterUIDArray";
-
-
-
-
-
-# # Copy below in to VIPcommunityList.sqf #
-
-masterClassArrayVIP = [""];
-
-masterUIDArrayVIP = [
-
-  "76561198001220177", // MaDmaX
-  
-  "76561198001220177" // MaDmaX
-  
-];
-
-publicVariable "masterClassArrayVIP";
-
-publicVariable "masterUIDArrayVIP";
-
-
-
-
-# # Copy below in to init.sqf #
-
-execVM (externalConfigFolder + "\communityList.sqf");
-
-execVM (externalConfigFolder + "\VIPcommunityList.sqf");
-
-
-
-
-
-Replace the UID with yours for able to use Restricted Vehicles.
-
-You can add Vehicle Class Names to masterClassArrayVIP = [""]; or masterClassArray = ["B_MBT_01_mlrs_F","O_Plane_CAS_02_F"]; to restrict Vehicles to only who are in the Community list.
+//allowed = call compile preprocessFileLineNumbers "\InvadeAnnex_settings\memberIds.txt"; //whitelist
+# in initServer.sqf in your Mission Folder in order to disable Community Vehicles
 
 
 
