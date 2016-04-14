@@ -37,7 +37,7 @@ supPad1 = _this select 9;
 _vicDir1 = (markerDir vicPos1);
 _vicDir2 = (markerDir vicPos2);
 	
-_randomVehicles1 = ["B_MRAP_01_hmg_F","I_APC_Wheeled_03_cannon_F","O_MBT_02_cannon_F"];
+_randomVehicles1 = ["B_MRAP_01_hmg_F","I_APC_Wheeled_03_cannon_F","B_MBT_01_cannon_F"];
 _lightvic1 = (_randomVehicles1 call BIS_fnc_selectRandom) createVehicle getMarkerPos vicPos1;
 _randomVehicles2 = ["B_MRAP_01_gmg_F","B_APC_Wheeled_01_cannon_F"];
 _lightvic2 = (_randomVehicles2 call BIS_fnc_selectRandom) createVehicle getMarkerPos vicPos2;

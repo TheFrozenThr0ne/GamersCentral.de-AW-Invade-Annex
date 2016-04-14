@@ -263,6 +263,13 @@ class Params
 				texts[] = {"5500","65000","80000","110000","180000","200000","250000","280000"};
 				default = 65000;
 			};
+		
+		class AOInfantryOnlyCredits {
+				title = "Credits AO Infantry Only Complete Reward";
+				values[] = {5500,65000,80000,110000,180000,200000,250000,280000};
+				texts[] = {"5500","65000","80000","110000","180000","200000","250000","280000"};
+				default = 65000;
+			};
 			
 		class AO {
 				title = "Enable Main AO?";

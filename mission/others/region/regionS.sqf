@@ -113,6 +113,9 @@ while { count _targetArrayOthers > 0 } do {
 	
 	sleep 4;
 	
+	[] execVM "mission\ressources\AOInfantryOnly.sqf";
+	
+	/*
 	// Get the current credits of my_factory
 	_creditsSmall = my_factory_small getVariable "R3F_LOG_CF_credits";
 	_creditsMedium = my_factory_medium getVariable "R3F_LOG_CF_credits";
@@ -129,6 +132,7 @@ while { count _targetArrayOthers > 0 } do {
 	my_factory_big setVariable ["R3F_LOG_CF_credits", _creditsBig, true];
 	
 	showNotification = ["GetCredits", "65000 Credits added to Factory"]; publicVariable "showNotification";
+	*/
 	
 	//----------------------------------------------------- MAINTENANCE
 	

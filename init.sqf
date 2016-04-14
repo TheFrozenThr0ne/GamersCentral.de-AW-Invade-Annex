@@ -22,7 +22,7 @@ ______________________________________________________*/
 ["respawn_west",1000,"You Have Entered The Central Safe Zone","You Have Left The Central Safe Zone",1] exec "NoKillZone.Sqs";
 
 //null = [] execVM "auxslingloading.sqf";
-[] execVM "SlingLoadingInit.sqf";
+//[] execVM "SlingLoadingInit.sqf";
 
 [player] execVM "scripts\simpleEP.sqf";
 
