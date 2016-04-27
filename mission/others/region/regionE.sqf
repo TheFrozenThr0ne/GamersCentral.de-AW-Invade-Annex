@@ -16,7 +16,7 @@ Notes:
 	
 ______________________________________________*/
 
-private ["_targetSecondary1","_targetSecondary2","_targetSecondary3","_targetArrayOthers","_posOthers","_iOthers","_positionOthers","_flatPosOthers","_roughPosOthers","_targetStartTextOthers","_targetsOthers","_targetsLeftOthers","_dtt","_enemiesArrayOthers","_unitsArrayOthers","_radioTowerDownTextOthers","_targetCompleteTextOthers","_regionCompleteTextOthers","_nullOthers","_minesOthers","_chanceOthers","_tower1Others","_tower2Others","_tower3Others"];
+private ["_targetSecondary1","_targetSecondary2","_targetSecondary3","_targetArrayOthers","_posOthers","_iOthers","_positionOthers","_flatPosOthers","_roughPosOthers","_targetStartTextOthers","_targetsOthers","_targetsLeftOthers","_dtt","_enemiesArrayOthers","_unitsArrayOthers","_radioTowerDownTextOthers","_targetCompleteTextOthers","_regionCompleteTextOthers","_nullOthers","_minesOthers","_chanceOthers","_tower1Others","_tower2Others","_tower3Others","_creditsSmall","_creditsMedium","_creditsBig"];
 eastSide = createCenter east;
 
 //---------------------------------------------- AO location marker array
@@ -112,28 +112,30 @@ while { count _targetArrayOthers > 0 } do {
 	GlobalHint = _targetCompleteTextOthers; publicVariable "GlobalHint"; hint parseText GlobalHint;
 	
 	sleep 4;
-	
+	if(isServer) then {
 	[] execVM "mission\ressources\AOInfantryOnly.sqf";
-	
+	};
 	/*
-	// Get the current credits of my_factory
+	if(isServer) then {
 	_creditsSmall = my_factory_small getVariable "R3F_LOG_CF_credits";
 	_creditsMedium = my_factory_medium getVariable "R3F_LOG_CF_credits";
 	_creditsBig = my_factory_big getVariable "R3F_LOG_CF_credits";
 	
 	// Add 15 000 to the value
-	_creditsSmall = _creditsSmall + 65000;
-	_creditsMedium = _creditsMedium + 65000;
-	_creditsBig = _creditsBig + 65000;
+	_creditsSmall = _creditsSmall + PARAMS_AOInfantryOnlyCredits;
+	_creditsMedium = _creditsMedium + PARAMS_AOInfantryOnlyCredits;
+	_creditsBig = _creditsBig + PARAMS_AOInfantryOnlyCredits;
 	
 	// Set the new credits
 	my_factory_small setVariable ["R3F_LOG_CF_credits", _creditsSmall, true];
 	my_factory_medium setVariable ["R3F_LOG_CF_credits", _creditsMedium, true];
 	my_factory_big setVariable ["R3F_LOG_CF_credits", _creditsBig, true];
 	
-	showNotification = ["GetCredits", "65000 Credits added to Factory"]; publicVariable "showNotification";
+	getCreditsFactory = PARAMS_AOInfantryOnlyCredits;
+
+	};
+	showNotification = ["GetCredits", getCreditsFactory]; publicVariable "showNotification";
 	*/
-	
 	//----------------------------------------------------- MAINTENANCE
 	
 	/*_aoClean = [] execVM "scripts\misc\clearItemsAO.sqf";

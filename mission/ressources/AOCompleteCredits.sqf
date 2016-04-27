@@ -1,3 +1,6 @@
+if(isServer) then { 
+
+private ["_creditsSmall","_creditsMedium","_creditsBig"];
 	// Get the current credits of my_factory
 	_creditsSmall = my_factory_small getVariable "R3F_LOG_CF_credits";
 	_creditsMedium = my_factory_medium getVariable "R3F_LOG_CF_credits";
@@ -16,6 +19,8 @@
 	getCreditsFactory = PARAMS_AOCompleteCredits;
 	
 	//showNotification = ["GetCredits", "80000 Credits added to Factory"]; publicVariable "showNotification";
-	
+	};
 	showNotification = ["GetCredits", getCreditsFactory]; publicVariable "showNotification";
-	
+	my_factory_small setVariable ["R3F_LOG_CF_disabled", false];
+	my_factory_medium setVariable ["R3F_LOG_CF_disabled", false];
+	my_factory_big setVariable ["R3F_LOG_CF_disabled", false];

@@ -1,3 +1,6 @@
+if(isServer) then { 
+
+private ["_creditsSmall","_creditsMedium","_creditsBig"];
 	// Get the current credits of my_factory
 	_creditsSmall = my_factory_small getVariable "R3F_LOG_CF_credits";
 	_creditsMedium = my_factory_medium getVariable "R3F_LOG_CF_credits";
@@ -16,7 +19,6 @@
 	getCreditsFactory = PARAMS_SMCredits;
 	
 	//showNotification = ["GetCredits", "80000 Credits added to Factory"]; publicVariable "showNotification";
-	
+	};
 	showNotification = ["GetCredits", getCreditsFactory]; publicVariable "showNotification";
-	
 	// ["GetCredits",[getCreditsFactory]] call bis_fnc_showNotification; //Debug
