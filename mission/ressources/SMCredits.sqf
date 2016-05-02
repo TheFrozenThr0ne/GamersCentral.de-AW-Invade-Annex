@@ -1,3 +1,4 @@
+if (PARAMS_CreditsReward == 1) then {
 if(isServer) then { 
 
 private ["_creditsSmall","_creditsMedium","_creditsBig"];
@@ -22,3 +23,4 @@ private ["_creditsSmall","_creditsMedium","_creditsBig"];
 	};
 	showNotification = ["GetCredits", getCreditsFactory]; publicVariable "showNotification";
 	// ["GetCredits",[getCreditsFactory]] call bis_fnc_showNotification; //Debug
+	};

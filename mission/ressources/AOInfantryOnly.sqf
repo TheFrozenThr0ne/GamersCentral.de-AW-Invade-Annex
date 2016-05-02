@@ -1,3 +1,4 @@
+if (PARAMS_CreditsReward == 1) then {
 private ["_creditsSmall","_creditsMedium","_creditsBig"];
 	// Get the current credits of my_factory
 	_creditsSmall = my_factory_small getVariable "R3F_LOG_CF_credits";
@@ -22,3 +23,4 @@ private ["_creditsSmall","_creditsMedium","_creditsBig"];
 	my_factory_small setVariable ["R3F_LOG_CF_disabled", false];
 	my_factory_medium setVariable ["R3F_LOG_CF_disabled", false];
 	my_factory_big setVariable ["R3F_LOG_CF_disabled", false];
+	};

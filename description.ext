@@ -257,6 +257,13 @@ class Params
 				default = 35;
 			};
 		
+		class CreditsReward {
+				title = "Enable Factory Credits Reward?";
+				values[] = {1,0};
+				texts[] = {"Enabled","Disabled"};
+				default = 0;
+			};
+			
 		class SMCredits {
 				title = "Credits Side Mission Reward";
 				values[] = {5500,110000,180000,200000,250000,280000};

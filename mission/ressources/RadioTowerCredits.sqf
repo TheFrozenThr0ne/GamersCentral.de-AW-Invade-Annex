@@ -1,3 +1,5 @@
+if (PARAMS_CreditsReward == 1) then {
+
 if(isServer) then { 
 
 private ["_creditsSmall","_creditsMedium","_creditsBig"];
@@ -25,3 +27,5 @@ private ["_creditsSmall","_creditsMedium","_creditsBig"];
 	my_factory_medium setVariable ["R3F_LOG_CF_disabled", false];
 	my_factory_big setVariable ["R3F_LOG_CF_disabled", false];
 	// ["GetCredits",[getCreditsFactory]] call bis_fnc_showNotification; //Debug
+	
+	};
