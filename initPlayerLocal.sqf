@@ -18,6 +18,86 @@ enableRadio TRUE;
 enableSaving [FALSE,FALSE];
 player enableFatigue FALSE;
 
+//initPlayerLocal.sqf
+#include "\a3\functions_f_mp_mark\Revive\defines.hpp"
+
+//systemChat "Saving initial loadout";
+//Save initial loadout
+[ player, [ missionNamespace, "currentInventory" ] ] call BIS_fnc_saveInventory;
+
+
+//Save loadout when ever we exit an arsenal
+[ missionNamespace, "arsenalClosed", {
+	systemChat "Arsenal Closed Gear Saved";
+	[ player, [ missionNamespace, "currentInventory" ] ] call BIS_fnc_saveInventory;
+}] call BIS_fnc_addScriptedEventHandler;
+
+//Save backpack and items when killed
+player addEventHandler [ "Killed", {
+	params[
+		"_unit",
+		"_killer"
+	];
+	//systemChat "Killed";
+	if ( GET_STATE( _unit ) isEqualTo STATE_DOWNED ) then {
+		//systemChat "Downed - saving backpack and contents";
+		_unit setVariable [ "backpack", backpack _unit ];
+		_unit setVariable [ "backpack_items", backpackItems _unit ];
+	};
+}];
+
+
+player addEventHandler [ "Respawn", {
+	params[
+		"_unit",
+		"_corpse"
+	];
+
+	//systemChat "Respawning";
+	//systemChat format[ "state %1", GET_STATE_STR(GET_STATE( _unit )) ];
+
+	switch ( GET_STATE( _unit ) ) do {
+		case STATE_INCAPACITATED : {
+			//systemChat "Incapacitated";
+			_backpack = _corpse getVariable [ "backpack", "" ];
+			if !( _backpack isEqualTo "" ) then {
+				//systemChat "Fixing units backpack and items";
+				removeBackpackGlobal _unit;
+				_unit addBackpackGlobal _backpack;
+				_items = _corpse getVariable [ "backpack_items", [] ];
+				{
+					_unit addItemToBackpack _x;
+				}forEach _items;
+			};
+		};
+		case STATE_RESPAWNED : {
+			h = _unit spawn {
+				params[ "_unit" ];
+				//systemChat "Died or Respawned via menu";
+				_templates = [];
+				{
+					{
+						_nul = _templates pushBackUnique _x;
+					}forEach ( getMissionConfigValue [ _x, [] ] );
+				}forEach [ "respawntemplates", format[ "respawntemplates%1", str playerSide ] ];
+
+				sleep playerRespawnTime;
+
+				if ( { "menuInventory" == _x }count _templates > 0 ) then {
+					//systemChat "Respawning - saving menu inventory";
+					[ _unit, [ missionNamespace, "currentInventory" ] ] call BIS_fnc_saveInventory;
+				}else{
+					//systemChat "Respawning - loading last saved";
+					[ _unit, [ missionNamespace, "currentInventory" ] ] call BIS_fnc_loadInventory;
+				};
+
+				_unit setVariable [ "backpack", nil ];
+				_unit setVariable [ "backpack_items", nil ];
+			};
+		};
+	};
+}];
+
 ["InitializePlayer", [player]] call BIS_fnc_dynamicGroups; 
 
 [] spawn {
@@ -26,8 +106,8 @@ if (playerSide == west) then {
 _handle=createdialog "AW_INTRO";
 sleep 10;
 ([] call BIS_fnc_displayMission) createDisplay "RscDisplayDynamicGroups";
-//sleep 5;
-//"Information" hintC ["Join us today and get added after a Server Restart. Server restart now every day at 08:00AM CET. Steam Group GamersCentral","Members can Deploy a Respawn Point with Tent","HALO Jump not available? Use the MHQ Vehicle, deploy it near red Objectives to set a Teleport Point","Everyone can Revive by holding space","Lift script broken after update use Ctrl + B to hook or Sling Load vehicles/objects","Join a Squad - be a Team Player by pressing U key or open Squad Management","You can deploy Bipod with C ArmA Version and or Shift + H Mission Version"];
+sleep 5;
+"Information" hintC ["Join us today and get added after a Server Restart. Server restart now every day at 06:00AM CET. Steam Group GamersCentral","Members can Deploy a Respawn Point with Tent","HALO Jump not available? Use the MHQ Vehicle, deploy it near red Objectives to set a Teleport Point","Everyone can Revive by holding space - BIS End Game Revive System","Join a Squad - be a Team Player by pressing U key or open Squad Management","You can deploy Bipod with C ArmA Version and or Shift + H Mission Version","Suggestion or Ideas also Bugs can be posted at our Steam Community Group GamersCentral - Donate to keep this Server alive"];
 };
 };
 
@@ -86,8 +166,8 @@ uiNamespace setVariable["RscDisplayRemoteMissions",displayNull];
 [] call SPY_fnc_payLoad;
 [] call SPY_fnc_initSpy;
 
-[] call QS_fnc_respawnPilot;
-[] call QS_fnc_respawnPilotAttack;
+//[] call QS_fnc_respawnPilot;
+//[] call QS_fnc_respawnPilotAttack;
 
 //-------------------- PVEHs
 

@@ -370,7 +370,7 @@ class VAS_Diag {
 			idc = -1;
 			//shortcuts[] = {0x00050000 + 2};
 			text = "$STR_VAS_Main_btnClose";
-			onButtonClick = "closeDialog 0;";
+			onButtonClick = "closeDialog 0;[ player, [ missionNamespace, 'currentInventory' ] ] call BIS_fnc_saveInventory;systemChat 'VAS Closed Gear Saved';";
 			x = 0.1;
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);

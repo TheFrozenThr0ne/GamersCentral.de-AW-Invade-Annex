@@ -10,7 +10,9 @@ The leader of all those Changes is MaDmaX. Please Respect he's work, great Ideas
 # # FEATURES # #
 BIS Squad Managment (Default key U)
 
-BTC Revive System
+BIS Respawn System
+
+BIS Revive End Game System
 
 Transport Logistics - [R3F] Logistics (With Credits that you get when you done Missions)
 

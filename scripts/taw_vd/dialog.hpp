@@ -455,7 +455,7 @@ class TAW_VD
 			text = "None";
 			action = "['none'] call TAWVD_fnc_onTerrainChange;";
 			sizeEx = 0.04;
-			
+			colorDisabled[] = {};
 			x = 0.38; y = 0.50;
 			w = 0.275; h = 0.04;
 		};
@@ -466,7 +466,7 @@ class TAW_VD
 			text = "Low";
 			action = "['low'] call TAWVD_fnc_onTerrainChange;";
 			sizeEx = 0.04;
-			
+			colorDisabled[] = {};
 			x = 0.47; y = 0.50;
 			w = 0.275; h = 0.04;
 		};
@@ -477,7 +477,7 @@ class TAW_VD
 			text = "Normal";
 			action = "['norm'] call TAWVD_fnc_onTerrainChange;";
 			sizeEx = 0.04;
-			
+			colorDisabled[] = {};
 			x = 0.56; y = 0.50;
 			w = 0.275; h = 0.04;
 		};
