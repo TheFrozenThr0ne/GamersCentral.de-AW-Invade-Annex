@@ -33,6 +33,12 @@ if (_IntroMusic) then { playMusic "intro";};
 
 // [player] execVM "welcome.sqf";
 
+[] execVM "CP\CheckpointA.sqf";
+[] execVM "CP\CheckpointB.sqf";
+[] execVM "CP\CheckpointC.sqf";
+[] execVM "CP\CheckpointD.sqf";
+[] execVM "CP\CheckpointE.sqf";
+
 ETG_Reinforcements = 0;
 // [] execVM "VCOMAI\init.sqf";
 

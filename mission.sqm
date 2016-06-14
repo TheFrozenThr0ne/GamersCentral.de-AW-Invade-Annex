@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=50;
+		nextID=60;
 	};
 	class Camera
 	{
@@ -98,14 +98,13 @@ addons[]=
 	"A3_Data_F_Curator_Virtual",
 	"A3_Modules_F_Multiplayer",
 	"A3_Structures_F_Mil_BagBunker",
-	"A3_Soft_F_MRAP_02",
-	"A3_Characters_F_Mark"
+	"A3_Soft_F_MRAP_02"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=34;
+		items=33;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -337,13 +336,6 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
-		class Item33
-		{
-			className="A3_Characters_F_Mark";
-			name="Arma 3 Marksmen - Characters and Clothing";
-			author="Bohemia Interactive";
-			url="http://www.arma3.com";
-		};
 	};
 };
 randomSeed=3481259;
@@ -382,7 +374,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="Co-60 AW Invade&Annex 2.85C [HaloJump] [24.6] GamersCentral.de";
+		briefingName="Co-60 AW Invade&Annex [HaloJump] [24.6] GamersCentral.de";
 		overviewText="Edited by GamersCentral.de - MaDmaX[GC]";
 		resistanceWest=0;
 		resistanceEast=1;
@@ -408,7 +400,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=1352;
+		items=1332;
 		class Item0
 		{
 			dataType="Marker";
@@ -2910,7 +2902,7 @@ class Mission
 			position[]={6826.6841,183.61928,19303.484};
 			name="FOB_NW_APC";
 			type="Empty";
-			angle=127.07995;
+			angle=127.07994;
 			id=258;
 		};
 		class Item259
@@ -19878,13 +19870,36 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
-						init="(group this) setGroupId [""ALPHA""];";
+						init="(group this) setGroupId [""ALPHA""];this addAction [""<t color='#00BBFA'>Place Rally Point</t> (Squad Leader)"",""Rallypoint\createRallyk.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];";
 						name="s38";
 						description="Alpha Squad Leader";
 						isPlayable=1;
 					};
 					id=1213;
 					type="B_Soldier_SL_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.98000002;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item1
 				{
@@ -20045,7 +20060,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={14624.863,17.911438,16769.889};
-						angles[]={0,2.5372791,0};
+						angles[]={0,2.5372725,0};
 					};
 					side="West";
 					flags=6;
@@ -20053,13 +20068,36 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
-						init="(group this) setGroupId [""BRAVO""];";
+						init="(group this) setGroupId [""BRAVO""];this addAction [""<t color='#00BBFA'>Place Rally Point</t> (Squad Leader)"",""Rallypoint\createRallyk.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];";
 						name="s46";
 						description="Bravo Squad Leader";
 						isPlayable=1;
 					};
 					id=1222;
 					type="B_Soldier_SL_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.02;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item1
 				{
@@ -20220,7 +20258,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={14629.677,17.911438,16769.34};
-						angles[]={0,2.1935244,0};
+						angles[]={0,2.1935298,0};
 					};
 					side="West";
 					flags=6;
@@ -20228,13 +20266,36 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
-						init="(group this) setGroupId [""CHARLIE""];";
+						init="(group this) setGroupId [""CHARLIE""];this addAction [""<t color='#00BBFA'>Place Rally Point</t> (Squad Leader)"",""Rallypoint\createRallyk.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];";
 						name="s30";
 						description="Charlie Squad Leader";
 						isPlayable=1;
 					};
 					id=1231;
 					type="B_Soldier_SL_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.94999999;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item1
 				{
@@ -20395,7 +20456,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={14623.322,17.911438,16757.752};
-						angles[]={0,0.56450939,0};
+						angles[]={0,0.56450933,0};
 					};
 					side="West";
 					flags=6;
@@ -20403,13 +20464,36 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
-						init="(group this) setGroupId [""DELTA""];";
+						init="(group this) setGroupId [""DELTA""];this addAction [""<t color='#00BBFA'>Place Rally Point</t> (Squad Leader)"",""Rallypoint\createRallyk.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];";
 						name="s18";
 						description="Delta Squad Leader";
 						isPlayable=1;
 					};
 					id=1240;
 					type="B_Soldier_SL_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.04;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item1
 				{
@@ -20570,7 +20654,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={14634.623,17.911438,16771.314};
-						angles[]={0,2.3719842,0};
+						angles[]={0,2.3719897,0};
 					};
 					side="West";
 					flags=6;
@@ -20578,13 +20662,36 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
-						init="(group this) setGroupId [""ECHO""];";
+						init="(group this) setGroupId [""ECHO""];this addAction [""<t color='#00BBFA'>Place Rally Point</t> (Squad Leader)"",""Rallypoint\createRallyk.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];";
 						name="s58";
 						description="Echo Squad Leader";
 						isPlayable=1;
 					};
 					id=1249;
 					type="B_Soldier_SL_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.03;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item1
 				{
@@ -27288,190 +27395,6 @@ class Mission
 		};
 		class Item1299
 		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=8;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20692.334,37.183826,16688.748};
-						angles[]={0,6.1910696,0};
-					};
-					side="East";
-					flags=7;
-					class Attributes
-					{
-						rank="SERGEANT";
-						init="nul = [this,[""checkpointd"",""defend""],0,""original""] execVM ""AIRS\addAIgroupToPool.sqf"";";
-					};
-					id=1421;
-					type="O_SoldierU_SL_F";
-					atlOffset=0.0072250366;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20697.787,36.918186,16684.23};
-						angles[]={0,6.1910658,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=1422;
-					type="O_soldierU_F";
-					atlOffset=-0.053398132;
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20687.813,37.220589,16683.314};
-						angles[]={0,6.1910658,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						skill=0.44999999;
-						rank="CORPORAL";
-					};
-					id=1423;
-					type="O_soldierU_LAT_F";
-					atlOffset=-0.012298584;
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20703.215,36.636715,16679.707};
-						angles[]={0,6.1910658,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=1424;
-					type="O_soldierU_M_F";
-					atlOffset=-0.07056427;
-				};
-				class Item4
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20683.303,37.135971,16677.877};
-						angles[]={0,6.1910658,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						rank="SERGEANT";
-					};
-					id=1425;
-					type="O_soldierU_TL_F";
-					atlOffset=-0.0010719299;
-				};
-				class Item5
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20708.658,36.401215,16675.189};
-						angles[]={0,6.1910658,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						skill=0.44999999;
-						rank="CORPORAL";
-					};
-					id=1426;
-					type="O_soldierU_AR_F";
-					atlOffset=-0.02872467;
-				};
-				class Item6
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20678.795,37.172749,16672.434};
-						angles[]={0,6.1910658,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=1427;
-					type="O_soldierU_A_F";
-					atlOffset=0.31178665;
-				};
-				class Item7
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20714.092,36.363071,16670.682};
-						angles[]={0,6.1910658,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=1428;
-					type="O_soldierU_medic_F";
-					atlOffset=0.053585052;
-				};
-			};
-			class Attributes
-			{
-			};
-			id=1420;
-			atlOffset=0.0072250366;
-		};
-		class Item1300
-		{
 			dataType="Object";
 			class PositionInfo
 			{
@@ -27488,181 +27411,16 @@ class Mission
 			type="O_MRAP_02_hmg_F";
 			atlOffset=0.09859848;
 		};
-		class Item1301
+		class Item1300
 		{
 			dataType="Marker";
-			position[]={20686.572,37.199352,16681.801};
+			position[]={20688.906,37.233448,16684.074};
 			name="checkpointd";
 			type="Empty";
-			angle=314.3526;
+			angle=314.35257;
 			id=1430;
 		};
-		class Item1302
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20685.193,37.045971,16674.602};
-						angles[]={0,5.5199814,0};
-					};
-					side="East";
-					flags=7;
-					class Attributes
-					{
-						init="nul = [this,[""checkpointd"",""defend""],0,""original""] execVM ""AIRS\addAIgroupToPool.sqf"";";
-					};
-					id=1432;
-					type="O_HeavyGunner_F";
-					atlOffset=0.0088272095;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=0.94999999;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=1431;
-			atlOffset=0.0088272095;
-		};
-		class Item1303
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20687.805,37.123035,16671.084};
-						angles[]={0,3.280781,0};
-					};
-					side="East";
-					flags=7;
-					class Attributes
-					{
-						init="nul = [this,[""checkpointd"",""defend""],0,""original""] execVM ""AIRS\addAIgroupToPool.sqf"";";
-					};
-					id=1434;
-					type="O_Soldier_AR_F";
-					atlOffset=0.19953156;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=0.99000001;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=1433;
-			atlOffset=0.19953156;
-		};
-		class Item1304
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20689.121,37.034515,16672.207};
-						angles[]={0,0.055519782,0};
-					};
-					side="East";
-					flags=7;
-					class Attributes
-					{
-						init="nul = [this,[""checkpointd"",""defend""],0,""original""] execVM ""AIRS\addAIgroupToPool.sqf"";";
-					};
-					id=1436;
-					type="O_Soldier_AR_F";
-					atlOffset=0.072803497;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=1435;
-			atlOffset=0.072803497;
-		};
-		class Item1305
+		class Item1301
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -27673,7 +27431,7 @@ class Mission
 			type="SideOPFOR_F";
 			atlOffset=45.291885;
 		};
-		class Item1306
+		class Item1302
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -27684,7 +27442,7 @@ class Mission
 			type="ModuleMPTypeSectorControl_F";
 			atlOffset=43.601135;
 		};
-		class Item1307
+		class Item1303
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -27695,11 +27453,11 @@ class Mission
 			type="SideBLUFOR_F";
 			atlOffset=45.21553;
 		};
-		class Item1308
+		class Item1304
 		{
 			dataType="Trigger";
 			position[]={17420.803,4.4109702,13799.54};
-			angle=1.6926037;
+			angle=1.6926036;
 			class Attributes
 			{
 				sizeA=150;
@@ -27710,7 +27468,7 @@ class Mission
 			type="EmptyDetector";
 			atlOffset=0.36178064;
 		};
-		class Item1309
+		class Item1305
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -28013,7 +27771,7 @@ class Mission
 				nAttributes=15;
 			};
 		};
-		class Item1310
+		class Item1306
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -28024,7 +27782,7 @@ class Mission
 			id=1442;
 			type="LocationArea_F";
 		};
-		class Item1311
+		class Item1307
 		{
 			dataType="Layer";
 			name="Check Point (Large)_1";
@@ -28139,7 +27897,7 @@ class Mission
 			id=1443;
 			atlOffset=0.61609626;
 		};
-		class Item1312
+		class Item1308
 		{
 			dataType="Layer";
 			name="Roadblock_1";
@@ -28345,197 +28103,17 @@ class Mission
 			id=1450;
 			atlOffset=0.4167366;
 		};
-		class Item1313
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=8;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={17425.533,4.3185349,13792.028};
-						angles[]={0,0.86556542,0};
-					};
-					side="East";
-					flags=7;
-					class Attributes
-					{
-						rank="SERGEANT";
-						init="nul = [this,[""checkpointe"",""defend""],0,""original""] execVM ""AIRS\addAIgroupToPool.sqf"";";
-					};
-					id=1463;
-					type="O_SoldierU_SL_F";
-					atlOffset=0.044781208;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={17424.975,4.4302864,13784.976};
-						angles[]={0,0.86557227,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=1464;
-					type="O_soldierU_F";
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={17418.494,4.5395298,13792.589};
-						angles[]={0,0.86557227,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-						skill=0.44999999;
-						rank="CORPORAL";
-					};
-					id=1465;
-					type="O_soldierU_LAT_F";
-					atlOffset=0.39295006;
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={17424.41,4.6452475,13777.93};
-						angles[]={0,0.86557227,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=1466;
-					type="O_soldierU_M_F";
-				};
-				class Item4
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={17411.443,4.7704754,13793.158};
-						angles[]={0,0.86557227,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-						rank="SERGEANT";
-					};
-					id=1467;
-					type="O_soldierU_TL_F";
-					atlOffset=0.74024916;
-				};
-				class Item5
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={17423.844,4.9659834,13770.88};
-						angles[]={0,0.86557227,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						skill=0.44999999;
-						rank="CORPORAL";
-					};
-					id=1468;
-					type="O_soldierU_AR_F";
-				};
-				class Item6
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={17404.404,5.0559063,13793.724};
-						angles[]={0,0.86557227,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=1469;
-					type="O_soldierU_A_F";
-					atlOffset=1.1504219;
-				};
-				class Item7
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={17423.271,5.3947449,13763.833};
-						angles[]={0,0.86557227,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=1470;
-					type="O_soldierU_medic_F";
-				};
-			};
-			class Attributes
-			{
-			};
-			id=1462;
-			atlOffset=0.044781208;
-		};
-		class Item1314
+		class Item1309
 		{
 			dataType="Marker";
 			position[]={17419.928,4.4862099,13793.02};
 			name="checkpointe";
 			type="Empty";
-			angle=96.965553;
+			angle=96.965546;
 			id=1471;
 			atlOffset=0.32774305;
 		};
-		class Item1315
+		class Item1310
 		{
 			dataType="Object";
 			class PositionInfo
@@ -28552,176 +28130,11 @@ class Mission
 			type="O_MRAP_02_hmg_F";
 			atlOffset=0.96641779;
 		};
-		class Item1316
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={17414.105,6.8196783,13790.539};
-						angles[]={0,0.194491,0};
-					};
-					side="East";
-					flags=3;
-					class Attributes
-					{
-						init="nul = [this,[""checkpointe"",""defend""],0,""original""] execVM ""AIRS\addAIgroupToPool.sqf"";";
-					};
-					id=1474;
-					type="O_HeavyGunner_F";
-					atlOffset=2.6972828;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.02;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=1473;
-			atlOffset=2.6972828;
-		};
-		class Item1317
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={17412.373,7.6414127,13785.894};
-						angles[]={0,4.0907784,0};
-					};
-					side="East";
-					flags=7;
-					class Attributes
-					{
-						init="nul = [this,[""checkpointe"",""defend""],0,""original""] execVM ""AIRS\addAIgroupToPool.sqf"";";
-					};
-					id=1476;
-					type="O_Soldier_AR_F";
-					atlOffset=0.14746189;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.04;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=1475;
-			atlOffset=0.14746189;
-		};
-		class Item1318
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={17414.287,4.7312202,13785.834};
-						angles[]={0,0.86556542,0};
-					};
-					side="East";
-					flags=3;
-					class Attributes
-					{
-						init="nul = [this,[""checkpointe"",""defend""],0,""original""] execVM ""AIRS\addAIgroupToPool.sqf"";";
-					};
-					id=1478;
-					type="O_Soldier_AR_F";
-					atlOffset=0.50601673;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=0.95999998;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=1477;
-			atlOffset=0.50601673;
-		};
-		class Item1319
+		class Item1311
 		{
 			dataType="Trigger";
 			position[]={14367.112,17.186203,18021.271};
-			angle=5.2650375;
+			angle=5.2650371;
 			class Attributes
 			{
 				sizeA=150;
@@ -28732,7 +28145,7 @@ class Mission
 			type="EmptyDetector";
 			atlOffset=0.51832771;
 		};
-		class Item1320
+		class Item1312
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -29035,7 +28448,7 @@ class Mission
 				nAttributes=15;
 			};
 		};
-		class Item1321
+		class Item1313
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -29047,7 +28460,7 @@ class Mission
 			type="LocationArea_F";
 			atlOffset=0.50493622;
 		};
-		class Item1322
+		class Item1314
 		{
 			dataType="Layer";
 			name="Check Point (Large)_2";
@@ -29166,7 +28579,7 @@ class Mission
 			id=1485;
 			atlOffset=0.026758194;
 		};
-		class Item1323
+		class Item1315
 		{
 			dataType="Layer";
 			name="Roadblock_2";
@@ -29371,171 +28784,7 @@ class Mission
 			id=1492;
 			atlOffset=0.19928551;
 		};
-		class Item1324
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=7;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={14364.655,16.699619,18003.449};
-						angles[]={0,3.5188951,0};
-					};
-					side="East";
-					flags=7;
-					class Attributes
-					{
-						rank="SERGEANT";
-						init="nul = [this,[""checkpointc"",""defend""],0,""original""] execVM ""AIRS\addAIgroupToPool.sqf"";";
-					};
-					id=1505;
-					type="O_SoldierU_SL_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={14361.85,16.970325,18009.953};
-						angles[]={0,3.5188951,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=1506;
-					type="O_soldierU_F";
-					atlOffset=0.30789757;
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={14371.149,16.82122,18006.252};
-						angles[]={0,3.5188951,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						skill=0.44999999;
-						rank="CORPORAL";
-					};
-					id=1507;
-					type="O_soldierU_LAT_F";
-					atlOffset=0.083856583;
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={14377.631,17.190016,18009.059};
-						angles[]={0,3.5188951,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-						rank="SERGEANT";
-					};
-					id=1509;
-					type="O_soldierU_TL_F";
-					atlOffset=0.40521812;
-				};
-				class Item4
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={14356.236,17.135969,18022.928};
-						angles[]={0,3.5188951,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-						skill=0.44999999;
-						rank="CORPORAL";
-					};
-					id=1510;
-					type="O_soldierU_AR_F";
-					atlOffset=0.51072884;
-				};
-				class Item5
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={14384.125,17.29739,18011.867};
-						angles[]={0,3.5188951,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=1511;
-					type="O_soldierU_A_F";
-					atlOffset=0.46289635;
-				};
-				class Item6
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={14353.423,17.217323,18029.406};
-						angles[]={0,3.5188951,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=1512;
-					type="O_soldierU_medic_F";
-					atlOffset=0.5888443;
-				};
-			};
-			class Attributes
-			{
-			};
-			id=1504;
-		};
-		class Item1325
+		class Item1316
 		{
 			dataType="Marker";
 			position[]={14374.969,16.98908,18006.66};
@@ -29545,7 +28794,7 @@ class Mission
 			id=1513;
 			atlOffset=0.21934319;
 		};
-		class Item1326
+		class Item1317
 		{
 			dataType="Object";
 			class PositionInfo
@@ -29563,176 +28812,11 @@ class Mission
 			type="O_MRAP_02_hmg_F";
 			atlOffset=0.0032348633;
 		};
-		class Item1327
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={14376.938,17.98027,18015.25};
-						angles[]={0,3.5188951,0};
-					};
-					side="East";
-					flags=3;
-					class Attributes
-					{
-						init="nul = [this,[""checkpointc"",""defend""],0,""original""] execVM ""AIRS\addAIgroupToPool.sqf"";";
-					};
-					id=1516;
-					type="O_Soldier_AR_F";
-					atlOffset=1.2331066;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=0.95999998;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=1515;
-			atlOffset=1.2331066;
-		};
-		class Item1328
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={14378.458,17.298693,18016.428};
-						angles[]={0,0.46083483,0};
-					};
-					side="East";
-					flags=3;
-					class Attributes
-					{
-						init="nul = [this,[""checkpointc"",""defend""],0,""original""] execVM ""AIRS\addAIgroupToPool.sqf"";";
-					};
-					id=1518;
-					type="O_Soldier_AR_F";
-					atlOffset=0.54382324;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=0.98000002;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=1517;
-			atlOffset=0.54382324;
-		};
-		class Item1329
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={14379.082,17.268127,18011.531};
-						angles[]={0,2.8478048,0};
-					};
-					side="East";
-					flags=3;
-					class Attributes
-					{
-						init="nul = [this,[""checkpointc"",""defend""],0,""original""] execVM ""AIRS\addAIgroupToPool.sqf"";";
-					};
-					id=1520;
-					type="O_HeavyGunner_F";
-					atlOffset=0.48103523;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=0.98000002;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=1519;
-			atlOffset=0.48103523;
-		};
-		class Item1330
+		class Item1318
 		{
 			dataType="Trigger";
 			position[]={13009.736,23.429918,15142.424};
-			angle=5.709394;
+			angle=5.7093935;
 			class Attributes
 			{
 				sizeA=150;
@@ -29742,7 +28826,7 @@ class Mission
 			id=1521;
 			type="EmptyDetector";
 		};
-		class Item1331
+		class Item1319
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -30044,7 +29128,7 @@ class Mission
 				nAttributes=15;
 			};
 		};
-		class Item1332
+		class Item1320
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -30056,7 +29140,7 @@ class Mission
 			type="LocationArea_F";
 			atlOffset=-1.9073486e-005;
 		};
-		class Item1333
+		class Item1321
 		{
 			dataType="Layer";
 			name="Check Point (Large)_3";
@@ -30174,7 +29258,7 @@ class Mission
 			id=1524;
 			atlOffset=-0.023391724;
 		};
-		class Item1334
+		class Item1322
 		{
 			dataType="Layer";
 			name="Roadblock_3";
@@ -30414,187 +29498,7 @@ class Mission
 			id=1531;
 			atlOffset=0.025783539;
 		};
-		class Item1335
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=8;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13003.96,23.871164,15130.859};
-						angles[]={0,4.1812944,0};
-					};
-					side="East";
-					flags=7;
-					class Attributes
-					{
-						rank="SERGEANT";
-						init="nul = [this,[""checkpointb"",""defend""],0,""original""] execVM ""AIRS\addAIgroupToPool.sqf"";";
-					};
-					id=1546;
-					type="O_SoldierU_SL_F";
-					atlOffset=-1.9073486e-006;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13005.74,23.567081,15137.707};
-						angles[]={0,4.1812925,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=1547;
-					type="O_soldierU_F";
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13010.802,23.6224,15129.089};
-						angles[]={0,4.1812925,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						skill=0.44999999;
-						rank="CORPORAL";
-					};
-					id=1548;
-					type="O_soldierU_LAT_F";
-					atlOffset=0.042142868;
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13007.52,23.508772,15144.546};
-						angles[]={0,4.1812925,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=1549;
-					type="O_soldierU_M_F";
-				};
-				class Item4
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13017.649,23.443062,15127.307};
-						angles[]={0,4.1812925,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						rank="SERGEANT";
-					};
-					id=1550;
-					type="O_soldierU_TL_F";
-					atlOffset=0.034227371;
-				};
-				class Item5
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13009.296,23.541254,15151.392};
-						angles[]={0,4.1812925,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						skill=0.44999999;
-						rank="CORPORAL";
-					};
-					id=1551;
-					type="O_soldierU_AR_F";
-				};
-				class Item6
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13024.488,23.407816,15125.525};
-						angles[]={0,4.1812925,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=1552;
-					type="O_soldierU_A_F";
-					atlOffset=0.12734413;
-				};
-				class Item7
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13011.079,23.588486,15158.241};
-						angles[]={0,4.1812925,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=1553;
-					type="O_soldierU_medic_F";
-				};
-			};
-			class Attributes
-			{
-			};
-			id=1545;
-			atlOffset=-1.9073486e-006;
-		};
-		class Item1336
+		class Item1323
 		{
 			dataType="Object";
 			class PositionInfo
@@ -30611,7 +29515,7 @@ class Mission
 			type="O_MRAP_02_hmg_F";
 			atlOffset=0.27825928;
 		};
-		class Item1337
+		class Item1324
 		{
 			dataType="Marker";
 			position[]={13013.822,23.488001,15131.053};
@@ -30620,176 +29524,11 @@ class Mission
 			angle=327.11713;
 			id=1555;
 		};
-		class Item1338
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13019.166,25.893387,15134.934};
-						angles[]={0,3.5102372,0};
-					};
-					side="East";
-					flags=3;
-					class Attributes
-					{
-						init="nul = [this,[""checkpointb"",""defend""],0,""original""] execVM ""AIRS\addAIgroupToPool.sqf"";";
-					};
-					id=1557;
-					type="O_HeavyGunner_F";
-					atlOffset=2.614212;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=0.95999998;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=1556;
-			atlOffset=2.614212;
-		};
-		class Item1339
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13017.66,23.338631,15137.997};
-						angles[]={0,4.1812944,0};
-					};
-					side="East";
-					flags=7;
-					class Attributes
-					{
-						init="nul = [this,[""checkpointb"",""defend""],0,""original""] execVM ""AIRS\addAIgroupToPool.sqf"";";
-					};
-					id=1559;
-					type="O_Soldier_AR_F";
-					atlOffset=0.065616608;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.01;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=1558;
-			atlOffset=0.065616608;
-		};
-		class Item1340
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13019.313,23.348234,15139.499};
-						angles[]={0,1.1232748,0};
-					};
-					side="East";
-					flags=7;
-					class Attributes
-					{
-						init="nul = [this,[""checkpointb"",""defend""],0,""original""] execVM ""AIRS\addAIgroupToPool.sqf"";";
-					};
-					id=1561;
-					type="O_Soldier_AR_F";
-					atlOffset=0.12872314;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=0.98000002;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=1560;
-			atlOffset=0.12872314;
-		};
-		class Item1341
+		class Item1325
 		{
 			dataType="Trigger";
 			position[]={7840.5991,111.94743,16076.681};
-			angle=0.41375154;
+			angle=0.41375151;
 			class Attributes
 			{
 				sizeA=150;
@@ -30800,7 +29539,7 @@ class Mission
 			type="EmptyDetector";
 			atlOffset=0.11559296;
 		};
-		class Item1342
+		class Item1326
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -31103,7 +29842,7 @@ class Mission
 				nAttributes=15;
 			};
 		};
-		class Item1343
+		class Item1327
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -31115,7 +29854,7 @@ class Mission
 			type="LocationArea_F";
 			atlOffset=0.15603638;
 		};
-		class Item1344
+		class Item1328
 		{
 			dataType="Layer";
 			name="Check Point (Large)_4";
@@ -31234,7 +29973,7 @@ class Mission
 			id=1565;
 			atlOffset=0.071792603;
 		};
-		class Item1345
+		class Item1329
 		{
 			dataType="Layer";
 			name="Roadblock_4";
@@ -31442,214 +30181,7 @@ class Mission
 			id=1572;
 			atlOffset=0.086288452;
 		};
-		class Item1346
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=8;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7846.876,112.20071,16084.146};
-						angles[]={0,0.41375169,0};
-					};
-					side="East";
-					flags=7;
-					class Attributes
-					{
-						rank="SERGEANT";
-						init="nul = [this,[""checkpointa"",""defend""],0,""original""] execVM ""AIRS\addAIgroupToPool.sqf"";";
-					};
-					id=1585;
-					type="O_SoldierU_SL_F";
-					atlOffset=0.21018219;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7849.4429,111.99971,16077.562};
-						angles[]={0,0.41375169,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=1586;
-					type="O_soldierU_F";
-					atlOffset=0.2758255;
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7840.2852,112.08953,16081.58};
-						angles[]={0,0.41375169,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						skill=0.44999999;
-						rank="CORPORAL";
-					};
-					id=1587;
-					type="O_soldierU_LAT_F";
-					atlOffset=0.10796356;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.01;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7852.0078,111.78445,16070.967};
-						angles[]={0,0.41375169,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=1588;
-					type="O_soldierU_M_F";
-					atlOffset=0.35289001;
-				};
-				class Item4
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7833.6968,112.09109,16079.013};
-						angles[]={0,0.41375169,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						rank="SERGEANT";
-					};
-					id=1589;
-					type="O_soldierU_TL_F";
-					atlOffset=0.05859375;
-				};
-				class Item5
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7854.5776,111.52247,16064.384};
-						angles[]={0,0.41375169,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-						skill=0.44999999;
-						rank="CORPORAL";
-					};
-					id=1590;
-					type="O_soldierU_AR_F";
-					atlOffset=0.36547089;
-				};
-				class Item6
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7827.1099,112.1348,16076.444};
-						angles[]={0,0.41375169,0};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=1591;
-					type="O_soldierU_A_F";
-					atlOffset=0.013290405;
-				};
-				class Item7
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7857.1455,111.29586,16057.793};
-						angles[]={0,0.41375169,0};
-					};
-					side="East";
-					flags=1;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=1592;
-					type="O_soldierU_medic_F";
-					atlOffset=0.36302948;
-				};
-			};
-			class Attributes
-			{
-			};
-			id=1584;
-			atlOffset=0.21018219;
-		};
-		class Item1347
+		class Item1330
 		{
 			dataType="Marker";
 			position[]={7839.73,112.05649,16080.005};
@@ -31659,7 +30191,7 @@ class Mission
 			id=1593;
 			atlOffset=0.10205078;
 		};
-		class Item1348
+		class Item1331
 		{
 			dataType="Object";
 			class PositionInfo
@@ -31676,171 +30208,6 @@ class Mission
 			id=1594;
 			type="O_MRAP_02_hmg_F";
 			atlOffset=0.053276062;
-		};
-		class Item1349
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7835.396,111.89047,16072.401};
-						angles[]={0,6.025847,0};
-					};
-					side="East";
-					flags=7;
-					class Attributes
-					{
-						init="nul = [this,[""checkpointa"",""defend""],0,""original""] execVM ""AIRS\addAIgroupToPool.sqf"";";
-					};
-					id=1596;
-					type="O_HeavyGunner_F";
-					atlOffset=0.019058228;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.05;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=1595;
-			atlOffset=0.019058228;
-		};
-		class Item1350
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7838.1719,111.86761,16069.691};
-						angles[]={0,0.41375169,0};
-					};
-					side="East";
-					flags=7;
-					class Attributes
-					{
-						init="nul = [this,[""checkpointa"",""defend""],0,""original""] execVM ""AIRS\addAIgroupToPool.sqf"";";
-					};
-					id=1598;
-					type="O_Soldier_AR_F";
-					atlOffset=0.16442871;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=0.95999998;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=1597;
-			atlOffset=0.16442871;
-		};
-		class Item1351
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7837.7764,111.66304,16067.824};
-						angles[]={0,3.6389949,0};
-					};
-					side="East";
-					flags=7;
-					class Attributes
-					{
-						init="nul = [this,[""checkpointa"",""defend""],0,""original""] execVM ""AIRS\addAIgroupToPool.sqf"";";
-					};
-					id=1600;
-					type="O_Soldier_AR_F";
-					atlOffset=0.0049438477;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.04;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=1599;
-			atlOffset=0.0049438477;
 		};
 	};
 	class Connections

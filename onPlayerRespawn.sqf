@@ -85,7 +85,11 @@ if !(vehicleVarName player in JWC_CASarray) exitWith {};
 closeDialog 0;
 [JWC_MaxD, JWC_lock, JWC_num] execVM "JWC_CASFS\addAction.sqf";
 
+if (player iskindof "B_Soldier_SL_F") then {
+player addAction ["<t color='#00BBFA'>Place Rally Point</t> (Squad Leader)", "Rallypoint\createRallyk.sqf", [SUPMEN_attackHelis, SUPMEN_transportHelis], -100, false, false, "", "leader group _this == _this && _target == vehicle _this || leader group _this == _this && _target == _this"];
+};
 
+1 fadeSound 1;
 [player] execVM "scripts\simpleEP.sqf";
 // nul = [player] execVM "scripts\no_shooting.sqf";
 

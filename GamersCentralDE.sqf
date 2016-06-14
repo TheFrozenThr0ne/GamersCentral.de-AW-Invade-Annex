@@ -15,7 +15,7 @@ player createDiaryRecord ["GamersCentralInfo",["Information", "
 <br /> 
 <br />  Tips:
 <br />
-<br />- No Admin online? Just try - !ts Message - and wait for response or check directly our TeamSpeak Server. 
+<br />- No Admin online? Just try - !report Message - and wait for response or check directly our TeamSpeak Server. 
 <br /> 
 <br /> 
 <br />
@@ -49,7 +49,6 @@ player createDiaryRecord ["GamersCentralInfo",["Donate and Support us", "
 <br />
 <br />* Donate to our Server and get some benefits
 <br />  - Warn, Kick and Time ban Players.
-<br />  - Access to Community and VIP Vehicles.
 <br />  - If activated, an reserved slot too.
 <br />    - (Please leave your ArmA 3 Name on Donation, so we can add you directly.)
 <br />    - (If you donated and havent the rights now? Please Contact us immediately.)
@@ -100,7 +99,7 @@ player createDiaryRecord ["MissionInfo",["Description ENG", "
 <br />  Intel:
 <br />
 <br />- Artillery Vehicle will reload automatically every 15 minutes. (Offline)
-<br />- An MHQ is available at base. You can teleport to it with the main base's flag.
+<br />- An MHQ is available at base. You can teleport to it with the main base's flag or at respawn screen.
 <br />- Drones will respawn every 15 Minutes.
 <br /> 
 <br />
@@ -114,7 +113,7 @@ player createDiaryRecord ["MissionInfo",["Description ENG", "
 <br />
 <br />  Tips:
 <br />
-<br />- Press 'U' to activate helmet cam. Tactical glasses needed and PIP need to be activated in your Video settings.
+<br />- Press 'U' to join a Squad
 <br />- Transport choppers can lift any type of vehicles and boats.
 <br />- Transport choppers can lift Supply Boxes, for infantry and vehicles.
 <br />- To join a squad scroll down your mouse wheel and select Squad Management. Hold T for diffrent options.
@@ -123,13 +122,6 @@ player createDiaryRecord ["MissionInfo",["Description ENG", "
 <br />- If youre an Machine Gunner or Sniper, rest your weapon with 'Shift-H'.
 <br />- If you have two Scopes and one in your Inventory, press TAB to switch between each other.
 <br />- If its Night, activate your IR Strobe so Friendlys will know you location.
-<br />
-<br />- Use the Amazing Mini-Map - Press Shift-M (or Shift-<your map key>)
-<br />  - You can 'refold' (center) it by pressing Shift-Up Arrow when it's open. Use Shift-Left Arrow and Shift-Right Arrow to move it from the left or right side of the screen. (Zoom levels are not controllable by design; use the big map for that I think!)
-<br />
-<br /> - Press 2x 'C' during the run to jump over obstacles.
-<br />
-<br />  - VAS Tip: Press on Load Gear -> Load on Respawn to respawn with your Gear!
 <br />
 <br />  - Co-Pilot seats for Transport Helos disabled!
 <br />
@@ -171,7 +163,7 @@ player createDiaryRecord ["MissionInfo",["Description GER", "
 <br />  Intel:
 <br />
 <br />- Artillerie Fahrzeug wird automatisch alle 15 Minuten neu aufmunitioniert. (Offline)
-<br />- Ein MHQ ist an der base verfügbar. Verwende Teleporter an der Base - Spawn.
+<br />- Ein MHQ ist an der base verfügbar. Verwende Teleporter an der Base - Spawn oder im respawn menu.
 <br />- Dronen werden alle 15 minuten erneut gespawnt.
 <br />
 <br /> 
@@ -186,7 +178,7 @@ player createDiaryRecord ["MissionInfo",["Description GER", "
 <br />
 <br />  Tips:
 <br />
-<br />- Drücke 'U' um die helm kamera zu aktivieren. Tactical glasses wird benötigt und PIP muss in den Video Settings aktiviert sein.
+<br />- Drücke 'U' um einen Squad bei zu treten.
 <br />- Transport Hubschrauber können fast alle Fahrzeuge transportieren.
 <br />- Transport Hubschrauber können Versorgungs Kisten transportieren, für Infantrie und Fahrzeuge.
 <br />- Um einen Squad beizutreten, verwende Mausrad und wählen Sie Squad-Management. Halten T für verschiedene Optionen.
@@ -195,14 +187,6 @@ player createDiaryRecord ["MissionInfo",["Description GER", "
 <br />- Wenn du ein Maschinen oder Snipergewher hast, drücke 'Shift-H' für das Zweibein.
 <br />- Wenn du 2 Zielfernrohre hast, eins in deinem Inventar drücke TAB um zu switchen.
 <br />- Sobald es Nacht wird, kannst du IR Strobe Aktivieren damit dich Freunde von oben erkennen.
-<br />
-<br /> - Verwende die erstaunliche Mini-Map - Drücken Shift-M (oder Shift-<Karte button>)
-<br />   - Um die Karte nach links oder rechts zu verschieben, halte Shift gedrückt un verwende die Pfeil Tasten. (Zoomen ist nicht möglich vom Design;! Verwende die große Karte dafür.)
-<br />
-<br />- Drücke 2x 'C' während dem laufen um über hindernisse zu springen.
-<br />
-<br />
-<br />  - VAS Tip: Drücke bei Load Gear -> Load on Respawn um mit der letzten Ausrüstung zu spawnen!
 <br />
 <br />  - Co-Pilot sitze für Transport Helos deaktiviert!
 <br />

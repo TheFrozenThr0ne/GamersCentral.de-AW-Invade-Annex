@@ -187,11 +187,9 @@ player createDiaryRecord ["faq",
 "
 <br /><font size='16'>Q:</font> How do I join a squad?<br />
 <br /><font size='16'>A:</font> 
-<br /> 1. Hold 'T'.
-<br /> 2. While holding T, use your scroll wheel to interact.
-<br /> 3. You can interact with the person you are looking at, or those within a 5m radius.
+<br /> 1. Press 'U'.
+<br /> 2. You can interact with the person you are looking at, or those within a 5m radius.
 <br />
-<br /> * Xeno's Squad Management tool had to be removed at request of the script author.
 "
 ]];
 
@@ -218,10 +216,8 @@ player createDiaryRecord ["faq",
 "Medics",
 "
 <br /><font size='16'>Q:</font> Why can't I heal him?<br />
-<br /><font size='16'>A:</font> There are three conditions you must pass in order to revive a fallen comrade. 
-<br /> 1. You must be in a Medic / Paramedic role.
-<br /> 2. You must have a Medkit.
-<br /> 3. You must have at least one First Aid Kit.
+<br /><font size='16'>A:</font> There are one conditions you must pass in order to revive a fallen comrade. 
+<br /> 1. Hold Space at downed Teammate
 "
 ]];
 

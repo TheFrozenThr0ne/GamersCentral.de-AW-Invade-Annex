@@ -1,7 +1,7 @@
 //------------------------- On Load
 
 author = [Rarek, Quiksilver] Customized by GamersCentral;					// Visible when loading mission
-onLoadName = "Invade and Annex 2.85C";						// Visible when loading mission
+onLoadName = "Invade and Annex";						// Visible when loading mission
 OnLoadMission = "- Welcome back to GamersCentral Invade and Annex                                 - Join us on TeamSpeak at TS3.GamersCentral.de                                 - Protected by SpyGlass Anti-Hack";
 loadScreen = "media\images\loading.jpg";				// Visible when loading mission
 overviewPicture = "media\images\loading.jpg";			// Visible when selecting mission	
