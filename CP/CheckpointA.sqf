@@ -3,10 +3,7 @@ while {true} do
 _grpa = createGroup east;
 _grpa = [getMarkerPos "checkpointa", EAST, (configFile >> "CfgGroups" >> "East" >> "OPF_F" >> "Infantry" >> "OIA_InfSquad")] call BIS_fnc_spawnGroup;
 [_grpa, getMarkerPos "checkpointa", 50] call BIS_fnc_taskDefend;
-
-	{
-		_x addCuratorEditableObjects [units _grpa, false];
-	} foreach adminCurators;
+	
 
 	_Array = units _grpa;
 	waitUntil{!({alive _x}foreach _Array)};

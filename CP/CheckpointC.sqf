@@ -4,10 +4,6 @@ _grpc = createGroup east;
 _grpc = [getMarkerPos "checkpointc", EAST, (configFile >> "CfgGroups" >> "East" >> "OPF_F" >> "Infantry" >> "OIA_InfSquad")] call BIS_fnc_spawnGroup;
 [_grpc, getMarkerPos "checkpointc", 50] call BIS_fnc_taskDefend;
 
-	{
-		_x addCuratorEditableObjects [units _grpc, false];
-	} foreach adminCurators;
-
 	_Array = units _grpc;
 	waitUntil{!({alive _x}foreach _Array)};
 
