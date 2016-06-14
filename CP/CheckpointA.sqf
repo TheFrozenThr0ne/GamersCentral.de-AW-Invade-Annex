@@ -7,9 +7,7 @@ _grpa = [getMarkerPos "checkpointa", EAST, (configFile >> "CfgGroups" >> "East" 
 	{
 		_x addCuratorEditableObjects [units _grpa, false];
 	} foreach adminCurators;
-	
-	{
-	
+
 	_Array = units _grpa;
 	waitUntil{!({alive _x}foreach _Array)};
 
