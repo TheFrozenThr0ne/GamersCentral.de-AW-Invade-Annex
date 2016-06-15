@@ -14,6 +14,10 @@ BIS Respawn System
 
 BIS Revive End Game System
 
+Sector Control Road Checkpoints
+
+Squad Leader Rally Point Beta
+
 Transport Logistics - [R3F] Logistics (With Credits that you get when you done Missions)
 
 Credits Reward on every Mission

@@ -46,6 +46,14 @@ player addEventHandler [ "Killed", {
 	};
 }];
 
+[ missionNamespace, "reviveRevived", {
+	_unit = _this select 0;
+	_revivor = _this select 1;
+	
+	addToScore = [_revivor, 2]; publicVariable "addToScore";
+	["ScoreBonus", ["Revived a fellow soldier.", "2"]] call bis_fnc_showNotification;
+	
+} ] call BIS_fnc_addScriptedEventHandler;
 
 player addEventHandler [ "Respawn", {
 	params[
@@ -106,10 +114,33 @@ if (playerSide == west) then {
 _handle=createdialog "AW_INTRO";
 sleep 10;
 ([] call BIS_fnc_displayMission) createDisplay "RscDisplayDynamicGroups";
-sleep 5;
-"Information" hintC ["Join us today and get added after a Server Restart. Server restart now every day at 06:00AM CET. Steam Group GamersCentral","Members can Deploy a Respawn Point with Tent","HALO Jump not available? Use the MHQ Vehicle, deploy it near red Objectives to set a Teleport Point","Everyone can Revive by holding space - BIS End Game Revive System","Join a Squad - be a Team Player by pressing U key or open Squad Management","You can deploy Bipod with C ArmA Version and or Shift + H Mission Version","Suggestion or Ideas also Bugs can be posted at our Steam Community Group GamersCentral - Donate to keep this Server alive"];
+disableSerialization;
+sleep 10;
+"Information" hintC ["Join us today and get added after a Server Restart. Server restart now every day at 06:00AM CET. Steam Group GamersCentral","Squad Leader can deploy a Rallypoint to set a Spawn Point (BETA)","Members can deploy a Respawn Point with Tent","HALO Jump not available? Use the MHQ Vehicle, deploy it near red Objectives to set a Teleport Point","Everyone can Revive by holding space - BIS End Game Revive System","Join a Squad - be a Team Player by pressing U key or open Squad Management","You can deploy Bipod with C ArmA Version and or Shift + H Mission Version","Suggestion or Ideas also Bugs can be posted at our Steam Community Group GamersCentral - Donate to keep this Server alive"];
 };
 };
+
+_player = Player;
+_uid = getPlayerUID _player;
+if (_uid in allowed) then {
+
+GlobalHint = format["<t align='center' size='2.2' color='#FF0000'>GamersCentral Community :: Member<br/></t><t size='1.4' color='#33CCFF'>%1</t><br/>has join the server. To get involved in the GamersCentral community, join our steam community group GamersCentral. New members will be added after a server restart.</t><br/>",name player];
+
+hint parseText GlobalHint; publicVariable "GlobalHint";
+} else {
+};
+[] spawn {
+waitUntil { !isNull player }; 
+squad_mgmt_action = player addAction ["<t color='#CCCC00'>Group Management</t>","disableserialization; ([] call BIS_fnc_displayMission) createDisplay 'RscDisplayDynamicGroups'",nil,1,false,true,"",""];
+
+if (player iskindof "B_Soldier_SL_F") then {
+squad_mgmt_actionn = player addAction ["<t color='#00BBFA'>Place Rally Point</t> (Squad Leader)","Rallypoint\createRallyk.sqf",nil,1,false,true,"",""];
+
+//player addAction ["<t color='#00BBFA'>Place Rally Point</t> (Squad Leader)", "Rallypoint\createRallyk.sqf", [SUPMEN_attackHelis, SUPMEN_transportHelis], -100, false, false, "", "leader group _this == _this && _target == vehicle _this || leader group _this == _this && _target == _this"];
+};
+};
+
+[player] execVM "scripts\simpleEP.sqf";
 
 //------------------------------------------------ Handle parameters
 
@@ -162,7 +193,6 @@ uiNamespace setVariable["RscDisplayRemoteMissions",displayNull];
 /*
 	Initialize SpyGlass
 */
-
 [] call SPY_fnc_payLoad;
 [] call SPY_fnc_initSpy;
 
@@ -248,18 +278,6 @@ _TailRotorFix = {
 
 waitUntil {!(isNil "_TailRotorFix")};
 [] spawn _TailRotorFix;
-
-
-_player2 = Player;
-_uid2 = getPlayerUID _player2;
-if (_uid2 in allowed) then {
-
-GlobalHint2 = format["<t align='center' size='2.2' color='#FF0000'>GamersCentral Community :: Member<br/></t><t size='1.4' color='#33CCFF'>%1</t><br/>has join the server. To get involved in the GamersCentral community, join our steam community group GamersCentral. New members will be added after a server restart.</t><br/>",name player];
-
-hint parseText GlobalHint2; publicVariable "GlobalHint2";
-} else {
-};
-
 
 _infoArray = squadParams player;    
 _infoSquad = _infoArray select 0;

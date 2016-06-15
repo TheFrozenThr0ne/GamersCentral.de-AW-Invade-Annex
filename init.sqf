@@ -24,20 +24,12 @@ ______________________________________________________*/
 //null = [] execVM "auxslingloading.sqf";
 //[] execVM "SlingLoadingInit.sqf";
 
-[player] execVM "scripts\simpleEP.sqf";
-
 //_null = [] execVM "members\communityList.sqf";
 
 _IntroMusic            = false; // Welcome Intro Song
 if (_IntroMusic) then { playMusic "intro";};
 
 // [player] execVM "welcome.sqf";
-
-[] execVM "CP\CheckpointA.sqf";
-[] execVM "CP\CheckpointB.sqf";
-[] execVM "CP\CheckpointC.sqf";
-[] execVM "CP\CheckpointD.sqf";
-[] execVM "CP\CheckpointE.sqf";
 
 ETG_Reinforcements = 0;
 // [] execVM "VCOMAI\init.sqf";
@@ -49,19 +41,13 @@ CHHQ_showMarkers = true; // Set 'true' if you want real time map markers for all
 
 execVM "JWC_CASFS\initCAS.sqf";
 
-squad_mgmt_action = player addaction ["<t color='#CCCC00'>Group Management</t>","disableserialization; ([] call BIS_fnc_displayMission) createDisplay 'RscDisplayDynamicGroups'",nil,1,false,true,"",""];
-
-player addEventHandler ["Respawn", {
-squad_mgmt_action = player addaction ["<t color='#CCCC00'>Group Management</t>","disableserialization; ([] call BIS_fnc_displayMission) createDisplay 'RscDisplayDynamicGroups'",nil,1,false,true,"",""];
-}
-];
-
 //call compile preprocessFile "scripts\=BTC=_revive\=BTC=_revive_init.sqf";		// revive
 call compile preprocessFile "=BTC=_TK_punishment\=BTC=_tk_init.sqf"; 
 
 execVM "R3F_LOG\init.sqf";
 
-if (isServer) then {[1000,-1,true,100,1000,1000]execvm "zbe_cache\main.sqf"};
+if (isServer) then {[1000,-1,false,100,1000,1000]execvm "zbe_cache\main.sqf"};
+
 //execFSM "core\fsm\ZBE_HCCache.fsm";
 
 [] execVM "scripts\DOM_repair\init.sqf";

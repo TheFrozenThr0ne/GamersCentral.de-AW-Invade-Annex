@@ -49,9 +49,15 @@ _null = [] execVM "scripts\eos\OpenMe.sqf";																// EOS (urban mission
 _null = [] execVM "scripts\misc\airbaseDefense.sqf";													// Airbase air defense
 _null = [] execVM "scripts\misc\cleanup.sqf";															// cleanup
 _null = [] execVM "scripts\misc\islandConfig.sqf";														// prep the island for mission
-_null = [] execVM "scripts\misc\zeusupdater.sqf";														// zeus unit updater loop
+//_null = [] execVM "scripts\misc\zeusupdater.sqf";														// zeus unit updater loop
 if (PARAMS_EasterEggs == 1) then {_null = [] execVM "scripts\easterEggs.sqf";};							// Spawn easter eggs around the island
 [] execVM "scripts\real_weather.sqf";
 adminCurators = allCurators;
 enableEnvironment FALSE;
 BACO_ammoSuppAvail = true; publicVariable "BACO_ammoSuppAvail";
+
+[] execVM "CP\CheckpointA.sqf";
+[] execVM "CP\CheckpointB.sqf";
+[] execVM "CP\CheckpointC.sqf";
+[] execVM "CP\CheckpointD.sqf";
+[] execVM "CP\CheckpointE.sqf";

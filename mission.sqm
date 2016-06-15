@@ -19870,7 +19870,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
-						init="(group this) setGroupId [""ALPHA""];this addAction [""<t color='#00BBFA'>Place Rally Point</t> (Squad Leader)"",""Rallypoint\createRallyk.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];";
+						init="(group this) setGroupId [""ALPHA""];";
 						name="s38";
 						description="Alpha Squad Leader";
 						isPlayable=1;
@@ -20068,7 +20068,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
-						init="(group this) setGroupId [""BRAVO""];this addAction [""<t color='#00BBFA'>Place Rally Point</t> (Squad Leader)"",""Rallypoint\createRallyk.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];";
+						init="(group this) setGroupId [""BRAVO""];";
 						name="s46";
 						description="Bravo Squad Leader";
 						isPlayable=1;
@@ -20266,7 +20266,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
-						init="(group this) setGroupId [""CHARLIE""];this addAction [""<t color='#00BBFA'>Place Rally Point</t> (Squad Leader)"",""Rallypoint\createRallyk.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];";
+						init="(group this) setGroupId [""CHARLIE""];";
 						name="s30";
 						description="Charlie Squad Leader";
 						isPlayable=1;
@@ -20464,7 +20464,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
-						init="(group this) setGroupId [""DELTA""];this addAction [""<t color='#00BBFA'>Place Rally Point</t> (Squad Leader)"",""Rallypoint\createRallyk.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];";
+						init="(group this) setGroupId [""DELTA""];";
 						name="s18";
 						description="Delta Squad Leader";
 						isPlayable=1;
@@ -20662,7 +20662,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
-						init="(group this) setGroupId [""ECHO""];this addAction [""<t color='#00BBFA'>Place Rally Point</t> (Squad Leader)"",""Rallypoint\createRallyk.sqf"",[],10,true,true,'((vehicle player) == player) && ((player distance _target) < 5)'];";
+						init="(group this) setGroupId [""ECHO""];";
 						name="s58";
 						description="Echo Squad Leader";
 						isPlayable=1;
