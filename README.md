@@ -54,7 +54,7 @@ Ammo Boxes (Liftable)
 
 PVP Function - (You will get a Flag Pole as Side Mission reward which allow you to Join the OPFOR Side to AO for 15 Minutes) - MaDmaX Script
 # # INFO # #
-PSD Pictures for Map can be Downloaded here: http://gamersupload.de/file/568/billboard-intel.rar.html
+PSD Pictures for Map can be Downloaded here: http://GamersCentral.de/userfiles/arma/Mission%20intel.rar
 
 # # REQIRED: # #
 Create a Folder in Root Directory of your ArmA III Server - InvadeAnnex_settings
